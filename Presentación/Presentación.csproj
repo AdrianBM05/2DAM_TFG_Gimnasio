@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4164C50A-439B-43A0-BF0F-4B708136DCA0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Presentación</RootNamespace>
+    <AssemblyName>Presentación</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FClienteFicha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FClienteFicha.Designer.cs">
+      <DependentUpon>FClienteFicha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FGestionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FGestionClientes.Designer.cs">
+      <DependentUpon>FGestionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPrincipalEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPrincipalEmpleado.Designer.cs">
+      <DependentUpon>FPrincipalEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProductoFicha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProductoFicha.Designer.cs">
+      <DependentUpon>FProductoFicha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FProductos.Designer.cs">
+      <DependentUpon>FProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="F_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Login.Designer.cs">
+      <DependentUpon>F_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FClienteFicha.resx">
+      <DependentUpon>FClienteFicha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FGestionClientes.resx">
+      <DependentUpon>FGestionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPrincipalEmpleado.resx">
+      <DependentUpon>FPrincipalEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProductoFicha.resx">
+      <DependentUpon>FProductoFicha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FProductos.resx">
+      <DependentUpon>FProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Login.resx">
+      <DependentUpon>F_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Imágenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\natura_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CAD\CAD.csproj">
+      <Project>{064e40f6-1b27-4352-aa1b-6382e46be810}</Project>
+      <Name>CAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{ebdb12ae-1d2c-42af-b778-1c68dddcc174}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-añadir-50.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
