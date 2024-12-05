@@ -54,6 +54,12 @@
     <Compile Include="FClienteFicha.Designer.cs">
       <DependentUpon>FClienteFicha.cs</DependentUpon>
     </Compile>
+    <Compile Include="FClienteFicha2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FClienteFicha2.Designer.cs">
+      <DependentUpon>FClienteFicha2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FGestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     <Compile Include="FProductos.Designer.cs">
       <DependentUpon>FProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_Factura.Designer.cs">
+      <DependentUpon>F_Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +100,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FClienteFicha.resx">
       <DependentUpon>FClienteFicha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FClienteFicha2.resx">
+      <DependentUpon>FClienteFicha2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FGestionClientes.resx">
       <DependentUpon>FGestionClientes.cs</DependentUpon>
@@ -100,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FProductos.resx">
       <DependentUpon>FProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="F_Factura.resx">
+      <DependentUpon>F_Factura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>

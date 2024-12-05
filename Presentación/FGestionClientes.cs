@@ -59,7 +59,7 @@ namespace Presentación
             // Ajustar fecha actual de ese momento 
             DateTime actual = DateTime.Now;
 
-            FClienteFicha ficha = new FClienteFicha(0,0,actual);
+            FClienteFicha2 ficha = new FClienteFicha2(0,0,actual);
             ficha.Show();
 
             NVClientes.obtenerClientes(dsGimnasio1);
@@ -73,7 +73,7 @@ namespace Presentación
             // Abrir ficha del cliente
             if(bsVClientes.Count > 0)
             {
-                FClienteFicha ficha = new FClienteFicha((int)((DataRowView)bsVClientes.Current).Row["Id"],1, (DateTime)((DataRowView)bsVClientes.Current).Row["Fecha_Inicio_Tarifa"]);
+                FClienteFicha2 ficha = new FClienteFicha2((int)((DataRowView)bsVClientes.Current).Row["Id"],1, (DateTime)((DataRowView)bsVClientes.Current).Row["Fecha_Inicio_Tarifa"]);
                 ficha.Show();
 
                 NVClientes.obtenerClientes(dsGimnasio1);
