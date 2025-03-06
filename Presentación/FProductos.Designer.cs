@@ -53,7 +53,7 @@
             this.descripciónDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.secciónDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preciocompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseImponibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Base_Imponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoIVADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pVPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsProductos = new System.Windows.Forms.BindingSource(this.components);
@@ -289,7 +289,7 @@
             this.descripciónDataGridViewTextBoxColumn,
             this.secciónDataGridViewTextBoxColumn,
             this.preciocompraDataGridViewTextBoxColumn,
-            this.baseImponibleDataGridViewTextBoxColumn,
+            this.Base_Imponible,
             this.tipoIVADataGridViewTextBoxColumn,
             this.pVPDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bsProductos;
@@ -316,6 +316,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1357, 605);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -357,13 +358,13 @@
             this.preciocompraDataGridViewTextBoxColumn.Name = "preciocompraDataGridViewTextBoxColumn";
             this.preciocompraDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // baseImponibleDataGridViewTextBoxColumn
+            // Base_Imponible
             // 
-            this.baseImponibleDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.baseImponibleDataGridViewTextBoxColumn.DataPropertyName = "Base imponible";
-            this.baseImponibleDataGridViewTextBoxColumn.HeaderText = "Base imponible";
-            this.baseImponibleDataGridViewTextBoxColumn.Name = "baseImponibleDataGridViewTextBoxColumn";
-            this.baseImponibleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Base_Imponible.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Base_Imponible.DataPropertyName = "Base_Imponible";
+            this.Base_Imponible.HeaderText = "Base_Imponible";
+            this.Base_Imponible.Name = "Base_Imponible";
+            this.Base_Imponible.ReadOnly = true;
             // 
             // tipoIVADataGridViewTextBoxColumn
             // 
@@ -422,19 +423,11 @@
         private CAD.DSGimnasio dsGimnasio1;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource bsProductos;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.ComboBox comboBoxSecciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripciónDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn secciónDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn preciocompraDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn baseImponibleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoIVADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pVPDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
@@ -443,5 +436,14 @@
         private System.Windows.Forms.BindingSource bsSecciones;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.BindingSource bsProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripciónDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secciónDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn preciocompraDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Base_Imponible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoIVADataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pVPDataGridViewTextBoxColumn;
     }
 }

@@ -24,7 +24,7 @@ namespace Presentación
             FPrincipalEmpleado._gestionClientes = this;
 
 
-            lblUsuario.Text = "Bienvenido: " + _empleado.Nombre + _empleado.Apellido;
+            lblUsuario.Text = "Bienvenido: " + _empleado.Nombre + " " + _empleado.Apellido;
 
             /* Comprobar estado de la tabla clientes
             NClientes.actualizarEstadoCliente(dsGimnasio1);
@@ -104,12 +104,16 @@ namespace Presentación
 
         private void btnIngresosMensuales_Click(object sender, EventArgs e)
         {
-
             double ingresos = NTarifas.calcularIngresosMensuales(dsGimnasio1);
 
-            MessageBox.Show("Ingresos por clientes este mes: " + ingresos+ "€.", "Ingresos mensuales", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            string mensaje = $"📊 Ingresos Mensuales 📊\n\n" +
+                             $"💰 Total: {ingresos}€\n" +
+                             "----------------------------\n" +
+                             "📅 Datos actualizados al mes actual";
 
+            MessageBox.Show(mensaje, "Ingresos Mensuales", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -118,9 +122,16 @@ namespace Presentación
 
             try
             {
-                // Sacar el estado
-                string estado = (((DataRowView)bsVClientes.Current).Row["Estado"].ToString());
-
+                // Comprobar fecha de vencimiento > actual en todos los clientes
+                foreach(DataRowView cliente in bsVClientes)
+                {
+                    DateTime fechaVencimiento = (DateTime)cliente.Row["Fecha_Caducidad_Tarifa"];
+                    DateTime fechaActual = DateTime.Now;
+                    if (fechaVencimiento < fechaActual)
+                    {
+                        NClientes.cambiarEstadoCliente((int)cliente.Row["Id"], 2);
+                    }
+                }
 
             } catch (Exception ex)
             {
@@ -134,51 +145,71 @@ namespace Presentación
 
         private void btnEstado_Click(object sender, EventArgs e)
         {
-
             try
             {
-                // CLiente seleccionado
-                int id = (int)(((DataRowView)bsVClientes.Current).Row["Id"]);
+                // Cliente seleccionado
+                int id = (int)(((DataRowView)bsVClientes.Current).Row[0]);
+                string estado = (((DataRowView)bsVClientes.Current).Row["Estado"].ToString());
 
                 if (id > 0)
                 {
-
-                    // Sacar el estado
-                    string estado = (((DataRowView)bsVClientes.Current).Row["Estado"].ToString());
+                    // Determinar nuevo estado y mensaje
+                    string mensaje = "";
+                    int nuevoEstado = 0;
 
                     if (estado == "Activo")
                     {
-
-                        // Preguntar
-                        DialogResult rest = MessageBox.Show("¿Desea dar de baja al cliente?", "Información", MessageBoxButtons.YesNo, icon: MessageBoxIcon.Information);
-                        if (rest == DialogResult.Yes)
-                        {
-                            NClientes.cambiarEstadoCliente(id,2);
-                        }
-
-
+                        mensaje = "¿Desea dar de baja al cliente?";
+                        nuevoEstado = 2; // Estado "Inactivo"
                     }
-                    else if ( estado == "Desactivo")
+                    else if (estado == "Inactivo") // Corrigiendo "Desactivo"
                     {
-
-                        // Preguntar
-                        DialogResult rest = MessageBox.Show("¿Desea dar de alta al cliente?", "Información", MessageBoxButtons.YesNo, icon: MessageBoxIcon.Information);
-                        if (rest == DialogResult.Yes)
-                        {
-                            NClientes.cambiarEstadoCliente(id, 1);
-                        }
-
-
+                        mensaje = "¿Desea dar de alta al cliente?";
+                        nuevoEstado = 1; // Estado "Activo"
                     }
 
+                    // Confirmar cambio de estado
+                    if (nuevoEstado > 0)
+                    {
+                        DialogResult rest = MessageBox.Show(mensaje, "Información", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                        if (rest == DialogResult.Yes)
+                        {
+                            NClientes.cambiarEstadoCliente(id, nuevoEstado);
+
+                            // Refrescar datos tras el cambio de estado
+                            bsVClientes.ResetBindings(false);
+                        }
+                    }
                 }
-
-            } catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void btnF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+
+            // Abrir ficha del cliente
+
+        }
+
+        private void btnFacturaNueva_Click(object sender, EventArgs e)
+        {
+            // Abrir ficha de cero
+            FNuevaFactura factura = new FNuevaFactura(0,0); // CREACIÓN DE FACTURA NUEVA
+            factura.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

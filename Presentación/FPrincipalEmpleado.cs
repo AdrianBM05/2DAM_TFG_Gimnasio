@@ -19,7 +19,8 @@ namespace Presentación
         public static FPrincipalEmpleado _fPrincipalEmpleado;
         public static FGestionClientes _gestionClientes;
         public static FProductos _productos;
-        
+        public static FGestionFacturas _gestionFacturas;
+
 
         public FPrincipalEmpleado(Empleado _Empleado)
         {
@@ -91,6 +92,26 @@ namespace Presentación
             }
 
 
+        }
+
+        private void ribbon1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturasTSM_Click(object sender, EventArgs e)
+        {
+            FGestionFacturas facturas = new FGestionFacturas(_empleado);
+            if (facturas != null)
+            {
+                _gestionFacturas = facturas;
+                _gestionFacturas.MdiParent = this;
+                _gestionFacturas.Show();
+            }
+            else
+            {
+                _gestionFacturas.BringToFront();
+            }
         }
     }
 }

@@ -105,5 +105,10 @@ namespace Presentación
             NProductos.mostrarBusqueda(dsGimnasio1, busqueda);
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

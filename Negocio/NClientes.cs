@@ -121,6 +121,10 @@ namespace Negocio
                     {
                         cliente.Id_Estado = 2; // De baja 
                     }
+                    else
+                    {
+                        cliente.Id_Estado = 1;
+                    }
                 }
 
                 ta.Update(ds.Clientes);
@@ -145,6 +149,9 @@ namespace Negocio
 
 
         }
+
+
+        
 
     }
 }

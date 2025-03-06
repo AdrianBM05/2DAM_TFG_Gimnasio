@@ -22,8 +22,10 @@
             this.gymLogo = new System.Windows.Forms.PictureBox();
             this.headerLabel = new System.Windows.Forms.Label();
             this.clientInfoGroupBox = new System.Windows.Forms.GroupBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.dsGimnasio1 = new CAD.DSGimnasio();
+            this.bsEstado = new System.Windows.Forms.BindingSource(this.components);
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -31,6 +33,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lastNameLabel = new System.Windows.Forms.Label();
             this.txtApellidos = new System.Windows.Forms.TextBox();
+            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
             this.dniLabel = new System.Windows.Forms.Label();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.addressLabel = new System.Windows.Forms.Label();
@@ -43,20 +46,17 @@
             this.endDatePicker = new System.Windows.Forms.DateTimePicker();
             this.tariffLabel = new System.Windows.Forms.Label();
             this.comboBoxTarifas = new System.Windows.Forms.ComboBox();
-            this.bsClientes = new System.Windows.Forms.BindingSource(this.components);
             this.bsTarifa = new System.Windows.Forms.BindingSource(this.components);
-            this.bsEstado = new System.Windows.Forms.BindingSource(this.components);
+            this.statusLabel = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnFactura = new System.Windows.Forms.Button();
-            this.statusLabel = new System.Windows.Forms.Label();
-            this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gymLogo)).BeginInit();
             this.clientInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEstado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTarifa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEstado)).BeginInit();
             this.SuspendLayout();
             // 
             // headerPanel
@@ -122,6 +122,27 @@
             this.clientInfoGroupBox.TabStop = false;
             this.clientInfoGroupBox.Text = "Información del Cliente";
             // 
+            // comboBoxEstado
+            // 
+            this.comboBoxEstado.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dsGimnasio1, "Clientes.Id_Estado", true));
+            this.comboBoxEstado.DataSource = this.bsEstado;
+            this.comboBoxEstado.DisplayMember = "Estado";
+            this.comboBoxEstado.Location = new System.Drawing.Point(195, 438);
+            this.comboBoxEstado.Name = "comboBoxEstado";
+            this.comboBoxEstado.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxEstado.TabIndex = 26;
+            this.comboBoxEstado.ValueMember = "Id";
+            // 
+            // dsGimnasio1
+            // 
+            this.dsGimnasio1.DataSetName = "DSGimnasio";
+            this.dsGimnasio1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bsEstado
+            // 
+            this.bsEstado.DataMember = "Estado";
+            this.bsEstado.DataSource = this.dsGimnasio1;
+            // 
             // txtCorreo
             // 
             this.txtCorreo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.Correo", true));
@@ -129,13 +150,8 @@
             this.txtCorreo.Location = new System.Drawing.Point(195, 270);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(200, 30);
+            this.txtCorreo.Size = new System.Drawing.Size(200, 26);
             this.txtCorreo.TabIndex = 25;
-            // 
-            // dsGimnasio1
-            // 
-            this.dsGimnasio1.DataSetName = "DSGimnasio";
-            this.dsGimnasio1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtContraseña
             // 
@@ -144,7 +160,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(195, 230);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(200, 30);
+            this.txtContraseña.Size = new System.Drawing.Size(200, 26);
             this.txtContraseña.TabIndex = 24;
             // 
             // txtUsuario
@@ -154,7 +170,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(195, 190);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(200, 30);
+            this.txtUsuario.Size = new System.Drawing.Size(200, 26);
             this.txtUsuario.TabIndex = 23;
             // 
             // txtDireccion
@@ -164,7 +180,7 @@
             this.txtDireccion.Location = new System.Drawing.Point(195, 150);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(200, 30);
+            this.txtDireccion.Size = new System.Drawing.Size(200, 26);
             this.txtDireccion.TabIndex = 22;
             // 
             // nameLabel
@@ -182,7 +198,7 @@
             this.txtNombre.Location = new System.Drawing.Point(195, 30);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 30);
+            this.txtNombre.Size = new System.Drawing.Size(200, 26);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
@@ -196,13 +212,19 @@
             // 
             // txtApellidos
             // 
-            this.txtApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.Apellidos", true));
+            this.txtApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "Apellidos", true));
             this.txtApellidos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.Location = new System.Drawing.Point(195, 70);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(200, 30);
+            this.txtApellidos.Size = new System.Drawing.Size(200, 26);
             this.txtApellidos.TabIndex = 3;
+            // 
+            // bsClientes
+            // 
+            this.bsClientes.DataMember = "Clientes";
+            this.bsClientes.DataSource = this.dsGimnasio1;
+            this.bsClientes.CurrentChanged += new System.EventHandler(this.bsClientes_CurrentChanged);
             // 
             // dniLabel
             // 
@@ -219,7 +241,7 @@
             this.txtDNI.Location = new System.Drawing.Point(195, 110);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(200, 30);
+            this.txtDNI.Size = new System.Drawing.Size(200, 26);
             this.txtDNI.TabIndex = 5;
             // 
             // addressLabel
@@ -270,7 +292,7 @@
             this.startDatePicker.Location = new System.Drawing.Point(195, 310);
             this.startDatePicker.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(200, 30);
+            this.startDatePicker.Size = new System.Drawing.Size(200, 26);
             this.startDatePicker.TabIndex = 15;
             // 
             // endDateLabel
@@ -289,7 +311,7 @@
             this.endDatePicker.Location = new System.Drawing.Point(195, 350);
             this.endDatePicker.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(200, 30);
+            this.endDatePicker.Size = new System.Drawing.Size(200, 26);
             this.endDatePicker.TabIndex = 17;
             // 
             // tariffLabel
@@ -302,30 +324,27 @@
             // 
             // comboBoxTarifas
             // 
-            this.comboBoxTarifas.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dsGimnasio1, "Clientes.IdTarifa", true));
+            this.comboBoxTarifas.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsClientes, "IdTarifa", true));
             this.comboBoxTarifas.DataSource = this.bsTarifa;
             this.comboBoxTarifas.DisplayMember = "TipoTarifa";
             this.comboBoxTarifas.Location = new System.Drawing.Point(195, 392);
             this.comboBoxTarifas.Name = "comboBoxTarifas";
-            this.comboBoxTarifas.Size = new System.Drawing.Size(200, 32);
+            this.comboBoxTarifas.Size = new System.Drawing.Size(200, 27);
             this.comboBoxTarifas.TabIndex = 19;
             this.comboBoxTarifas.ValueMember = "Id";
-            // 
-            // bsClientes
-            // 
-            this.bsClientes.DataMember = "Clientes";
-            this.bsClientes.DataSource = this.dsGimnasio1;
-            this.bsClientes.CurrentChanged += new System.EventHandler(this.bsClientes_CurrentChanged);
             // 
             // bsTarifa
             // 
             this.bsTarifa.DataMember = "Tarifas";
             this.bsTarifa.DataSource = this.dsGimnasio1;
             // 
-            // bsEstado
+            // statusLabel
             // 
-            this.bsEstado.DataMember = "Estado";
-            this.bsEstado.DataSource = this.dsGimnasio1;
+            this.statusLabel.Location = new System.Drawing.Point(20, 441);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(100, 23);
+            this.statusLabel.TabIndex = 20;
+            this.statusLabel.Text = "Estado:";
             // 
             // btnGuardar
             // 
@@ -349,25 +368,6 @@
             this.btnFactura.UseVisualStyleBackColor = true;
             this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
-            // statusLabel
-            // 
-            this.statusLabel.Location = new System.Drawing.Point(20, 441);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(100, 23);
-            this.statusLabel.TabIndex = 20;
-            this.statusLabel.Text = "Estado:";
-            // 
-            // comboBoxEstado
-            // 
-            this.comboBoxEstado.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dsGimnasio1, "Clientes.Id_Estado", true));
-            this.comboBoxEstado.DataSource = this.bsEstado;
-            this.comboBoxEstado.DisplayMember = "Estado";
-            this.comboBoxEstado.Location = new System.Drawing.Point(195, 438);
-            this.comboBoxEstado.Name = "comboBoxEstado";
-            this.comboBoxEstado.Size = new System.Drawing.Size(200, 32);
-            this.comboBoxEstado.TabIndex = 26;
-            this.comboBoxEstado.ValueMember = "Id";
-            // 
             // FClienteFicha2
             // 
             this.ClientSize = new System.Drawing.Size(550, 650);
@@ -383,9 +383,9 @@
             this.clientInfoGroupBox.ResumeLayout(false);
             this.clientInfoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsEstado)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsTarifa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsEstado)).EndInit();
             this.ResumeLayout(false);
 
         }

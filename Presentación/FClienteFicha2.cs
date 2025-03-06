@@ -109,9 +109,7 @@ namespace Presentación
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            // Llamamos al formulario factura
-            F_Factura factura = new F_Factura(this.id);
-            factura.Show();
+            
         }
     }
 }

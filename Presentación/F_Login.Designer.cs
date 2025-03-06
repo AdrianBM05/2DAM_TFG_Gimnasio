@@ -35,8 +35,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.rbtnCliente = new System.Windows.Forms.RadioButton();
-            this.rbtnEmpleado = new System.Windows.Forms.RadioButton();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.dsGimnasio1 = new CAD.DSGimnasio();
@@ -79,7 +77,7 @@
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Location = new System.Drawing.Point(193, 397);
+            this.button1.Location = new System.Drawing.Point(193, 357);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(74, 43);
             this.button1.TabIndex = 1;
@@ -107,32 +105,6 @@
             this.txtContraseña.Size = new System.Drawing.Size(155, 23);
             this.txtContraseña.TabIndex = 3;
             this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
-            // 
-            // rbtnCliente
-            // 
-            this.rbtnCliente.AutoSize = true;
-            this.rbtnCliente.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnCliente.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.rbtnCliente.Location = new System.Drawing.Point(129, 348);
-            this.rbtnCliente.Name = "rbtnCliente";
-            this.rbtnCliente.Size = new System.Drawing.Size(86, 23);
-            this.rbtnCliente.TabIndex = 6;
-            this.rbtnCliente.TabStop = true;
-            this.rbtnCliente.Text = "Cliente";
-            this.rbtnCliente.UseVisualStyleBackColor = true;
-            // 
-            // rbtnEmpleado
-            // 
-            this.rbtnEmpleado.AutoSize = true;
-            this.rbtnEmpleado.Font = new System.Drawing.Font("Bookman Old Style", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnEmpleado.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.rbtnEmpleado.Location = new System.Drawing.Point(245, 348);
-            this.rbtnEmpleado.Name = "rbtnEmpleado";
-            this.rbtnEmpleado.Size = new System.Drawing.Size(108, 23);
-            this.rbtnEmpleado.TabIndex = 7;
-            this.rbtnEmpleado.TabStop = true;
-            this.rbtnEmpleado.Text = "Empleado";
-            this.rbtnEmpleado.UseVisualStyleBackColor = true;
             // 
             // lblUsuario
             // 
@@ -178,11 +150,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.ClientSize = new System.Drawing.Size(464, 452);
+            this.ClientSize = new System.Drawing.Size(464, 441);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.rbtnEmpleado);
-            this.Controls.Add(this.rbtnCliente);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.button1);
@@ -193,7 +163,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "F_Login";
-            this.Text = "GYM_Bejarano";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -211,8 +181,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.RadioButton rbtnCliente;
-        private System.Windows.Forms.RadioButton rbtnEmpleado;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Label lblContraseña;
         private CAD.DSGimnasio dsGimnasio1;
