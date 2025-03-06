@@ -12,12 +12,12 @@ using System.Windows.Forms;
 
 namespace Presentación
 {
-    public partial class FProductos : Form
+    public partial class FGestionProductos : Form
     {
 
         public Empleado _empleado;
 
-        public FProductos(Empleado empleado)
+        public FGestionProductos(Empleado empleado)
         {
             InitializeComponent();
             _empleado = empleado;

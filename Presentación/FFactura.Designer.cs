@@ -122,7 +122,7 @@
             this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.07837F));
             this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.74921F));
             this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.172414F));
-            this.tlpVentana.Size = new System.Drawing.Size(1302, 638);
+            this.tlpVentana.Size = new System.Drawing.Size(1274, 691);
             this.tlpVentana.TabIndex = 0;
             // 
             // gbCabecera
@@ -134,7 +134,7 @@
             this.gbCabecera.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCabecera.Location = new System.Drawing.Point(3, 3);
             this.gbCabecera.Name = "gbCabecera";
-            this.gbCabecera.Size = new System.Drawing.Size(1296, 154);
+            this.gbCabecera.Size = new System.Drawing.Size(1268, 167);
             this.gbCabecera.TabIndex = 0;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Datos de la factura";
@@ -196,16 +196,16 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1290, 129);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1262, 142);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNombre.Location = new System.Drawing.Point(67, 14);
+            this.lblNombre.Location = new System.Drawing.Point(66, 15);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(71, 14);
+            this.lblNombre.Size = new System.Drawing.Size(69, 15);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre: ";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -221,9 +221,9 @@
             this.cmbClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbClientes.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(144, 17);
+            this.cmbClientes.Location = new System.Drawing.Point(141, 18);
             this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(123, 22);
+            this.cmbClientes.Size = new System.Drawing.Size(120, 22);
             this.cmbClientes.TabIndex = 17;
             this.cmbClientes.ValueMember = "Id";
             this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
@@ -249,18 +249,18 @@
             this.txtApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "Apellidos", true));
             this.txtApellidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtApellidos.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidos.Location = new System.Drawing.Point(144, 45);
+            this.txtApellidos.Location = new System.Drawing.Point(141, 48);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(123, 22);
+            this.txtApellidos.Size = new System.Drawing.Size(120, 22);
             this.txtApellidos.TabIndex = 20;
             // 
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblApellidos.Location = new System.Drawing.Point(67, 42);
+            this.lblApellidos.Location = new System.Drawing.Point(66, 45);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(71, 14);
+            this.lblApellidos.Size = new System.Drawing.Size(69, 15);
             this.lblApellidos.TabIndex = 18;
             this.lblApellidos.Text = "Apellidos:";
             this.lblApellidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,9 +269,9 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDNI.Location = new System.Drawing.Point(67, 70);
+            this.lblDNI.Location = new System.Drawing.Point(66, 75);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(71, 14);
+            this.lblDNI.Size = new System.Drawing.Size(69, 15);
             this.lblDNI.TabIndex = 21;
             this.lblDNI.Text = "DNI:";
             this.lblDNI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -282,18 +282,18 @@
             this.txtDNI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "DNI", true));
             this.txtDNI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDNI.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(144, 73);
+            this.txtDNI.Location = new System.Drawing.Point(141, 78);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(123, 22);
+            this.txtDNI.Size = new System.Drawing.Size(120, 22);
             this.txtDNI.TabIndex = 22;
             // 
             // lblEmision
             // 
             this.lblEmision.AutoSize = true;
             this.lblEmision.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmision.Location = new System.Drawing.Point(555, 14);
+            this.lblEmision.Location = new System.Drawing.Point(543, 15);
             this.lblEmision.Name = "lblEmision";
-            this.lblEmision.Size = new System.Drawing.Size(110, 14);
+            this.lblEmision.Size = new System.Drawing.Size(107, 15);
             this.lblEmision.TabIndex = 25;
             this.lblEmision.Text = "Fecha de emisión:";
             this.lblEmision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -305,9 +305,9 @@
             this.dtpEmision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpEmision.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEmision.Location = new System.Drawing.Point(671, 17);
+            this.dtpEmision.Location = new System.Drawing.Point(656, 18);
             this.dtpEmision.Name = "dtpEmision";
-            this.dtpEmision.Size = new System.Drawing.Size(123, 22);
+            this.dtpEmision.Size = new System.Drawing.Size(120, 22);
             this.dtpEmision.TabIndex = 26;
             this.dtpEmision.Value = new System.DateTime(2024, 12, 20, 0, 0, 0, 0);
             // 
@@ -315,9 +315,9 @@
             // 
             this.lblVencimiento.AutoSize = true;
             this.lblVencimiento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblVencimiento.Location = new System.Drawing.Point(555, 42);
+            this.lblVencimiento.Location = new System.Drawing.Point(543, 45);
             this.lblVencimiento.Name = "lblVencimiento";
-            this.lblVencimiento.Size = new System.Drawing.Size(110, 14);
+            this.lblVencimiento.Size = new System.Drawing.Size(107, 15);
             this.lblVencimiento.TabIndex = 27;
             this.lblVencimiento.Text = "Fecha vencimiento:";
             this.lblVencimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -326,9 +326,9 @@
             // 
             this.lblFechaPago.AutoSize = true;
             this.lblFechaPago.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFechaPago.Location = new System.Drawing.Point(555, 70);
+            this.lblFechaPago.Location = new System.Drawing.Point(543, 75);
             this.lblFechaPago.Name = "lblFechaPago";
-            this.lblFechaPago.Size = new System.Drawing.Size(110, 14);
+            this.lblFechaPago.Size = new System.Drawing.Size(107, 15);
             this.lblFechaPago.TabIndex = 35;
             this.lblFechaPago.Text = "Fecha de pago:";
             this.lblFechaPago.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -340,9 +340,9 @@
             this.dtpVencimiento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpVencimiento.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpVencimiento.Location = new System.Drawing.Point(671, 45);
+            this.dtpVencimiento.Location = new System.Drawing.Point(656, 48);
             this.dtpVencimiento.Name = "dtpVencimiento";
-            this.dtpVencimiento.Size = new System.Drawing.Size(123, 22);
+            this.dtpVencimiento.Size = new System.Drawing.Size(120, 22);
             this.dtpVencimiento.TabIndex = 36;
             this.dtpVencimiento.Value = new System.DateTime(2024, 12, 12, 9, 9, 29, 0);
             // 
@@ -353,9 +353,9 @@
             this.dtpFechaPago.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpFechaPago.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaPago.Location = new System.Drawing.Point(671, 73);
+            this.dtpFechaPago.Location = new System.Drawing.Point(656, 78);
             this.dtpFechaPago.Name = "dtpFechaPago";
-            this.dtpFechaPago.Size = new System.Drawing.Size(123, 22);
+            this.dtpFechaPago.Size = new System.Drawing.Size(120, 22);
             this.dtpFechaPago.TabIndex = 37;
             this.dtpFechaPago.Value = new System.DateTime(2024, 12, 12, 9, 9, 29, 0);
             // 
@@ -363,9 +363,9 @@
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCorreo.Location = new System.Drawing.Point(67, 98);
+            this.lblCorreo.Location = new System.Drawing.Point(66, 105);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(71, 14);
+            this.lblCorreo.Size = new System.Drawing.Size(69, 15);
             this.lblCorreo.TabIndex = 23;
             this.lblCorreo.Text = "Correo:";
             this.lblCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -376,18 +376,18 @@
             this.txtCorreo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "Correo", true));
             this.txtCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCorreo.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(144, 101);
+            this.txtCorreo.Location = new System.Drawing.Point(141, 108);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(123, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(120, 22);
             this.txtCorreo.TabIndex = 24;
             // 
             // lblFechaEnvio
             // 
             this.lblFechaEnvio.AutoSize = true;
             this.lblFechaEnvio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFechaEnvio.Location = new System.Drawing.Point(555, 98);
+            this.lblFechaEnvio.Location = new System.Drawing.Point(543, 105);
             this.lblFechaEnvio.Name = "lblFechaEnvio";
-            this.lblFechaEnvio.Size = new System.Drawing.Size(110, 14);
+            this.lblFechaEnvio.Size = new System.Drawing.Size(107, 15);
             this.lblFechaEnvio.TabIndex = 39;
             this.lblFechaEnvio.Text = "Fecha de envío:";
             this.lblFechaEnvio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -399,9 +399,9 @@
             this.dtpEnvio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpEnvio.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEnvio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnvio.Location = new System.Drawing.Point(671, 101);
+            this.dtpEnvio.Location = new System.Drawing.Point(656, 108);
             this.dtpEnvio.Name = "dtpEnvio";
-            this.dtpEnvio.Size = new System.Drawing.Size(123, 22);
+            this.dtpEnvio.Size = new System.Drawing.Size(120, 22);
             this.dtpEnvio.TabIndex = 40;
             this.dtpEnvio.Value = new System.DateTime(2024, 12, 12, 9, 9, 29, 0);
             // 
@@ -412,10 +412,10 @@
             this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(889, 87);
+            this.btnGuardar.Location = new System.Drawing.Point(870, 93);
             this.btnGuardar.Name = "btnGuardar";
             this.tableLayoutPanel1.SetRowSpan(this.btnGuardar, 2);
-            this.btnGuardar.Size = new System.Drawing.Size(122, 22);
+            this.btnGuardar.Size = new System.Drawing.Size(120, 24);
             this.btnGuardar.TabIndex = 38;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -425,9 +425,9 @@
             // 
             this.lblTipoPago.AutoSize = true;
             this.lblTipoPago.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTipoPago.Location = new System.Drawing.Point(298, 14);
+            this.lblTipoPago.Location = new System.Drawing.Point(292, 15);
             this.lblTipoPago.Name = "lblTipoPago";
-            this.lblTipoPago.Size = new System.Drawing.Size(97, 14);
+            this.lblTipoPago.Size = new System.Drawing.Size(94, 15);
             this.lblTipoPago.TabIndex = 41;
             this.lblTipoPago.Text = "Tipo de pago:";
             this.lblTipoPago.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -436,9 +436,9 @@
             // 
             this.lblEnvio.AutoSize = true;
             this.lblEnvio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEnvio.Location = new System.Drawing.Point(298, 42);
+            this.lblEnvio.Location = new System.Drawing.Point(292, 45);
             this.lblEnvio.Name = "lblEnvio";
-            this.lblEnvio.Size = new System.Drawing.Size(97, 14);
+            this.lblEnvio.Size = new System.Drawing.Size(94, 15);
             this.lblEnvio.TabIndex = 42;
             this.lblEnvio.Text = "Envio:";
             this.lblEnvio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -447,9 +447,9 @@
             // 
             this.lblEstadoFactura.AutoSize = true;
             this.lblEstadoFactura.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEstadoFactura.Location = new System.Drawing.Point(298, 70);
+            this.lblEstadoFactura.Location = new System.Drawing.Point(292, 75);
             this.lblEstadoFactura.Name = "lblEstadoFactura";
-            this.lblEstadoFactura.Size = new System.Drawing.Size(97, 14);
+            this.lblEstadoFactura.Size = new System.Drawing.Size(94, 15);
             this.lblEstadoFactura.TabIndex = 43;
             this.lblEstadoFactura.Text = "Estado:";
             this.lblEstadoFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -464,9 +464,9 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(401, 17);
+            this.comboBox1.Location = new System.Drawing.Point(392, 18);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(123, 22);
+            this.comboBox1.Size = new System.Drawing.Size(120, 22);
             this.comboBox1.TabIndex = 44;
             this.comboBox1.ValueMember = "Id";
             // 
@@ -486,9 +486,9 @@
             this.cbEstadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEstadoFactura.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstadoFactura.FormattingEnabled = true;
-            this.cbEstadoFactura.Location = new System.Drawing.Point(401, 73);
+            this.cbEstadoFactura.Location = new System.Drawing.Point(392, 78);
             this.cbEstadoFactura.Name = "cbEstadoFactura";
-            this.cbEstadoFactura.Size = new System.Drawing.Size(123, 22);
+            this.cbEstadoFactura.Size = new System.Drawing.Size(120, 22);
             this.cbEstadoFactura.TabIndex = 46;
             this.cbEstadoFactura.ValueMember = "Id";
             // 
@@ -508,9 +508,9 @@
             this.cbEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEnvio.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEnvio.FormattingEnabled = true;
-            this.cbEnvio.Location = new System.Drawing.Point(401, 45);
+            this.cbEnvio.Location = new System.Drawing.Point(392, 48);
             this.cbEnvio.Name = "cbEnvio";
-            this.cbEnvio.Size = new System.Drawing.Size(123, 22);
+            this.cbEnvio.Size = new System.Drawing.Size(120, 22);
             this.cbEnvio.TabIndex = 45;
             this.cbEnvio.ValueMember = "Id";
             // 
@@ -527,10 +527,10 @@
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(1017, 87);
+            this.btnVolver.Location = new System.Drawing.Point(996, 93);
             this.btnVolver.Name = "btnVolver";
             this.tableLayoutPanel1.SetRowSpan(this.btnVolver, 2);
-            this.btnVolver.Size = new System.Drawing.Size(122, 22);
+            this.btnVolver.Size = new System.Drawing.Size(120, 24);
             this.btnVolver.TabIndex = 47;
             this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -543,9 +543,9 @@
             this.gbDesgloses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbDesgloses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbDesgloses.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDesgloses.Location = new System.Drawing.Point(3, 163);
+            this.gbDesgloses.Location = new System.Drawing.Point(3, 176);
             this.gbDesgloses.Name = "gbDesgloses";
-            this.gbDesgloses.Size = new System.Drawing.Size(1296, 438);
+            this.gbDesgloses.Size = new System.Drawing.Size(1268, 475);
             this.gbDesgloses.TabIndex = 1;
             this.gbDesgloses.TabStop = false;
             this.gbDesgloses.Text = "Desgloses ";
@@ -556,7 +556,7 @@
             this.tlpDesgloses.ColumnCount = 3;
             this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.28391F));
             this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.71609F));
-            this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tlpDesgloses.Controls.Add(this.dataGridView1, 1, 0);
             this.tlpDesgloses.Controls.Add(this.tlpDatosDesglose, 0, 0);
             this.tlpDesgloses.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -565,7 +565,7 @@
             this.tlpDesgloses.RowCount = 2;
             this.tlpDesgloses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpDesgloses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 148F));
-            this.tlpDesgloses.Size = new System.Drawing.Size(1290, 413);
+            this.tlpDesgloses.Size = new System.Drawing.Size(1262, 450);
             this.tlpDesgloses.TabIndex = 0;
             // 
             // dataGridView1
@@ -589,10 +589,10 @@
             this.conceptoDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.bsVDesglose;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(366, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(357, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(829, 259);
+            this.dataGridView1.Size = new System.Drawing.Size(809, 296);
             this.dataGridView1.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -709,16 +709,16 @@
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDatosDesglose.Size = new System.Drawing.Size(357, 259);
+            this.tlpDatosDesglose.Size = new System.Drawing.Size(348, 296);
             this.tlpDatosDesglose.TabIndex = 1;
             // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
             this.lblProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProducto.Location = new System.Drawing.Point(42, 18);
+            this.lblProducto.Location = new System.Drawing.Point(41, 21);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(73, 18);
+            this.lblProducto.Size = new System.Drawing.Size(71, 21);
             this.lblProducto.TabIndex = 2;
             this.lblProducto.Text = "Producto:";
             this.lblProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -732,18 +732,18 @@
             this.cmbProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbProductos.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProductos.FormattingEnabled = true;
-            this.cmbProductos.Location = new System.Drawing.Point(125, 21);
+            this.cmbProductos.Location = new System.Drawing.Point(122, 24);
             this.cmbProductos.Name = "cmbProductos";
-            this.cmbProductos.Size = new System.Drawing.Size(190, 22);
+            this.cmbProductos.Size = new System.Drawing.Size(185, 22);
             this.cmbProductos.TabIndex = 18;
             // 
             // lblCódigo
             // 
             this.lblCódigo.AutoSize = true;
             this.lblCódigo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCódigo.Location = new System.Drawing.Point(42, 54);
+            this.lblCódigo.Location = new System.Drawing.Point(41, 63);
             this.lblCódigo.Name = "lblCódigo";
-            this.lblCódigo.Size = new System.Drawing.Size(73, 18);
+            this.lblCódigo.Size = new System.Drawing.Size(71, 21);
             this.lblCódigo.TabIndex = 19;
             this.lblCódigo.Text = "Código: ";
             this.lblCódigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -752,9 +752,9 @@
             // 
             this.lblBaseImponible.AutoSize = true;
             this.lblBaseImponible.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblBaseImponible.Location = new System.Drawing.Point(42, 90);
+            this.lblBaseImponible.Location = new System.Drawing.Point(41, 105);
             this.lblBaseImponible.Name = "lblBaseImponible";
-            this.lblBaseImponible.Size = new System.Drawing.Size(73, 18);
+            this.lblBaseImponible.Size = new System.Drawing.Size(71, 21);
             this.lblBaseImponible.TabIndex = 20;
             this.lblBaseImponible.Text = "B. Imponible:";
             this.lblBaseImponible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -763,9 +763,9 @@
             // 
             this.lblIVA.AutoSize = true;
             this.lblIVA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblIVA.Location = new System.Drawing.Point(42, 126);
+            this.lblIVA.Location = new System.Drawing.Point(41, 147);
             this.lblIVA.Name = "lblIVA";
-            this.lblIVA.Size = new System.Drawing.Size(73, 18);
+            this.lblIVA.Size = new System.Drawing.Size(71, 21);
             this.lblIVA.TabIndex = 21;
             this.lblIVA.Text = "IVA:";
             this.lblIVA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -774,9 +774,9 @@
             // 
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCantidad.Location = new System.Drawing.Point(42, 162);
+            this.lblCantidad.Location = new System.Drawing.Point(41, 189);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(73, 18);
+            this.lblCantidad.Size = new System.Drawing.Size(71, 21);
             this.lblCantidad.TabIndex = 22;
             this.lblCantidad.Text = "Cantidad:";
             this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -785,9 +785,9 @@
             // 
             this.lblConcepto.AutoSize = true;
             this.lblConcepto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblConcepto.Location = new System.Drawing.Point(42, 198);
+            this.lblConcepto.Location = new System.Drawing.Point(41, 231);
             this.lblConcepto.Name = "lblConcepto";
-            this.lblConcepto.Size = new System.Drawing.Size(73, 18);
+            this.lblConcepto.Size = new System.Drawing.Size(71, 21);
             this.lblConcepto.TabIndex = 23;
             this.lblConcepto.Text = "Concepto:";
             this.lblConcepto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -798,9 +798,9 @@
             this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProductos, "Id", true));
             this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCodigo.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(125, 57);
+            this.txtCodigo.Location = new System.Drawing.Point(122, 66);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(190, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(185, 22);
             this.txtCodigo.TabIndex = 24;
             // 
             // bsProductos
@@ -814,9 +814,9 @@
             this.txtBImponible.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProductos, "Base_Imponible", true));
             this.txtBImponible.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBImponible.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBImponible.Location = new System.Drawing.Point(125, 93);
+            this.txtBImponible.Location = new System.Drawing.Point(122, 108);
             this.txtBImponible.Name = "txtBImponible";
-            this.txtBImponible.Size = new System.Drawing.Size(190, 22);
+            this.txtBImponible.Size = new System.Drawing.Size(185, 22);
             this.txtBImponible.TabIndex = 25;
             // 
             // txtIVA
@@ -824,9 +824,9 @@
             this.txtIVA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIVA.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtIVA.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIVA.Location = new System.Drawing.Point(125, 129);
+            this.txtIVA.Location = new System.Drawing.Point(122, 150);
             this.txtIVA.Name = "txtIVA";
-            this.txtIVA.Size = new System.Drawing.Size(190, 22);
+            this.txtIVA.Size = new System.Drawing.Size(185, 22);
             this.txtIVA.TabIndex = 26;
             // 
             // txtCantidad
@@ -834,9 +834,9 @@
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCantidad.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(125, 165);
+            this.txtCantidad.Location = new System.Drawing.Point(122, 192);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(190, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(185, 22);
             this.txtCantidad.TabIndex = 27;
             // 
             // txtConcepto
@@ -844,9 +844,9 @@
             this.txtConcepto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConcepto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConcepto.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConcepto.Location = new System.Drawing.Point(125, 201);
+            this.txtConcepto.Location = new System.Drawing.Point(122, 234);
             this.txtConcepto.Name = "txtConcepto";
-            this.txtConcepto.Size = new System.Drawing.Size(190, 22);
+            this.txtConcepto.Size = new System.Drawing.Size(185, 22);
             this.txtConcepto.TabIndex = 28;
             // 
             // bsDesglose
@@ -860,7 +860,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(1302, 638);
+            this.ClientSize = new System.Drawing.Size(1274, 691);
             this.Controls.Add(this.tlpVentana);
             this.Font = new System.Drawing.Font("Cambria", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;

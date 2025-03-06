@@ -1,6 +1,6 @@
 ﻿namespace Presentación
 {
-    partial class FProductos
+    partial class FGestionProductos
     {
         /// <summary>
         /// Required designer variable.
@@ -393,13 +393,13 @@
             this.bsSecciones.DataMember = "Secciones";
             this.bsSecciones.DataSource = this.dsGimnasio1;
             // 
-            // FProductos
+            // FGestionProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1363, 764);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FProductos";
+            this.Name = "FGestionProductos";
             this.Text = "FProductos";
             this.Load += new System.EventHandler(this.FProductos_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

@@ -256,17 +256,17 @@
     <Compile Include="FProductoFicha.Designer.cs">
       <DependentUpon>FProductoFicha.cs</DependentUpon>
     </Compile>
-    <Compile Include="FProductos.cs">
+    <Compile Include="FGestionProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FProductos.Designer.cs">
-      <DependentUpon>FProductos.cs</DependentUpon>
+    <Compile Include="FGestionProductos.Designer.cs">
+      <DependentUpon>FGestionProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="F_Login.cs">
+    <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="F_Login.Designer.cs">
-      <DependentUpon>F_Login.cs</DependentUpon>
+    <Compile Include="FLogin.Designer.cs">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -291,11 +291,11 @@
     <EmbeddedResource Include="FProductoFicha.resx">
       <DependentUpon>FProductoFicha.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FProductos.resx">
-      <DependentUpon>FProductos.cs</DependentUpon>
+    <EmbeddedResource Include="FGestionProductos.resx">
+      <DependentUpon>FGestionProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="F_Login.resx">
-      <DependentUpon>F_Login.cs</DependentUpon>
+    <EmbeddedResource Include="FLogin.resx">
+      <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

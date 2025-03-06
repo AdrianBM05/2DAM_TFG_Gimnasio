@@ -23,7 +23,7 @@ namespace Presentación
             InitializeComponent();
             empleado = _empleado;
             this.WindowState = FormWindowState.Maximized;
-            FPrincipalEmpleado._gestionFacturas = this;
+            FPrincipal._gestionFacturas = this;
 
             //NVFacturas.actualizarFacturas(dsGimnasio1);
             NVFacturas.obtenerFacturas(dsGimnasio1);

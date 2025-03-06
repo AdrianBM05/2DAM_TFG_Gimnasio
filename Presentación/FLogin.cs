@@ -14,14 +14,14 @@ using System.Windows.Forms;
 
 namespace Presentación
 {
-    public partial class F_Login : Form
+    public partial class FLogin : Form
     {
 
         // Para instanciar usuario
         public Cliente _cliente;
         public Empleado _empleado;
 
-        public F_Login()
+        public FLogin()
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -109,7 +109,7 @@ namespace Presentación
 
                     // Ocultar el formulario de login y abrir la ventana principal de empleados
                     Hide();
-                    FPrincipalEmpleado ventana = new FPrincipalEmpleado(_empleado);
+                    FPrincipal ventana = new FPrincipal(_empleado);
                     ventana.ShowDialog();
                     Close(); // Cerrar el formulario de login
                 }

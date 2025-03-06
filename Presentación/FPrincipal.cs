@@ -18,7 +18,7 @@ namespace Presentación
         public Empleado _empleado;
         public static FPrincipalEmpleado _fPrincipalEmpleado;
         public static FGestionClientes _gestionClientes;
-        public static FProductos _productos;
+        public static FGestionProductos _productos;
         public static FGestionFacturas _gestionFacturas;
 
 
@@ -77,7 +77,7 @@ namespace Presentación
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            FProductos productos = new FProductos(_empleado);
+            FGestionProductos productos = new FGestionProductos(_empleado);
 
             if (_productos != null)
             {

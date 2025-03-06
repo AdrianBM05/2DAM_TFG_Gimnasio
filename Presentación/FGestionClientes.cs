@@ -21,7 +21,7 @@ namespace Presentación
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             _empleado = _Empleado;
-            FPrincipalEmpleado._gestionClientes = this;
+            FPrincipal._gestionClientes = this;
 
 
             lblUsuario.Text = "Bienvenido: " + _empleado.Nombre + " " + _empleado.Apellido;
@@ -50,7 +50,7 @@ namespace Presentación
 
         private void FGestionClientes_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FPrincipalEmpleado._gestionClientes = null;
+            FPrincipal._gestionClientes = null;
         }
 
         private void btnAñadir_Click(object sender, EventArgs e)
@@ -59,7 +59,7 @@ namespace Presentación
             // Ajustar fecha actual de ese momento 
             DateTime actual = DateTime.Now;
 
-            FClienteFicha2 ficha = new FClienteFicha2(0,0,actual);
+            FFichaCliente ficha = new FFichaCliente(0,0,actual);
             ficha.Show();
 
             NVClientes.obtenerClientes(dsGimnasio1);
@@ -73,7 +73,7 @@ namespace Presentación
             // Abrir ficha del cliente
             if(bsVClientes.Count > 0)
             {
-                FClienteFicha2 ficha = new FClienteFicha2((int)((DataRowView)bsVClientes.Current).Row["Id"],1, (DateTime)((DataRowView)bsVClientes.Current).Row["Fecha_Inicio_Tarifa"]);
+                FFichaCliente ficha = new FFichaCliente((int)((DataRowView)bsVClientes.Current).Row["Id"],1, (DateTime)((DataRowView)bsVClientes.Current).Row["Fecha_Inicio_Tarifa"]);
                 ficha.Show();
 
                 NVClientes.obtenerClientes(dsGimnasio1);
@@ -204,7 +204,7 @@ namespace Presentación
         private void btnFacturaNueva_Click(object sender, EventArgs e)
         {
             // Abrir ficha de cero
-            FNuevaFactura factura = new FNuevaFactura(0,0); // CREACIÓN DE FACTURA NUEVA
+            FPlantillaFactura factura = new FPlantillaFactura(0,0); // CREACIÓN DE FACTURA NUEVA
             factura.Show();
         }
 

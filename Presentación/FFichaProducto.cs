@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace Presentación
 {
-    public partial class FProductoFicha : Form
+    public partial class FFichaProducto : Form
     {
         private int _id;
 
-        public FProductoFicha(int id,int tipo)
+        public FFichaProducto(int id,int tipo)
         {
             InitializeComponent();
             this.CenterToScreen();
