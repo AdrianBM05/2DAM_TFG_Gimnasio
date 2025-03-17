@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FacturaDesglose.cs" />
     <Compile Include="NFactura.cs" />
     <Compile Include="NProductos.cs" />
     <Compile Include="NSysSeccion.cs" />

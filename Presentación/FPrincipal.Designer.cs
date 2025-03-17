@@ -2,7 +2,7 @@
 
 namespace Presentación
 {
-    partial class FPrincipalEmpleado
+    partial class FPrincipal
     {
         /// <summary>
         /// Required designer variable.

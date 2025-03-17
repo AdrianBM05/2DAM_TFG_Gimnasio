@@ -214,11 +214,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FClienteFicha2.cs">
+    <Compile Include="FFichaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FClienteFicha2.Designer.cs">
-      <DependentUpon>FClienteFicha2.cs</DependentUpon>
+    <Compile Include="FFichaCliente.Designer.cs">
+      <DependentUpon>FFichaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FFactura.cs">
       <SubType>Form</SubType>
@@ -238,23 +238,23 @@
     <Compile Include="FGestionFacturas.Designer.cs">
       <DependentUpon>FGestionFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FNuevaFactura.cs">
+    <Compile Include="FPlantillaFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FNuevaFactura.Designer.cs">
-      <DependentUpon>FNuevaFactura.cs</DependentUpon>
+    <Compile Include="FPlantillaFactura.Designer.cs">
+      <DependentUpon>FPlantillaFactura.cs</DependentUpon>
     </Compile>
-    <Compile Include="FPrincipalEmpleado.cs">
+    <Compile Include="FPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FPrincipalEmpleado.Designer.cs">
-      <DependentUpon>FPrincipalEmpleado.cs</DependentUpon>
+    <Compile Include="FPrincipal.Designer.cs">
+      <DependentUpon>FPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FProductoFicha.cs">
+    <Compile Include="FFichaProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FProductoFicha.Designer.cs">
-      <DependentUpon>FProductoFicha.cs</DependentUpon>
+    <Compile Include="FFichaProducto.Designer.cs">
+      <DependentUpon>FFichaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="FGestionProductos.cs">
       <SubType>Form</SubType>
@@ -270,8 +270,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FClienteFicha2.resx">
-      <DependentUpon>FClienteFicha2.cs</DependentUpon>
+    <EmbeddedResource Include="FFichaCliente.resx">
+      <DependentUpon>FFichaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FFactura.resx">
       <DependentUpon>FFactura.cs</DependentUpon>
@@ -282,14 +282,14 @@
     <EmbeddedResource Include="FGestionFacturas.resx">
       <DependentUpon>FGestionFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FNuevaFactura.resx">
-      <DependentUpon>FNuevaFactura.cs</DependentUpon>
+    <EmbeddedResource Include="FPlantillaFactura.resx">
+      <DependentUpon>FPlantillaFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FPrincipalEmpleado.resx">
-      <DependentUpon>FPrincipalEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="FPrincipal.resx">
+      <DependentUpon>FPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FProductoFicha.resx">
-      <DependentUpon>FProductoFicha.cs</DependentUpon>
+    <EmbeddedResource Include="FFichaProducto.resx">
+      <DependentUpon>FFichaProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FGestionProductos.resx">
       <DependentUpon>FGestionProductos.cs</DependentUpon>

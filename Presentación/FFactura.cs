@@ -1,20 +1,17 @@
-﻿using Negocio;
-using System;
-using System.Data;
-using System.Windows.Forms;
-
+﻿using CAD.DSGimnasioTableAdapters;
 using Negocio;
-using System;
+using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
+using System;
 
 namespace Presentación
 {
     public partial class FFactura : Form
     {
-        private readonly FGestionFacturas _gestionFacturas;
-        private readonly int _id;
-        private readonly int _tipo;
+        private FGestionFacturas _gestionFacturas;
+        private int _id;
+        private int _tipo;
         private bool facturaCreada = false;
 
         public FFactura(int id, int tipo, FGestionFacturas gestionFacturas)
@@ -64,10 +61,15 @@ namespace Presentación
 
         private void CargarDatosFacturaExistente()
         {
-            // TODO: Implementar lógica para cargar factura existente
+            
         }
 
-        // Función para limpiar campos de cliente
+        private void cargarDesgloses()
+        {
+            
+
+        }
+
         private void modificarDatosCliente()
         {
             txtApellidos.Clear();
@@ -75,9 +77,6 @@ namespace Presentación
             txtCorreo.Clear();
         }
 
-        /// <summary>
-        /// Activa o desactiva el diseño del desglose.
-        /// </summary>
         private void ToggleDesglose()
         {
             tlpDesgloses.Enabled = !tlpDesgloses.Enabled;
@@ -85,47 +84,90 @@ namespace Presentación
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            // Volver a mostrar el DataGridView
             _gestionFacturas.contenedor.Controls.Clear();
             _gestionFacturas.contenedor.Controls.Add(_gestionFacturas.dataGridView1);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ToggleDesglose(); // Activamos el desglose
+            // Comprobamos los campos en una misma condicion
+            if (cmbClientes.SelectedIndex == -1 || cbEstadoFactura.SelectedIndex == -1 || cmbTipoPago.SelectedIndex == -1 || cbEnvio.SelectedIndex == -1)
+            {
+                MessageBox.Show("Rellene todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            // TODO: Implementar lógica de guardado
+            // Crear nueva factura ( id autoincremnt )
+            DataRowView facturaTemp = (DataRowView)bsFacturas.Current;
+            facturaTemp["FechaEmision"] = dtpEmision.Value; // Asignar un valor predeterminado inmediatamente
+            // Continuar con otras asignaciones
+            facturaTemp["Id_Cliente"] = cmbClientes.SelectedValue;
+            facturaTemp["FechaVencimiento"] = dtpVencimiento.Value;
+            facturaTemp["IdEstadoFactura"] = cbEstadoFactura.SelectedIndex;
+            facturaTemp["IdEnvio"] = cbEnvio.SelectedIndex;
+            facturaTemp["FechaEnvio"] = dtpEnvio.Value;
+            facturaTemp["FechaPago"] = dtpFechaPago.Value;
+            facturaTemp["IdTipoPago"] = cmbTipoPago.SelectedIndex;
+
+            // Guardar cambios
+            bsFacturas.EndEdit();
+            NFactura.actualizarFacturas(dsGimnasio1);
+
+            // Recargar los datos de la factura para obtener el Id actualizado
+            bsFacturas.ResetBindings(false);
+            facturaTemp = (DataRowView)bsFacturas.Current;
+
+            // Guardamos el id para los desgloses
+            int idFactura = (int)facturaTemp["Id"];
+
+            // Activamos desglose y desactivamos factura
+            ToggleDesglose();
+            facturaCreada = true;
+            // Mostrar id factura para probar
+            MessageBox.Show("Factura creada con id : " + idFactura, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbClientes.SelectedIndex == -1 || facturaCreada) return;
+            
+        }
 
-            // Verificar que el binding source tiene un elemento seleccionado
-            if (bsFacturas.Current is DataRowView facturaTemp)
-            {
-                // Rellenamos la cabecera de la factura
-                facturaTemp["FechaEmision"] = DateTime.Today;
-                facturaTemp["FechaVencimiento"] = DateTime.Today.AddMonths(1);
+        private void btnGuardarDesglose_Click(object sender, EventArgs e)
+        {
 
-                // Envío por defecto
-                facturaTemp["IdEnvio"] = 1;
-                facturaTemp["FechaEnvio"] = DateTime.Today;
-                facturaTemp["FechaPago"] = DateTime.Today;
-                facturaTemp["IdTipoPago"] = 1; // Efectivo
+            // Cargamos el id de la factura
+            DataRowView facturaTemp = (DataRowView)bsFacturas.Current;
+            int idFactura = (int)facturaTemp["Id"];
 
-                // Validar y asignar ID del cliente
-                if (cmbClientes.SelectedValue != null && int.TryParse(cmbClientes.SelectedValue.ToString(), out int idCliente))
-                {
-                    facturaTemp["Id_Cliente"] = idCliente;
-                }
-                else
-                {
-                    facturaTemp["Id_Cliente"] = DBNull.Value;  // Dejarlo como nulo en la base de datos
-                }
+            // Comprobamos que los campos no estén vacíos
+            if (!facturaCreada || cmbProductos.SelectedIndex == -1 || string.IsNullOrEmpty(txtCantidad.Text)) return;
 
-                facturaTemp["IdEstadoFactura"] = 2;
-            }
+            bsDesglose.AddNew();
+            DataRowView desgloseTemp = (DataRowView)bsDesglose.Current;
+            desgloseTemp["IdFactura"] = idFactura;
+            desgloseTemp["IdProducto"] = cmbProductos.SelectedValue;
+            desgloseTemp["Cantidad"] = Convert.ToInt32(txtCantidad.Text);
+            desgloseTemp["BaseImponible"] = Convert.ToDecimal(txtBImponible.Text);
+            desgloseTemp["IdTipoIVA"] = 1;
+            desgloseTemp["Concepto"] = txtConcepto.Text;
+            bsDesglose.EndEdit();
+
+            NFactura.actualizarDesgloses(dsGimnasio1);
+
+            // MOstramos mensaje de confirmación
+            MessageBox.Show("Desglose añadido a la factura : " + idFactura, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // MOstrar id del desglose (probar que se crea en la bd)
+            MessageBox.Show("Desglose añadido con id : " + ((DataRowView)bsDesglose.Current)[0], "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void limpiarDesglose()
+        {
+            txtCantidad.Clear();
+            txtBImponible.Text = "-";
+            txtCodigo.Text = "-";
+            txtConcepto.Clear();
+            cmbProductos.SelectedIndex = -1;
         }
     }
 }

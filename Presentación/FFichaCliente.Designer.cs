@@ -1,6 +1,6 @@
 ﻿namespace Presentación
 {
-    partial class FClienteFicha2
+    partial class FFichaCliente
     {
         private System.ComponentModel.IContainer components = null;
 

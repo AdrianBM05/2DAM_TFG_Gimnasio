@@ -22,7 +22,7 @@ namespace Presentación
             InitializeComponent();
             _empleado = empleado;
             this.WindowState = FormWindowState.Maximized;
-            FPrincipalEmpleado._productos = this;
+            FPrincipal._productos = this;
 
             lblUsuario.Text = "Bienvenido: " + _empleado.Nombre + _empleado.Apellido;
 
@@ -74,7 +74,7 @@ namespace Presentación
         private void button1_Click(object sender, EventArgs e)
         {
 
-            FProductoFicha ficha = new FProductoFicha(0,0);
+            FFichaProducto ficha = new FFichaProducto(0,0);
             ficha.ShowDialog();
 
         }
@@ -90,7 +90,7 @@ namespace Presentación
             
             if(bsProductos.Count > 0)
             {
-                FProductoFicha ficha = new FProductoFicha((int)((DataRowView)bsProductos.Current).Row["Id"], 1);
+                FFichaProducto ficha = new FFichaProducto((int)((DataRowView)bsProductos.Current).Row["Id"], 1);
                 ficha.ShowDialog();
             }
 

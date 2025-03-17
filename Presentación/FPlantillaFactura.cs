@@ -6,14 +6,14 @@ using System.Windows.Forms;
 
 namespace Presentación
 {
-    public partial class FNuevaFactura : Form
+    public partial class FPlantillaFactura : Form
     {
         private bool facturaCreada = false;
         int id;
         int tipo;
         private DataRowView facturaTemp;
 
-        public FNuevaFactura(int _id, int _tipo)
+        public FPlantillaFactura(int _id, int _tipo)
         {
             InitializeComponent();
             id = _id;
@@ -198,6 +198,11 @@ namespace Presentación
         }
 
         private void lblNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProductos_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Presentación
 {
-    public partial class FClienteFicha2 : Form
+    public partial class FFichaCliente : Form
     {
         private int id;
         private DateTime fechaInicio;
@@ -21,7 +21,7 @@ namespace Presentación
         /// <param name="_id">Id del cliente</param>
         /// <param name="tipo"></param>
         /// <param name="_fechaInicio"></param>
-        public FClienteFicha2(int _id, int tipo, DateTime _fechaInicio) 
+        public FFichaCliente(int _id, int tipo, DateTime _fechaInicio) 
         {
             InitializeComponent();
             this.CenterToScreen();

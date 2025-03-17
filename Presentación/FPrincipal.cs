@@ -11,18 +11,18 @@ using System.Windows.Forms;
 
 namespace Presentación
 {
-    public partial class FPrincipalEmpleado : Form
+    public partial class FPrincipal : Form
     {
 
         
         public Empleado _empleado;
-        public static FPrincipalEmpleado _fPrincipalEmpleado;
+        public static FPrincipal _fPrincipalEmpleado;
         public static FGestionClientes _gestionClientes;
         public static FGestionProductos _productos;
         public static FGestionFacturas _gestionFacturas;
 
 
-        public FPrincipalEmpleado(Empleado _Empleado)
+        public FPrincipal(Empleado _Empleado)
         {
             // Inicio con el empleado que se ha logueado
 

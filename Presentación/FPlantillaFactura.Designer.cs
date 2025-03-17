@@ -1,6 +1,6 @@
 ﻿namespace Presentación
 {
-    partial class FNuevaFactura
+    partial class FPlantillaFactura
     {
         /// <summary>
         /// Required designer variable.
@@ -499,6 +499,7 @@
             this.cmbProductos.Size = new System.Drawing.Size(301, 23);
             this.cmbProductos.TabIndex = 18;
             this.cmbProductos.ValueMember = "Id";
+            this.cmbProductos.SelectedIndexChanged += new System.EventHandler(this.cmbProductos_SelectedIndexChanged);
             // 
             // lblProducto
             // 
@@ -536,14 +537,14 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1110, 616);
             this.tableLayoutPanel1.TabIndex = 36;
             // 
-            // FNuevaFactura
+            // FPlantillaFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1110, 616);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "FNuevaFactura";
+            this.Name = "FPlantillaFactura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Factura";
             this.Load += new System.EventHandler(this.FNuevaFactura_Load);
