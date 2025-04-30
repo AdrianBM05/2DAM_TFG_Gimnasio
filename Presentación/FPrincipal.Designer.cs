@@ -30,6 +30,7 @@ namespace Presentación
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FPrincipal));
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripEmpleado = new System.Windows.Forms.MenuStrip();
@@ -38,6 +39,7 @@ namespace Presentación
             this.facturasTSM = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dsGimnasio1 = new CAD.DSGimnasio();
+            this.panelDeControlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripEmpleado.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).BeginInit();
@@ -65,11 +67,12 @@ namespace Presentación
             this.menuStripEmpleado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
             this.productosToolStripMenuItem,
-            this.facturasTSM});
+            this.facturasTSM,
+            this.panelDeControlToolStripMenuItem});
             this.menuStripEmpleado.Location = new System.Drawing.Point(0, 0);
             this.menuStripEmpleado.Name = "menuStripEmpleado";
             this.menuStripEmpleado.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.menuStripEmpleado.Size = new System.Drawing.Size(1011, 49);
+            this.menuStripEmpleado.Size = new System.Drawing.Size(606, 49);
             this.menuStripEmpleado.TabIndex = 0;
             this.menuStripEmpleado.Text = "menuStrip1";
             this.menuStripEmpleado.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripEmpleado_ItemClicked);
@@ -77,9 +80,10 @@ namespace Presentación
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clientesToolStripMenuItem.Image")));
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(88, 45);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(104, 45);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
@@ -107,7 +111,7 @@ namespace Presentación
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1011, 49);
+            this.panel1.Size = new System.Drawing.Size(606, 49);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -116,16 +120,24 @@ namespace Presentación
             this.dsGimnasio1.DataSetName = "DSGimnasio";
             this.dsGimnasio1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // FPrincipalEmpleado
+            // panelDeControlToolStripMenuItem
+            // 
+            this.panelDeControlToolStripMenuItem.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelDeControlToolStripMenuItem.Name = "panelDeControlToolStripMenuItem";
+            this.panelDeControlToolStripMenuItem.Size = new System.Drawing.Size(133, 45);
+            this.panelDeControlToolStripMenuItem.Text = "Panel de control";
+            this.panelDeControlToolStripMenuItem.Click += new System.EventHandler(this.panelDeControlToolStripMenuItem_Click);
+            // 
+            // FPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1011, 521);
+            this.ClientSize = new System.Drawing.Size(606, 333);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStripEmpleado;
-            this.Name = "FPrincipalEmpleado";
+            this.Name = "FPrincipal";
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.FPrincipalEmpleado_Load);
             this.menuStripEmpleado.ResumeLayout(false);
@@ -151,5 +163,6 @@ namespace Presentación
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem facturasTSM;
+        private System.Windows.Forms.ToolStripMenuItem panelDeControlToolStripMenuItem;
     }
 }

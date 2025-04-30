@@ -49,7 +49,6 @@
             this.bsTarifa = new System.Windows.Forms.BindingSource(this.components);
             this.statusLabel = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnFactura = new System.Windows.Forms.Button();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gymLogo)).BeginInit();
             this.clientInfoGroupBox.SuspendLayout();
@@ -127,9 +126,10 @@
             this.comboBoxEstado.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.dsGimnasio1, "Clientes.Id_Estado", true));
             this.comboBoxEstado.DataSource = this.bsEstado;
             this.comboBoxEstado.DisplayMember = "Estado";
+            this.comboBoxEstado.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxEstado.Location = new System.Drawing.Point(195, 438);
             this.comboBoxEstado.Name = "comboBoxEstado";
-            this.comboBoxEstado.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxEstado.Size = new System.Drawing.Size(200, 23);
             this.comboBoxEstado.TabIndex = 26;
             this.comboBoxEstado.ValueMember = "Id";
             // 
@@ -146,41 +146,41 @@
             // txtCorreo
             // 
             this.txtCorreo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.Correo", true));
-            this.txtCorreo.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCorreo.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorreo.Location = new System.Drawing.Point(195, 270);
             this.txtCorreo.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(200, 26);
+            this.txtCorreo.Size = new System.Drawing.Size(200, 23);
             this.txtCorreo.TabIndex = 25;
             // 
             // txtContraseña
             // 
             this.txtContraseña.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.Contraseña", true));
-            this.txtContraseña.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(195, 230);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(200, 26);
+            this.txtContraseña.Size = new System.Drawing.Size(200, 23);
             this.txtContraseña.TabIndex = 24;
             // 
             // txtUsuario
             // 
             this.txtUsuario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.Usuario", true));
-            this.txtUsuario.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(195, 190);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(200, 26);
+            this.txtUsuario.Size = new System.Drawing.Size(200, 23);
             this.txtUsuario.TabIndex = 23;
             // 
             // txtDireccion
             // 
             this.txtDireccion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.Dirección", true));
-            this.txtDireccion.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(195, 150);
             this.txtDireccion.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(200, 26);
+            this.txtDireccion.Size = new System.Drawing.Size(200, 23);
             this.txtDireccion.TabIndex = 22;
             // 
             // nameLabel
@@ -194,11 +194,11 @@
             // txtNombre
             // 
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.Nombre", true));
-            this.txtNombre.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(195, 30);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(200, 26);
+            this.txtNombre.Size = new System.Drawing.Size(200, 23);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.nameTextBox_TextChanged);
             // 
@@ -213,11 +213,11 @@
             // txtApellidos
             // 
             this.txtApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "Apellidos", true));
-            this.txtApellidos.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.Location = new System.Drawing.Point(195, 70);
             this.txtApellidos.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(200, 26);
+            this.txtApellidos.Size = new System.Drawing.Size(200, 23);
             this.txtApellidos.TabIndex = 3;
             // 
             // bsClientes
@@ -237,11 +237,11 @@
             // txtDNI
             // 
             this.txtDNI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dsGimnasio1, "Clientes.DNI", true));
-            this.txtDNI.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDNI.Location = new System.Drawing.Point(195, 110);
             this.txtDNI.Margin = new System.Windows.Forms.Padding(5, 3, 3, 3);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(200, 26);
+            this.txtDNI.Size = new System.Drawing.Size(200, 23);
             this.txtDNI.TabIndex = 5;
             // 
             // addressLabel
@@ -287,12 +287,12 @@
             // startDatePicker
             // 
             this.startDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dsGimnasio1, "Clientes.Fecha_Inicio_Tarifa", true));
-            this.startDatePicker.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.startDatePicker.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.startDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.startDatePicker.Location = new System.Drawing.Point(195, 310);
             this.startDatePicker.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.startDatePicker.Name = "startDatePicker";
-            this.startDatePicker.Size = new System.Drawing.Size(200, 26);
+            this.startDatePicker.Size = new System.Drawing.Size(200, 23);
             this.startDatePicker.TabIndex = 15;
             // 
             // endDateLabel
@@ -306,12 +306,12 @@
             // endDatePicker
             // 
             this.endDatePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dsGimnasio1, "Clientes.Fecha_Caducidad_Tarifa", true));
-            this.endDatePicker.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.endDatePicker.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.endDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.endDatePicker.Location = new System.Drawing.Point(195, 350);
             this.endDatePicker.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.endDatePicker.Name = "endDatePicker";
-            this.endDatePicker.Size = new System.Drawing.Size(200, 26);
+            this.endDatePicker.Size = new System.Drawing.Size(200, 23);
             this.endDatePicker.TabIndex = 17;
             // 
             // tariffLabel
@@ -327,9 +327,10 @@
             this.comboBoxTarifas.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.bsClientes, "IdTarifa", true));
             this.comboBoxTarifas.DataSource = this.bsTarifa;
             this.comboBoxTarifas.DisplayMember = "TipoTarifa";
+            this.comboBoxTarifas.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxTarifas.Location = new System.Drawing.Point(195, 392);
             this.comboBoxTarifas.Name = "comboBoxTarifas";
-            this.comboBoxTarifas.Size = new System.Drawing.Size(200, 27);
+            this.comboBoxTarifas.Size = new System.Drawing.Size(200, 23);
             this.comboBoxTarifas.TabIndex = 19;
             this.comboBoxTarifas.ValueMember = "Id";
             // 
@@ -349,33 +350,22 @@
             // btnGuardar
             // 
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardar.Location = new System.Drawing.Point(181, 606);
+            this.btnGuardar.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(215, 606);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(84, 32);
+            this.btnGuardar.Size = new System.Drawing.Size(99, 32);
             this.btnGuardar.TabIndex = 2;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnFactura
-            // 
-            this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnFactura.Location = new System.Drawing.Point(288, 606);
-            this.btnFactura.Name = "btnFactura";
-            this.btnFactura.Size = new System.Drawing.Size(84, 32);
-            this.btnFactura.TabIndex = 3;
-            this.btnFactura.Text = "Factura";
-            this.btnFactura.UseVisualStyleBackColor = true;
-            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
-            // 
-            // FClienteFicha2
+            // FFichaCliente
             // 
             this.ClientSize = new System.Drawing.Size(550, 650);
-            this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.headerPanel);
             this.Controls.Add(this.clientInfoGroupBox);
-            this.Name = "FClienteFicha2";
+            this.Name = "FFichaCliente";
             this.Text = "Ficha del Cliente";
             this.Load += new System.EventHandler(this.FClienteFicha2_Load_1);
             this.headerPanel.ResumeLayout(false);
@@ -421,7 +411,6 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.Button btnFactura;
         private System.Windows.Forms.Label statusLabel;
         private System.Windows.Forms.ComboBox comboBoxEstado;
     }

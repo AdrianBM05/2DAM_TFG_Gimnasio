@@ -20,6 +20,7 @@ namespace Presentación
         public static FGestionClientes _gestionClientes;
         public static FGestionProductos _productos;
         public static FGestionFacturas _gestionFacturas;
+        public static FPanelControl _panelControl;
 
 
         public FPrincipal(Empleado _Empleado)
@@ -112,6 +113,15 @@ namespace Presentación
             {
                 _gestionFacturas.BringToFront();
             }
+        }
+
+        private void panelDeControlToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FPanelControl panel = new FPanelControl(_empleado);
+
+            _panelControl = panel;
+            _panelControl.MdiParent = this;
+            _panelControl.Show();
         }
     }
 }

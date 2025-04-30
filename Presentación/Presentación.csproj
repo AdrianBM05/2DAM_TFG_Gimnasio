@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\IronPdf.Slim.2025.3.6\build\IronPdf.Slim.props" Condition="Exists('..\packages\IronPdf.Slim.2025.3.6\build\IronPdf.Slim.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -12,6 +13,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,14 +37,110 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BitMiracle.LibTiff.NET, Version=2.4.649.0, Culture=neutral, PublicKeyToken=53879b3e20e7a7d6, processorArchitecture=MSIL">
+      <HintPath>..\packages\BitMiracle.LibTiff.NET.2.4.649\lib\net40\BitMiracle.LibTiff.NET.dll</HintPath>
+    </Reference>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
-      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.23.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.23.0\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.2.46.6\lib\net45\Grpc.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Core.Api, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Core.Api.2.62.0\lib\net462\Grpc.Core.Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Client, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Client.2.62.0\lib\net462\Grpc.Net.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Grpc.Net.Common, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d754f35622e28bad, processorArchitecture=MSIL">
+      <HintPath>..\packages\Grpc.Net.Common.2.62.0\lib\netstandard2.0\Grpc.Net.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2, Version=2.0.4.7, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.7\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf, Version=2025.3.0.6, Culture=neutral, PublicKeyToken=94e1c31412563c75, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.Slim.2025.3.6\lib\netstandard2.0\IronPdf.dll</HintPath>
+    </Reference>
+    <Reference Include="IronPdf.Extensions.ASPX, Version=2023.10.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronPdf.Extensions.ASPX.2023.10.3\lib\net462\IronPdf.Extensions.ASPX.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Abstractions, Version=2025.2.0.6, Culture=neutral, PublicKeyToken=3bd0119b776a4800, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.Abstractions.2025.2.6\lib\netstandard2.0\IronSoftware.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Drawing.Abstractions, Version=2025.2.0.6, Culture=neutral, PublicKeyToken=3bd0119b776a4800, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.Drawing.Abstractions.2025.2.6\lib\netstandard2.0\IronSoftware.Drawing.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Drawing.Common, Version=2025.3.0.5, Culture=neutral, PublicKeyToken=8d7e55c97b3e9835, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.System.Drawing.2025.3.5\lib\netstandard2.0\IronSoftware.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Logger, Version=2025.2.0.3, Culture=neutral, PublicKeyToken=c0ab8f6e415e2702, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.Common.2025.2.3\lib\netstandard2.0\IronSoftware.Logger.dll</HintPath>
+    </Reference>
+    <Reference Include="IronSoftware.Shared, Version=2025.2.0.3, Culture=neutral, PublicKeyToken=c0ab8f6e415e2702, processorArchitecture=MSIL">
+      <HintPath>..\packages\IronSoftware.Common.2025.2.3\lib\netstandard2.0\IronSoftware.Shared.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.Cryptography, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Cryptography.9.0.1\lib\net462\Microsoft.Bcl.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=6.0.0.2, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.6.0.2\lib\net461\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.6.0.1\lib\net461\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.6.0.1\lib\net461\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.6.0.1\lib\net461\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.6.0.1\lib\net461\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.6.0.1\lib\net461\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.6.0.1\lib\net461\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.6.0.0\lib\net461\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.4, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.4\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.6.0.1\lib\net461\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Win32.Registry, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.5.0.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
@@ -50,6 +150,32 @@
     </Reference>
     <Reference Include="Microsoft.Win32.SystemEvents, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.SystemEvents.9.0.1\lib\net462\Microsoft.Win32.SystemEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAPICodePack-Core.1.1.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.6.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.6\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SendGrid, Version=9.29.3.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\SendGrid.9.29.3\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.2.1.9\lib\net472\SixLabors.ImageSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp.Drawing, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.ImageSharp.Drawing.1.0.0\lib\net472\SixLabors.ImageSharp.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b2e6337a5d77bfbc, processorArchitecture=MSIL">
+      <HintPath>..\packages\starkbank-ecdsa.1.3.3\lib\net452\StarkbankEcdsa.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
@@ -75,6 +201,10 @@
     <Reference Include="System.Data.OracleClient" />
     <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
     <Reference Include="System.Diagnostics.EventLog, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.EventLog.9.0.1\lib\net462\System.Diagnostics.EventLog.dll</HintPath>
@@ -114,6 +244,9 @@
       <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
     </Reference>
     <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.WinHttpHandler, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.WinHttpHandler.7.0.0\lib\net462\System.Net.Http.WinHttpHandler.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
@@ -127,6 +260,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -191,17 +325,29 @@
     <Reference Include="System.Text.Encoding.CodePages, Version=9.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.Encoding.CodePages.9.0.1\lib\net462\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.11, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.11\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Threading.AccessControl, Version=9.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Threading.AccessControl.9.0.1\lib\net462\System.Threading.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Web.Services.Description, Version=4.10.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Web.Services.Description.4.10.0\lib\net461\System.Web.Services.Description.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -214,6 +360,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DSGimnasio.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSGimnasio.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FFichaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,11 +389,17 @@
     <Compile Include="FGestionFacturas.Designer.cs">
       <DependentUpon>FGestionFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FPlantillaFactura.cs">
+    <Compile Include="FMostrarFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FPlantillaFactura.Designer.cs">
-      <DependentUpon>FPlantillaFactura.cs</DependentUpon>
+    <Compile Include="FMostrarFactura.Designer.cs">
+      <DependentUpon>FMostrarFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPanelControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPanelControl.Designer.cs">
+      <DependentUpon>FPanelControl.cs</DependentUpon>
     </Compile>
     <Compile Include="FPrincipal.cs">
       <SubType>Form</SubType>
@@ -270,6 +427,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Factura.rdlc" />
     <EmbeddedResource Include="FFichaCliente.resx">
       <DependentUpon>FFichaCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -282,8 +441,11 @@
     <EmbeddedResource Include="FGestionFacturas.resx">
       <DependentUpon>FGestionFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FPlantillaFactura.resx">
-      <DependentUpon>FPlantillaFactura.cs</DependentUpon>
+    <EmbeddedResource Include="FMostrarFactura.resx">
+      <DependentUpon>FMostrarFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPanelControl.resx">
+      <DependentUpon>FPanelControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FPrincipal.resx">
       <DependentUpon>FPrincipal.cs</DependentUpon>
@@ -307,7 +469,135 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DSGimnasio.xsc">
+      <DependentUpon>DSGimnasio.xsd</DependentUpon>
+    </None>
+    <None Include="DSGimnasio.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSGimnasio.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DSGimnasio.xss">
+      <DependentUpon>DSGimnasio.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CAD.Cliente.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ClientesDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ClientesRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ClientesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ClientesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EmpleadosDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EmpleadosRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EmpleadosRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EmpleadosRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EnvioDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EnvioRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EnvioRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EnvioRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoFacturaDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoFacturaRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoFacturaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoFacturaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+EstadoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturaDesgloseDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturaDesgloseRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturaDesgloseRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturaDesgloseRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturasDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturasRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturasRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+FacturasRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ProductosDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ProductosRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ProductosRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+ProductosRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+SeccionesDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+SeccionesRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+SeccionesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+SeccionesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TarifasDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TarifasRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TarifasRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TarifasRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TipoPagoDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TipoPagoRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TipoPagoRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+TipoPagoRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_CuentaDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_CuentaRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_CuentaRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_CuentaRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_IVADataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_IVARow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_IVARowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+Tipo_IVARowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VClientesDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VClientesRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VClientesRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VClientesRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VDesgloseDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VDesgloseRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VDesgloseRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VDesgloseRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VFacturasDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VFacturasRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VFacturasRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VFacturasRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VProductosDataTable.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VProductosRow.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VProductosRowChangeEvent.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio+VProductosRowChangeEventHandler.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasio.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.ClientesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.EmpleadosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.EnvioTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.EstadoFacturaTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.EstadoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.FacturaDesgloseTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.FacturasTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.ProductosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.QueriesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.SeccionesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.TableAdapterManager.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.TarifasTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.TipoPagoTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.Tipo_CuentaTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.Tipo_IVATableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.VClientesTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.VDesgloseTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.VFacturasTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.DSGimnasioTableAdapters.VProductosTableAdapter.datasource" />
+    <None Include="Properties\DataSources\CAD.Instancias.Empleado.datasource" />
+    <None Include="Properties\DataSources\FFactura.datasource" />
+    <None Include="Properties\DataSources\FFichaCliente.datasource" />
+    <None Include="Properties\DataSources\FFichaProducto.datasource" />
+    <None Include="Properties\DataSources\FGestionClientes.datasource" />
+    <None Include="Properties\DataSources\FGestionFacturas.datasource" />
+    <None Include="Properties\DataSources\FGestionProductos.datasource" />
+    <None Include="Properties\DataSources\FLogin.datasource" />
+    <None Include="Properties\DataSources\FPrincipal.datasource" />
+    <None Include="Properties\DataSources\Negocio.FacturaDesglose.datasource" />
+    <None Include="Properties\DataSources\Negocio.NClientes.datasource" />
+    <None Include="Properties\DataSources\Negocio.NEmpleado.datasource" />
+    <None Include="Properties\DataSources\Negocio.NEstados.datasource" />
+    <None Include="Properties\DataSources\Negocio.NFactura.datasource" />
+    <None Include="Properties\DataSources\Negocio.NGestión.datasource" />
+    <None Include="Properties\DataSources\Negocio.NProcedimientos.datasource" />
+    <None Include="Properties\DataSources\Negocio.NProductos.datasource" />
+    <None Include="Properties\DataSources\Negocio.NSysSeccion.datasource" />
+    <None Include="Properties\DataSources\Negocio.NTarifas.datasource" />
+    <None Include="Properties\DataSources\Negocio.NVClientes.datasource" />
+    <None Include="Properties\DataSources\Negocio.NVDesglose.datasource" />
+    <None Include="Properties\DataSources\Negocio.NVFacturas.datasource" />
+    <None Include="Properties\DataSources\Negocio.NVProductos.datasource" />
+    <None Include="Properties\DataSources\Presentación.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\Presentación.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -361,7 +651,32 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\borrar-usuario.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\borrar-usuario1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\IronPdf.Native.Chrome.Windows.2025.3.9\build\net\IronPdf.Native.Chrome.Windows.targets" Condition="Exists('..\packages\IronPdf.Native.Chrome.Windows.2025.3.9\build\net\IronPdf.Native.Chrome.Windows.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\IronPdf.Native.Chrome.Windows.2025.3.9\build\net\IronPdf.Native.Chrome.Windows.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronPdf.Native.Chrome.Windows.2025.3.9\build\net\IronPdf.Native.Chrome.Windows.targets'))" />
+    <Error Condition="!Exists('..\packages\IronSoftware.Native.PdfModel.2025.3.9\build\net\IronSoftware.Native.PdfModel.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronSoftware.Native.PdfModel.2025.3.9\build\net\IronSoftware.Native.PdfModel.targets'))" />
+    <Error Condition="!Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\IronPdf.Slim.2025.3.6\build\IronPdf.Slim.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\IronPdf.Slim.2025.3.6\build\IronPdf.Slim.props'))" />
+  </Target>
+  <Import Project="..\packages\IronSoftware.Native.PdfModel.2025.3.9\build\net\IronSoftware.Native.PdfModel.targets" Condition="Exists('..\packages\IronSoftware.Native.PdfModel.2025.3.9\build\net\IronSoftware.Native.PdfModel.targets')" />
+  <Import Project="..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets" Condition="Exists('..\packages\Grpc.Core.2.46.6\build\net45\Grpc.Core.targets')" />
 </Project>

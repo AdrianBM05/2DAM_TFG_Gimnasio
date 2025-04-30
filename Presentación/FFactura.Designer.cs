@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 
 namespace Presentación
 {
@@ -31,6 +32,9 @@ namespace Presentación
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tlpVentana = new System.Windows.Forms.TableLayoutPanel();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -66,29 +70,47 @@ namespace Presentación
             this.btnVolver = new System.Windows.Forms.Button();
             this.gbDesgloses = new System.Windows.Forms.GroupBox();
             this.tlpDesgloses = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idFacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.baseImponibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTipoIVADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsDesglose = new System.Windows.Forms.BindingSource(this.components);
             this.tlpDatosDesglose = new System.Windows.Forms.TableLayoutPanel();
             this.lblProducto = new System.Windows.Forms.Label();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
             this.bsProductos = new System.Windows.Forms.BindingSource(this.components);
             this.lblCódigo = new System.Windows.Forms.Label();
             this.lblBaseImponible = new System.Windows.Forms.Label();
-            this.lblCantidad = new System.Windows.Forms.Label();
-            this.lblConcepto = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtBImponible = new System.Windows.Forms.TextBox();
+            this.lblCantidad = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.lblConcepto = new System.Windows.Forms.Label();
             this.txtConcepto = new System.Windows.Forms.TextBox();
             this.btnGuardarDesglose = new System.Windows.Forms.Button();
+            this.btnEliminarDesglose = new System.Windows.Forms.Button();
+            this.btnEditarDesglose = new System.Windows.Forms.Button();
+            this.tlpVistaDesglose = new System.Windows.Forms.TableLayoutPanel();
+            this.dgvDesglose = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idFacturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preciocompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.baseImponibleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoIVADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pVPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsVDesglose = new System.Windows.Forms.BindingSource(this.components);
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.gpTotal = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.lblTotalFactura = new System.Windows.Forms.Label();
+            this.lbl2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTotalProductos = new System.Windows.Forms.Label();
+            this.lblTotalCoste = new System.Windows.Forms.Label();
+            this.lblTotalBImponible = new System.Windows.Forms.Label();
+            this.bsDesglose = new System.Windows.Forms.BindingSource(this.components);
             this.tlpVentana.SuspendLayout();
             this.gbCabecera.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -100,11 +122,15 @@ namespace Presentación
             ((System.ComponentModel.ISupportInitialize)(this.bsEnvio)).BeginInit();
             this.gbDesgloses.SuspendLayout();
             this.tlpDesgloses.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDesglose)).BeginInit();
             this.tlpDatosDesglose.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsProductos)).BeginInit();
+            this.tlpVistaDesglose.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDesglose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVDesglose)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.gpTotal.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDesglose)).BeginInit();
             this.SuspendLayout();
             // 
             // tlpVentana
@@ -113,14 +139,15 @@ namespace Presentación
             this.tlpVentana.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlpVentana.Controls.Add(this.gbCabecera, 0, 0);
             this.tlpVentana.Controls.Add(this.gbDesgloses, 0, 1);
+            this.tlpVentana.Controls.Add(this.gpTotal, 0, 2);
             this.tlpVentana.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpVentana.Location = new System.Drawing.Point(0, 0);
             this.tlpVentana.Name = "tlpVentana";
             this.tlpVentana.RowCount = 3;
             this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.07837F));
-            this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 69.74921F));
-            this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.172414F));
-            this.tlpVentana.Size = new System.Drawing.Size(1457, 734);
+            this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.19178F));
+            this.tlpVentana.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 22.87671F));
+            this.tlpVentana.Size = new System.Drawing.Size(925, 501);
             this.tlpVentana.TabIndex = 0;
             // 
             // gbCabecera
@@ -132,7 +159,7 @@ namespace Presentación
             this.gbCabecera.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCabecera.Location = new System.Drawing.Point(3, 3);
             this.gbCabecera.Name = "gbCabecera";
-            this.gbCabecera.Size = new System.Drawing.Size(1451, 178);
+            this.gbCabecera.Size = new System.Drawing.Size(919, 119);
             this.gbCabecera.TabIndex = 0;
             this.gbCabecera.TabStop = false;
             this.gbCabecera.Text = "Datos de la factura";
@@ -144,10 +171,10 @@ namespace Presentación
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 2F));
@@ -156,7 +183,7 @@ namespace Presentación
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5F));
             this.tableLayoutPanel1.Controls.Add(this.lblNombre, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbClientes, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtApellidos, 2, 3);
@@ -194,16 +221,16 @@ namespace Presentación
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1445, 153);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(913, 94);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblNombre.Location = new System.Drawing.Point(75, 17);
+            this.lblNombre.Location = new System.Drawing.Point(48, 10);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(80, 17);
+            this.lblNombre.Size = new System.Drawing.Size(48, 10);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre: ";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -219,9 +246,9 @@ namespace Presentación
             this.cmbClientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbClientes.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClientes.FormattingEnabled = true;
-            this.cmbClientes.Location = new System.Drawing.Point(161, 20);
+            this.cmbClientes.Location = new System.Drawing.Point(102, 13);
             this.cmbClientes.Name = "cmbClientes";
-            this.cmbClientes.Size = new System.Drawing.Size(138, 22);
+            this.cmbClientes.Size = new System.Drawing.Size(85, 22);
             this.cmbClientes.TabIndex = 17;
             this.cmbClientes.ValueMember = "Id";
             this.cmbClientes.SelectedIndexChanged += new System.EventHandler(this.cmbClientes_SelectedIndexChanged);
@@ -247,18 +274,18 @@ namespace Presentación
             this.txtApellidos.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "Apellidos", true));
             this.txtApellidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtApellidos.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellidos.Location = new System.Drawing.Point(161, 54);
+            this.txtApellidos.Location = new System.Drawing.Point(102, 33);
             this.txtApellidos.Name = "txtApellidos";
-            this.txtApellidos.Size = new System.Drawing.Size(138, 22);
+            this.txtApellidos.Size = new System.Drawing.Size(85, 22);
             this.txtApellidos.TabIndex = 20;
             // 
             // lblApellidos
             // 
             this.lblApellidos.AutoSize = true;
             this.lblApellidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblApellidos.Location = new System.Drawing.Point(75, 51);
+            this.lblApellidos.Location = new System.Drawing.Point(48, 30);
             this.lblApellidos.Name = "lblApellidos";
-            this.lblApellidos.Size = new System.Drawing.Size(80, 17);
+            this.lblApellidos.Size = new System.Drawing.Size(48, 10);
             this.lblApellidos.TabIndex = 18;
             this.lblApellidos.Text = "Apellidos:";
             this.lblApellidos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -267,9 +294,9 @@ namespace Presentación
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDNI.Location = new System.Drawing.Point(75, 85);
+            this.lblDNI.Location = new System.Drawing.Point(48, 50);
             this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(80, 17);
+            this.lblDNI.Size = new System.Drawing.Size(48, 10);
             this.lblDNI.TabIndex = 21;
             this.lblDNI.Text = "DNI:";
             this.lblDNI.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -280,18 +307,18 @@ namespace Presentación
             this.txtDNI.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "DNI", true));
             this.txtDNI.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDNI.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(161, 88);
+            this.txtDNI.Location = new System.Drawing.Point(102, 53);
             this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(138, 22);
+            this.txtDNI.Size = new System.Drawing.Size(85, 22);
             this.txtDNI.TabIndex = 22;
             // 
             // lblEmision
             // 
             this.lblEmision.AutoSize = true;
             this.lblEmision.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEmision.Location = new System.Drawing.Point(620, 17);
+            this.lblEmision.Location = new System.Drawing.Point(447, 10);
             this.lblEmision.Name = "lblEmision";
-            this.lblEmision.Size = new System.Drawing.Size(124, 17);
+            this.lblEmision.Size = new System.Drawing.Size(76, 10);
             this.lblEmision.TabIndex = 25;
             this.lblEmision.Text = "Fecha de emisión:";
             this.lblEmision.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -303,9 +330,9 @@ namespace Presentación
             this.dtpEmision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpEmision.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEmision.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEmision.Location = new System.Drawing.Point(750, 20);
+            this.dtpEmision.Location = new System.Drawing.Point(529, 13);
             this.dtpEmision.Name = "dtpEmision";
-            this.dtpEmision.Size = new System.Drawing.Size(138, 22);
+            this.dtpEmision.Size = new System.Drawing.Size(85, 22);
             this.dtpEmision.TabIndex = 26;
             this.dtpEmision.Value = new System.DateTime(2024, 12, 20, 0, 0, 0, 0);
             // 
@@ -313,9 +340,9 @@ namespace Presentación
             // 
             this.lblVencimiento.AutoSize = true;
             this.lblVencimiento.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblVencimiento.Location = new System.Drawing.Point(620, 51);
+            this.lblVencimiento.Location = new System.Drawing.Point(447, 30);
             this.lblVencimiento.Name = "lblVencimiento";
-            this.lblVencimiento.Size = new System.Drawing.Size(124, 17);
+            this.lblVencimiento.Size = new System.Drawing.Size(76, 10);
             this.lblVencimiento.TabIndex = 27;
             this.lblVencimiento.Text = "Fecha vencimiento:";
             this.lblVencimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -324,9 +351,9 @@ namespace Presentación
             // 
             this.lblFechaPago.AutoSize = true;
             this.lblFechaPago.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFechaPago.Location = new System.Drawing.Point(620, 85);
+            this.lblFechaPago.Location = new System.Drawing.Point(447, 50);
             this.lblFechaPago.Name = "lblFechaPago";
-            this.lblFechaPago.Size = new System.Drawing.Size(124, 17);
+            this.lblFechaPago.Size = new System.Drawing.Size(76, 10);
             this.lblFechaPago.TabIndex = 35;
             this.lblFechaPago.Text = "Fecha de pago:";
             this.lblFechaPago.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -338,9 +365,9 @@ namespace Presentación
             this.dtpVencimiento.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpVencimiento.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpVencimiento.Location = new System.Drawing.Point(750, 54);
+            this.dtpVencimiento.Location = new System.Drawing.Point(529, 33);
             this.dtpVencimiento.Name = "dtpVencimiento";
-            this.dtpVencimiento.Size = new System.Drawing.Size(138, 22);
+            this.dtpVencimiento.Size = new System.Drawing.Size(85, 22);
             this.dtpVencimiento.TabIndex = 36;
             this.dtpVencimiento.Value = new System.DateTime(2024, 12, 12, 9, 9, 29, 0);
             // 
@@ -351,9 +378,9 @@ namespace Presentación
             this.dtpFechaPago.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpFechaPago.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpFechaPago.Location = new System.Drawing.Point(750, 88);
+            this.dtpFechaPago.Location = new System.Drawing.Point(529, 53);
             this.dtpFechaPago.Name = "dtpFechaPago";
-            this.dtpFechaPago.Size = new System.Drawing.Size(138, 22);
+            this.dtpFechaPago.Size = new System.Drawing.Size(85, 22);
             this.dtpFechaPago.TabIndex = 37;
             this.dtpFechaPago.Value = new System.DateTime(2024, 12, 12, 9, 9, 29, 0);
             // 
@@ -361,9 +388,9 @@ namespace Presentación
             // 
             this.lblCorreo.AutoSize = true;
             this.lblCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCorreo.Location = new System.Drawing.Point(75, 119);
+            this.lblCorreo.Location = new System.Drawing.Point(48, 70);
             this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(80, 17);
+            this.lblCorreo.Size = new System.Drawing.Size(48, 10);
             this.lblCorreo.TabIndex = 23;
             this.lblCorreo.Text = "Correo:";
             this.lblCorreo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -374,18 +401,18 @@ namespace Presentación
             this.txtCorreo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsClientes, "Correo", true));
             this.txtCorreo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCorreo.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(161, 122);
+            this.txtCorreo.Location = new System.Drawing.Point(102, 73);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(138, 22);
+            this.txtCorreo.Size = new System.Drawing.Size(85, 22);
             this.txtCorreo.TabIndex = 24;
             // 
             // lblFechaEnvio
             // 
             this.lblFechaEnvio.AutoSize = true;
             this.lblFechaEnvio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblFechaEnvio.Location = new System.Drawing.Point(620, 119);
+            this.lblFechaEnvio.Location = new System.Drawing.Point(447, 70);
             this.lblFechaEnvio.Name = "lblFechaEnvio";
-            this.lblFechaEnvio.Size = new System.Drawing.Size(124, 17);
+            this.lblFechaEnvio.Size = new System.Drawing.Size(76, 10);
             this.lblFechaEnvio.TabIndex = 39;
             this.lblFechaEnvio.Text = "Fecha de envío:";
             this.lblFechaEnvio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -397,9 +424,9 @@ namespace Presentación
             this.dtpEnvio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtpEnvio.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpEnvio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnvio.Location = new System.Drawing.Point(750, 122);
+            this.dtpEnvio.Location = new System.Drawing.Point(529, 73);
             this.dtpEnvio.Name = "dtpEnvio";
-            this.dtpEnvio.Size = new System.Drawing.Size(138, 22);
+            this.dtpEnvio.Size = new System.Drawing.Size(85, 22);
             this.dtpEnvio.TabIndex = 40;
             this.dtpEnvio.Value = new System.DateTime(2024, 12, 12, 9, 9, 29, 0);
             // 
@@ -410,10 +437,10 @@ namespace Presentación
             this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(994, 105);
+            this.btnGuardar.Location = new System.Drawing.Point(683, 63);
             this.btnGuardar.Name = "btnGuardar";
             this.tableLayoutPanel1.SetRowSpan(this.btnGuardar, 2);
-            this.btnGuardar.Size = new System.Drawing.Size(138, 28);
+            this.btnGuardar.Size = new System.Drawing.Size(84, 14);
             this.btnGuardar.TabIndex = 38;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -423,9 +450,9 @@ namespace Presentación
             // 
             this.lblTipoPago.AutoSize = true;
             this.lblTipoPago.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblTipoPago.Location = new System.Drawing.Point(333, 17);
+            this.lblTipoPago.Location = new System.Drawing.Point(238, 10);
             this.lblTipoPago.Name = "lblTipoPago";
-            this.lblTipoPago.Size = new System.Drawing.Size(109, 17);
+            this.lblTipoPago.Size = new System.Drawing.Size(67, 10);
             this.lblTipoPago.TabIndex = 41;
             this.lblTipoPago.Text = "Tipo de pago:";
             this.lblTipoPago.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -434,9 +461,9 @@ namespace Presentación
             // 
             this.lblEnvio.AutoSize = true;
             this.lblEnvio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEnvio.Location = new System.Drawing.Point(333, 51);
+            this.lblEnvio.Location = new System.Drawing.Point(238, 30);
             this.lblEnvio.Name = "lblEnvio";
-            this.lblEnvio.Size = new System.Drawing.Size(109, 17);
+            this.lblEnvio.Size = new System.Drawing.Size(67, 10);
             this.lblEnvio.TabIndex = 42;
             this.lblEnvio.Text = "Envio:";
             this.lblEnvio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -445,9 +472,9 @@ namespace Presentación
             // 
             this.lblEstadoFactura.AutoSize = true;
             this.lblEstadoFactura.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblEstadoFactura.Location = new System.Drawing.Point(333, 85);
+            this.lblEstadoFactura.Location = new System.Drawing.Point(238, 50);
             this.lblEstadoFactura.Name = "lblEstadoFactura";
-            this.lblEstadoFactura.Size = new System.Drawing.Size(109, 17);
+            this.lblEstadoFactura.Size = new System.Drawing.Size(67, 10);
             this.lblEstadoFactura.TabIndex = 43;
             this.lblEstadoFactura.Text = "Estado:";
             this.lblEstadoFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -462,9 +489,9 @@ namespace Presentación
             this.cmbTipoPago.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbTipoPago.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTipoPago.FormattingEnabled = true;
-            this.cmbTipoPago.Location = new System.Drawing.Point(448, 20);
+            this.cmbTipoPago.Location = new System.Drawing.Point(311, 13);
             this.cmbTipoPago.Name = "cmbTipoPago";
-            this.cmbTipoPago.Size = new System.Drawing.Size(138, 22);
+            this.cmbTipoPago.Size = new System.Drawing.Size(85, 22);
             this.cmbTipoPago.TabIndex = 44;
             this.cmbTipoPago.ValueMember = "Id";
             // 
@@ -484,9 +511,9 @@ namespace Presentación
             this.cbEstadoFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEstadoFactura.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstadoFactura.FormattingEnabled = true;
-            this.cbEstadoFactura.Location = new System.Drawing.Point(448, 88);
+            this.cbEstadoFactura.Location = new System.Drawing.Point(311, 53);
             this.cbEstadoFactura.Name = "cbEstadoFactura";
-            this.cbEstadoFactura.Size = new System.Drawing.Size(138, 22);
+            this.cbEstadoFactura.Size = new System.Drawing.Size(85, 22);
             this.cbEstadoFactura.TabIndex = 46;
             this.cbEstadoFactura.ValueMember = "Id";
             // 
@@ -506,9 +533,9 @@ namespace Presentación
             this.cbEnvio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbEnvio.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEnvio.FormattingEnabled = true;
-            this.cbEnvio.Location = new System.Drawing.Point(448, 54);
+            this.cbEnvio.Location = new System.Drawing.Point(311, 33);
             this.cbEnvio.Name = "cbEnvio";
-            this.cbEnvio.Size = new System.Drawing.Size(138, 22);
+            this.cbEnvio.Size = new System.Drawing.Size(85, 22);
             this.cbEnvio.TabIndex = 45;
             this.cbEnvio.ValueMember = "Id";
             // 
@@ -525,10 +552,10 @@ namespace Presentación
             this.btnVolver.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVolver.Font = new System.Drawing.Font("Georgia", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.Location = new System.Drawing.Point(1138, 105);
+            this.btnVolver.Location = new System.Drawing.Point(773, 63);
             this.btnVolver.Name = "btnVolver";
             this.tableLayoutPanel1.SetRowSpan(this.btnVolver, 2);
-            this.btnVolver.Size = new System.Drawing.Size(138, 28);
+            this.btnVolver.Size = new System.Drawing.Size(84, 14);
             this.btnVolver.TabIndex = 47;
             this.btnVolver.Text = "VOLVER";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -541,9 +568,9 @@ namespace Presentación
             this.gbDesgloses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbDesgloses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbDesgloses.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbDesgloses.Location = new System.Drawing.Point(3, 187);
+            this.gbDesgloses.Location = new System.Drawing.Point(3, 128);
             this.gbDesgloses.Name = "gbDesgloses";
-            this.gbDesgloses.Size = new System.Drawing.Size(1451, 505);
+            this.gbDesgloses.Size = new System.Drawing.Size(919, 255);
             this.gbDesgloses.TabIndex = 1;
             this.gbDesgloses.TabStop = false;
             this.gbDesgloses.Text = "Desgloses ";
@@ -554,96 +581,17 @@ namespace Presentación
             this.tlpDesgloses.ColumnCount = 3;
             this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.28391F));
             this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.71609F));
-            this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tlpDesgloses.Controls.Add(this.dataGridView1, 1, 0);
+            this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tlpDesgloses.Controls.Add(this.tlpDatosDesglose, 0, 0);
+            this.tlpDesgloses.Controls.Add(this.tlpVistaDesglose, 1, 0);
             this.tlpDesgloses.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDesgloses.Location = new System.Drawing.Point(3, 22);
             this.tlpDesgloses.Name = "tlpDesgloses";
-            this.tlpDesgloses.RowCount = 2;
+            this.tlpDesgloses.RowCount = 1;
             this.tlpDesgloses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpDesgloses.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 148F));
-            this.tlpDesgloses.Size = new System.Drawing.Size(1445, 480);
+            this.tlpDesgloses.Size = new System.Drawing.Size(913, 230);
             this.tlpDesgloses.TabIndex = 0;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.idFacturaDataGridViewTextBoxColumn,
-            this.idProductoDataGridViewTextBoxColumn,
-            this.cantidadDataGridViewTextBoxColumn,
-            this.baseImponibleDataGridViewTextBoxColumn,
-            this.idTipoIVADataGridViewTextBoxColumn,
-            this.conceptoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.bsDesglose;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(410, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(933, 326);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idFacturaDataGridViewTextBoxColumn
-            // 
-            this.idFacturaDataGridViewTextBoxColumn.DataPropertyName = "IdFactura";
-            this.idFacturaDataGridViewTextBoxColumn.HeaderText = "IdFactura";
-            this.idFacturaDataGridViewTextBoxColumn.Name = "idFacturaDataGridViewTextBoxColumn";
-            this.idFacturaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idProductoDataGridViewTextBoxColumn
-            // 
-            this.idProductoDataGridViewTextBoxColumn.DataPropertyName = "IdProducto";
-            this.idProductoDataGridViewTextBoxColumn.HeaderText = "IdProducto";
-            this.idProductoDataGridViewTextBoxColumn.Name = "idProductoDataGridViewTextBoxColumn";
-            this.idProductoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDataGridViewTextBoxColumn
-            // 
-            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
-            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
-            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // baseImponibleDataGridViewTextBoxColumn
-            // 
-            this.baseImponibleDataGridViewTextBoxColumn.DataPropertyName = "BaseImponible";
-            this.baseImponibleDataGridViewTextBoxColumn.HeaderText = "BaseImponible";
-            this.baseImponibleDataGridViewTextBoxColumn.Name = "baseImponibleDataGridViewTextBoxColumn";
-            this.baseImponibleDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idTipoIVADataGridViewTextBoxColumn
-            // 
-            this.idTipoIVADataGridViewTextBoxColumn.DataPropertyName = "IdTipoIVA";
-            this.idTipoIVADataGridViewTextBoxColumn.HeaderText = "IdTipoIVA";
-            this.idTipoIVADataGridViewTextBoxColumn.Name = "idTipoIVADataGridViewTextBoxColumn";
-            this.idTipoIVADataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // conceptoDataGridViewTextBoxColumn
-            // 
-            this.conceptoDataGridViewTextBoxColumn.DataPropertyName = "Concepto";
-            this.conceptoDataGridViewTextBoxColumn.HeaderText = "Concepto";
-            this.conceptoDataGridViewTextBoxColumn.Name = "conceptoDataGridViewTextBoxColumn";
-            this.conceptoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // bsDesglose
-            // 
-            this.bsDesglose.AllowNew = true;
-            this.bsDesglose.DataMember = "FacturaDesglose";
-            this.bsDesglose.DataSource = this.dsGimnasio1;
+            this.tlpDesgloses.Paint += new System.Windows.Forms.PaintEventHandler(this.tlpDesgloses_Paint);
             // 
             // tlpDatosDesglose
             // 
@@ -658,17 +606,19 @@ namespace Presentación
             this.tlpDatosDesglose.Controls.Add(this.cmbProductos, 3, 1);
             this.tlpDatosDesglose.Controls.Add(this.lblCódigo, 1, 3);
             this.tlpDatosDesglose.Controls.Add(this.lblBaseImponible, 1, 5);
-            this.tlpDatosDesglose.Controls.Add(this.lblCantidad, 1, 9);
-            this.tlpDatosDesglose.Controls.Add(this.lblConcepto, 1, 11);
             this.tlpDatosDesglose.Controls.Add(this.txtCodigo, 3, 3);
             this.tlpDatosDesglose.Controls.Add(this.txtBImponible, 3, 5);
-            this.tlpDatosDesglose.Controls.Add(this.txtCantidad, 3, 9);
-            this.tlpDatosDesglose.Controls.Add(this.txtConcepto, 3, 11);
-            this.tlpDatosDesglose.Controls.Add(this.btnGuardarDesglose, 3, 14);
+            this.tlpDatosDesglose.Controls.Add(this.lblCantidad, 1, 7);
+            this.tlpDatosDesglose.Controls.Add(this.txtCantidad, 3, 7);
+            this.tlpDatosDesglose.Controls.Add(this.lblConcepto, 1, 9);
+            this.tlpDatosDesglose.Controls.Add(this.txtConcepto, 3, 9);
+            this.tlpDatosDesglose.Controls.Add(this.btnGuardarDesglose, 3, 12);
+            this.tlpDatosDesglose.Controls.Add(this.btnEliminarDesglose, 3, 15);
+            this.tlpDatosDesglose.Controls.Add(this.btnEditarDesglose, 3, 18);
             this.tlpDatosDesglose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlpDatosDesglose.Location = new System.Drawing.Point(3, 3);
             this.tlpDatosDesglose.Name = "tlpDatosDesglose";
-            this.tlpDatosDesglose.RowCount = 16;
+            this.tlpDatosDesglose.RowCount = 21;
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.333333F));
@@ -685,16 +635,22 @@ namespace Presentación
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDatosDesglose.Size = new System.Drawing.Size(401, 326);
+            this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpDatosDesglose.Size = new System.Drawing.Size(244, 224);
             this.tlpDatosDesglose.TabIndex = 1;
             // 
             // lblProducto
             // 
             this.lblProducto.AutoSize = true;
             this.lblProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProducto.Location = new System.Drawing.Point(47, 20);
+            this.lblProducto.Location = new System.Drawing.Point(30, 3);
             this.lblProducto.Name = "lblProducto";
-            this.lblProducto.Size = new System.Drawing.Size(83, 20);
+            this.lblProducto.Size = new System.Drawing.Size(48, 3);
             this.lblProducto.TabIndex = 2;
             this.lblProducto.Text = "Producto:";
             this.lblProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -710,9 +666,9 @@ namespace Presentación
             this.cmbProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbProductos.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbProductos.FormattingEnabled = true;
-            this.cmbProductos.Location = new System.Drawing.Point(141, 23);
+            this.cmbProductos.Location = new System.Drawing.Point(87, 6);
             this.cmbProductos.Name = "cmbProductos";
-            this.cmbProductos.Size = new System.Drawing.Size(215, 22);
+            this.cmbProductos.Size = new System.Drawing.Size(128, 22);
             this.cmbProductos.TabIndex = 18;
             this.cmbProductos.ValueMember = "Id";
             this.cmbProductos.SelectedIndexChanged += new System.EventHandler(this.cmbProductos_SelectedIndexChanged);
@@ -726,9 +682,9 @@ namespace Presentación
             // 
             this.lblCódigo.AutoSize = true;
             this.lblCódigo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCódigo.Location = new System.Drawing.Point(47, 60);
+            this.lblCódigo.Location = new System.Drawing.Point(30, 9);
             this.lblCódigo.Name = "lblCódigo";
-            this.lblCódigo.Size = new System.Drawing.Size(83, 20);
+            this.lblCódigo.Size = new System.Drawing.Size(48, 3);
             this.lblCódigo.TabIndex = 19;
             this.lblCódigo.Text = "Código: ";
             this.lblCódigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -737,34 +693,12 @@ namespace Presentación
             // 
             this.lblBaseImponible.AutoSize = true;
             this.lblBaseImponible.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblBaseImponible.Location = new System.Drawing.Point(47, 100);
+            this.lblBaseImponible.Location = new System.Drawing.Point(30, 15);
             this.lblBaseImponible.Name = "lblBaseImponible";
-            this.lblBaseImponible.Size = new System.Drawing.Size(83, 20);
+            this.lblBaseImponible.Size = new System.Drawing.Size(48, 3);
             this.lblBaseImponible.TabIndex = 20;
             this.lblBaseImponible.Text = "B. Imponible:";
             this.lblBaseImponible.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblCantidad
-            // 
-            this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblCantidad.Location = new System.Drawing.Point(47, 180);
-            this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(83, 20);
-            this.lblCantidad.TabIndex = 22;
-            this.lblCantidad.Text = "Cantidad:";
-            this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblConcepto
-            // 
-            this.lblConcepto.AutoSize = true;
-            this.lblConcepto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblConcepto.Location = new System.Drawing.Point(47, 220);
-            this.lblConcepto.Name = "lblConcepto";
-            this.lblConcepto.Size = new System.Drawing.Size(83, 20);
-            this.lblConcepto.TabIndex = 23;
-            this.lblConcepto.Text = "Concepto:";
-            this.lblConcepto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCodigo
             // 
@@ -772,9 +706,9 @@ namespace Presentación
             this.txtCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProductos, "Id", true));
             this.txtCodigo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCodigo.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(141, 63);
+            this.txtCodigo.Location = new System.Drawing.Point(87, 12);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(215, 22);
+            this.txtCodigo.Size = new System.Drawing.Size(128, 22);
             this.txtCodigo.TabIndex = 24;
             // 
             // txtBImponible
@@ -783,43 +717,242 @@ namespace Presentación
             this.txtBImponible.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProductos, "Base_Imponible", true));
             this.txtBImponible.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtBImponible.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBImponible.Location = new System.Drawing.Point(141, 103);
+            this.txtBImponible.Location = new System.Drawing.Point(87, 18);
             this.txtBImponible.Name = "txtBImponible";
-            this.txtBImponible.Size = new System.Drawing.Size(215, 22);
+            this.txtBImponible.Size = new System.Drawing.Size(128, 22);
             this.txtBImponible.TabIndex = 25;
+            // 
+            // lblCantidad
+            // 
+            this.lblCantidad.AutoSize = true;
+            this.lblCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblCantidad.Location = new System.Drawing.Point(30, 21);
+            this.lblCantidad.Name = "lblCantidad";
+            this.lblCantidad.Size = new System.Drawing.Size(48, 3);
+            this.lblCantidad.TabIndex = 22;
+            this.lblCantidad.Text = "Cantidad:";
+            this.lblCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtCantidad
             // 
             this.txtCantidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCantidad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCantidad.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.Location = new System.Drawing.Point(141, 183);
+            this.txtCantidad.Location = new System.Drawing.Point(87, 24);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(215, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(128, 22);
             this.txtCantidad.TabIndex = 27;
+            // 
+            // lblConcepto
+            // 
+            this.lblConcepto.AutoSize = true;
+            this.lblConcepto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblConcepto.Location = new System.Drawing.Point(30, 27);
+            this.lblConcepto.Name = "lblConcepto";
+            this.lblConcepto.Size = new System.Drawing.Size(48, 3);
+            this.lblConcepto.TabIndex = 23;
+            this.lblConcepto.Text = "Concepto:";
+            this.lblConcepto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtConcepto
             // 
             this.txtConcepto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtConcepto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtConcepto.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConcepto.Location = new System.Drawing.Point(141, 223);
+            this.txtConcepto.Location = new System.Drawing.Point(87, 30);
             this.txtConcepto.Name = "txtConcepto";
-            this.txtConcepto.Size = new System.Drawing.Size(215, 22);
+            this.txtConcepto.Size = new System.Drawing.Size(128, 22);
             this.txtConcepto.TabIndex = 28;
             // 
             // btnGuardarDesglose
             // 
             this.btnGuardarDesglose.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnGuardarDesglose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnGuardarDesglose.Location = new System.Drawing.Point(141, 283);
+            this.btnGuardarDesglose.Location = new System.Drawing.Point(87, 39);
             this.btnGuardarDesglose.Name = "btnGuardarDesglose";
             this.tlpDatosDesglose.SetRowSpan(this.btnGuardarDesglose, 2);
-            this.btnGuardarDesglose.Size = new System.Drawing.Size(215, 40);
+            this.btnGuardarDesglose.Size = new System.Drawing.Size(128, 34);
             this.btnGuardarDesglose.TabIndex = 29;
-            this.btnGuardarDesglose.Text = "GUARDAR";
+            this.btnGuardarDesglose.Text = "AÑADIR";
             this.btnGuardarDesglose.UseVisualStyleBackColor = true;
             this.btnGuardarDesglose.Click += new System.EventHandler(this.btnGuardarDesglose_Click);
+            // 
+            // btnEliminarDesglose
+            // 
+            this.btnEliminarDesglose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEliminarDesglose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminarDesglose.Location = new System.Drawing.Point(87, 99);
+            this.btnEliminarDesglose.Name = "btnEliminarDesglose";
+            this.tlpDatosDesglose.SetRowSpan(this.btnEliminarDesglose, 2);
+            this.btnEliminarDesglose.Size = new System.Drawing.Size(128, 34);
+            this.btnEliminarDesglose.TabIndex = 30;
+            this.btnEliminarDesglose.Text = "ELIMINAR";
+            this.btnEliminarDesglose.UseVisualStyleBackColor = true;
+            this.btnEliminarDesglose.Click += new System.EventHandler(this.btnEliminarDesglose_Click);
+            // 
+            // btnEditarDesglose
+            // 
+            this.btnEditarDesglose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnEditarDesglose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEditarDesglose.Location = new System.Drawing.Point(87, 159);
+            this.btnEditarDesglose.Name = "btnEditarDesglose";
+            this.tlpDatosDesglose.SetRowSpan(this.btnEditarDesglose, 2);
+            this.btnEditarDesglose.Size = new System.Drawing.Size(128, 34);
+            this.btnEditarDesglose.TabIndex = 31;
+            this.btnEditarDesglose.Text = "EDITAR";
+            this.btnEditarDesglose.UseVisualStyleBackColor = true;
+            this.btnEditarDesglose.Click += new System.EventHandler(this.btnEditarDesglose_Click);
+            // 
+            // tlpVistaDesglose
+            // 
+            this.tlpVistaDesglose.ColumnCount = 1;
+            this.tlpVistaDesglose.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpVistaDesglose.Controls.Add(this.dgvDesglose, 0, 0);
+            this.tlpVistaDesglose.Controls.Add(this.tableLayoutPanel3, 0, 1);
+            this.tlpVistaDesglose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlpVistaDesglose.Location = new System.Drawing.Point(253, 3);
+            this.tlpVistaDesglose.Name = "tlpVistaDesglose";
+            this.tlpVistaDesglose.RowCount = 2;
+            this.tlpVistaDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
+            this.tlpVistaDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this.tlpVistaDesglose.Size = new System.Drawing.Size(569, 224);
+            this.tlpVistaDesglose.TabIndex = 3;
+            // 
+            // dgvDesglose
+            // 
+            this.dgvDesglose.AllowUserToAddRows = false;
+            this.dgvDesglose.AllowUserToDeleteRows = false;
+            this.dgvDesglose.AutoGenerateColumns = false;
+            this.dgvDesglose.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDesglose.BackgroundColor = System.Drawing.SystemColors.MenuBar;
+            this.dgvDesglose.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDesglose.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDesglose.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDesglose.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.idFacturaDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.preciocompraDataGridViewTextBoxColumn,
+            this.baseImponibleDataGridViewTextBoxColumn,
+            this.tipoIVADataGridViewTextBoxColumn,
+            this.pVPDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.cantidadDataGridViewTextBoxColumn,
+            this.conceptoDataGridViewTextBoxColumn});
+            this.dgvDesglose.DataSource = this.bsVDesglose;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDesglose.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDesglose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvDesglose.EnableHeadersVisualStyles = false;
+            this.dgvDesglose.GridColor = System.Drawing.SystemColors.MenuBar;
+            this.dgvDesglose.Location = new System.Drawing.Point(3, 3);
+            this.dgvDesglose.Name = "dgvDesglose";
+            this.dgvDesglose.ReadOnly = true;
+            this.dgvDesglose.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDesglose.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDesglose.Size = new System.Drawing.Size(563, 139);
+            this.dgvDesglose.TabIndex = 2;
+            this.dgvDesglose.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDesglose_CellClick_1);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 5F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idFacturaDataGridViewTextBoxColumn
+            // 
+            this.idFacturaDataGridViewTextBoxColumn.DataPropertyName = "IdFactura";
+            this.idFacturaDataGridViewTextBoxColumn.FillWeight = 5F;
+            this.idFacturaDataGridViewTextBoxColumn.HeaderText = "IdFactura";
+            this.idFacturaDataGridViewTextBoxColumn.Name = "idFacturaDataGridViewTextBoxColumn";
+            this.idFacturaDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.FillWeight = 20F;
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // preciocompraDataGridViewTextBoxColumn
+            // 
+            this.preciocompraDataGridViewTextBoxColumn.DataPropertyName = "Precio_compra";
+            this.preciocompraDataGridViewTextBoxColumn.FillWeight = 8F;
+            this.preciocompraDataGridViewTextBoxColumn.HeaderText = "Precio_compra";
+            this.preciocompraDataGridViewTextBoxColumn.Name = "preciocompraDataGridViewTextBoxColumn";
+            this.preciocompraDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // baseImponibleDataGridViewTextBoxColumn
+            // 
+            this.baseImponibleDataGridViewTextBoxColumn.DataPropertyName = "Base_Imponible";
+            this.baseImponibleDataGridViewTextBoxColumn.FillWeight = 8F;
+            this.baseImponibleDataGridViewTextBoxColumn.HeaderText = "Base_Imponible";
+            this.baseImponibleDataGridViewTextBoxColumn.Name = "baseImponibleDataGridViewTextBoxColumn";
+            this.baseImponibleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoIVADataGridViewTextBoxColumn
+            // 
+            this.tipoIVADataGridViewTextBoxColumn.DataPropertyName = "Tipo_IVA";
+            this.tipoIVADataGridViewTextBoxColumn.FillWeight = 5F;
+            this.tipoIVADataGridViewTextBoxColumn.HeaderText = "Tipo_IVA";
+            this.tipoIVADataGridViewTextBoxColumn.Name = "tipoIVADataGridViewTextBoxColumn";
+            this.tipoIVADataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // pVPDataGridViewTextBoxColumn
+            // 
+            this.pVPDataGridViewTextBoxColumn.DataPropertyName = "PVP";
+            this.pVPDataGridViewTextBoxColumn.FillWeight = 10F;
+            this.pVPDataGridViewTextBoxColumn.HeaderText = "PVP";
+            this.pVPDataGridViewTextBoxColumn.Name = "pVPDataGridViewTextBoxColumn";
+            this.pVPDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.FillWeight = 6F;
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDataGridViewTextBoxColumn
+            // 
+            this.cantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.FillWeight = 5F;
+            this.cantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad";
+            this.cantidadDataGridViewTextBoxColumn.Name = "cantidadDataGridViewTextBoxColumn";
+            this.cantidadDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // conceptoDataGridViewTextBoxColumn
+            // 
+            this.conceptoDataGridViewTextBoxColumn.DataPropertyName = "Concepto";
+            this.conceptoDataGridViewTextBoxColumn.FillWeight = 28F;
+            this.conceptoDataGridViewTextBoxColumn.HeaderText = "Concepto";
+            this.conceptoDataGridViewTextBoxColumn.Name = "conceptoDataGridViewTextBoxColumn";
+            this.conceptoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // bsVDesglose
             // 
@@ -827,17 +960,185 @@ namespace Presentación
             this.bsVDesglose.DataSource = this.dsGimnasio1;
             this.bsVDesglose.CurrentChanged += new System.EventHandler(this.bsVDesglose_CurrentChanged);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 5;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel3.Controls.Add(this.btnGenerar, 1, 2);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 148);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 7;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(563, 73);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnGenerar.Location = new System.Drawing.Point(115, 23);
+            this.btnGenerar.Name = "btnGenerar";
+            this.tableLayoutPanel3.SetRowSpan(this.btnGenerar, 2);
+            this.btnGenerar.Size = new System.Drawing.Size(106, 14);
+            this.btnGenerar.TabIndex = 0;
+            this.btnGenerar.Text = "GENERAR";
+            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // gpTotal
+            // 
+            this.gpTotal.Controls.Add(this.tableLayoutPanel2);
+            this.gpTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gpTotal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.gpTotal.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpTotal.Location = new System.Drawing.Point(3, 389);
+            this.gpTotal.Name = "gpTotal";
+            this.gpTotal.Size = new System.Drawing.Size(919, 109);
+            this.gpTotal.TabIndex = 2;
+            this.gpTotal.TabStop = false;
+            this.gpTotal.Text = "Total";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 7;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel2.Controls.Add(this.lbl1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lblTotalFactura, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.lbl2, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 4);
+            this.tableLayoutPanel2.Controls.Add(this.lblTotalProductos, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblTotalCoste, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.lblTotalBImponible, 1, 4);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 22);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 8;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(913, 84);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // lbl1
+            // 
+            this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl1.AutoSize = true;
+            this.lbl1.Location = new System.Drawing.Point(28, 10);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(73, 10);
+            this.lbl1.TabIndex = 0;
+            this.lbl1.Text = "Total de factura:";
+            // 
+            // lblTotalFactura
+            // 
+            this.lblTotalFactura.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTotalFactura.AutoSize = true;
+            this.lblTotalFactura.Location = new System.Drawing.Point(133, 10);
+            this.lblTotalFactura.Name = "lblTotalFactura";
+            this.lblTotalFactura.Size = new System.Drawing.Size(14, 10);
+            this.lblTotalFactura.TabIndex = 1;
+            this.lblTotalFactura.Text = "-";
+            // 
+            // lbl2
+            // 
+            this.lbl2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl2.AutoSize = true;
+            this.lbl2.Location = new System.Drawing.Point(13, 20);
+            this.lbl2.Name = "lbl2";
+            this.lbl2.Size = new System.Drawing.Size(103, 10);
+            this.lbl2.TabIndex = 2;
+            this.lbl2.Text = "Cantidad de productos:";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 10);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Total en coste :";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 10);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Total Base Imponible:";
+            // 
+            // lblTotalProductos
+            // 
+            this.lblTotalProductos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTotalProductos.AutoSize = true;
+            this.lblTotalProductos.Location = new System.Drawing.Point(133, 20);
+            this.lblTotalProductos.Name = "lblTotalProductos";
+            this.lblTotalProductos.Size = new System.Drawing.Size(14, 10);
+            this.lblTotalProductos.TabIndex = 5;
+            this.lblTotalProductos.Text = "-";
+            // 
+            // lblTotalCoste
+            // 
+            this.lblTotalCoste.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTotalCoste.AutoSize = true;
+            this.lblTotalCoste.Location = new System.Drawing.Point(133, 30);
+            this.lblTotalCoste.Name = "lblTotalCoste";
+            this.lblTotalCoste.Size = new System.Drawing.Size(14, 10);
+            this.lblTotalCoste.TabIndex = 6;
+            this.lblTotalCoste.Text = "-";
+            // 
+            // lblTotalBImponible
+            // 
+            this.lblTotalBImponible.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTotalBImponible.AutoSize = true;
+            this.lblTotalBImponible.Location = new System.Drawing.Point(133, 40);
+            this.lblTotalBImponible.Name = "lblTotalBImponible";
+            this.lblTotalBImponible.Size = new System.Drawing.Size(14, 10);
+            this.lblTotalBImponible.TabIndex = 7;
+            this.lblTotalBImponible.Text = "-";
+            // 
+            // bsDesglose
+            // 
+            this.bsDesglose.AllowNew = true;
+            this.bsDesglose.DataMember = "FacturaDesglose";
+            this.bsDesglose.DataSource = this.dsGimnasio1;
+            // 
             // FFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(1457, 734);
+            this.ClientSize = new System.Drawing.Size(925, 501);
             this.Controls.Add(this.tlpVentana);
             this.Font = new System.Drawing.Font("Cambria", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FFactura";
-            this.Text = "Datos Factura";
+            this.Text = "  ";
             this.Load += new System.EventHandler(this.FFactura_Load);
             this.tlpVentana.ResumeLayout(false);
             this.gbCabecera.ResumeLayout(false);
@@ -851,19 +1152,38 @@ namespace Presentación
             ((System.ComponentModel.ISupportInitialize)(this.bsEnvio)).EndInit();
             this.gbDesgloses.ResumeLayout(false);
             this.tlpDesgloses.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsDesglose)).EndInit();
             this.tlpDatosDesglose.ResumeLayout(false);
             this.tlpDatosDesglose.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsProductos)).EndInit();
+            this.tlpVistaDesglose.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDesglose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsVDesglose)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.gpTotal.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsDesglose)).EndInit();
             this.ResumeLayout(false);
 
         }
 
-        private void bsVDesglose_CurrentChanged(object sender, EventArgs e)
+        private void dgDesgloses_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             throw new NotImplementedException();
+        }
+
+        private void cmbClientes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbClientes.SelectedIndex != -1)
+            {
+                var clienteSeleccionado = cmbClientes.SelectedValue;
+                Console.WriteLine("Cliente seleccionado: " + clienteSeleccionado);
+            }
+        }
+
+        private void bsVDesglose_CurrentChanged(object sender, EventArgs e)
+        {
+            
         }
 
         private void cmbProductos_SelectedIndexChanged(object sender, EventArgs e)
@@ -923,7 +1243,6 @@ namespace Presentación
         private System.Windows.Forms.ComboBox cbEnvio;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.TableLayoutPanel tlpDesgloses;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tlpDatosDesglose;
         private System.Windows.Forms.BindingSource bsVDesglose;
         private System.Windows.Forms.Label lblProducto;
@@ -937,12 +1256,31 @@ namespace Presentación
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtConcepto;
         private System.Windows.Forms.Button btnGuardarDesglose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idFacturaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProductoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn baseImponibleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idTipoIVADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn conceptoDataGridViewTextBoxColumn;
+        private GroupBox gpTotal;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label lbl1;
+        private Label lblTotalFactura;
+        private Label lbl2;
+        private Label label1;
+        private Label label2;
+        private Label lblTotalProductos;
+        private Label lblTotalCoste;
+        private Label lblTotalBImponible;
+        private Button btnEliminarDesglose;
+        private Button btnEditarDesglose;
+        private DataGridView dgvDesglose;
+        private TableLayoutPanel tlpVistaDesglose;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn idFacturaDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn preciocompraDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn baseImponibleDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoIVADataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn pVPDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn conceptoDataGridViewTextBoxColumn;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Button btnGenerar;
     }
 }

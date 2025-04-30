@@ -4,6 +4,9 @@
 
     partial class DSGimnasio
     {
+        partial class ObtenerClientesActivosDataTable
+        {
+        }
     }
 }
 

@@ -120,7 +120,30 @@
   <metadata name="menuStripEmpleado.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="clientesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOfSURBVHhe7Zvb
+        605ZGMc/mjBJTinHIeWK0ZRLIX+BC8cohXJFxExJJuFSQnEjJDlTLowZilwQEXciEo3D1VyM8/nYt9au
+        3dOT992H9dr7tT/1vVlr7+d51vrtd63nWXv/oKGhoaGhY4wEVgN/A4+A18BL4DZwBlgG/GJv6gY0qEPA
+        R+BLC+ma3cAIa6SuzAVeOANtpefAdGusbqx0BpZFn4Dl1mhdmAd8dgaVVZqE2j0Jo4GnzmDySj+H4dZJ
+        ldnnDKKodlknVWVUm6t9VsmmttHK84cTfFlaap1VkdNO4GVJCVTleegEXpaUMVaeN07gZUkJVeV55wRe
+        ll5ZZ1XkXyfwsvTAOqsiqups4GXpL+usisTcBmW78qiMfe8EX1Qf6pQOH3QGUFRKr2uDnoJnziDySsVQ
+        LdLgNHNKKodlY4Y1XhdWFJwE3VuL/P9b6EnI83N4Asy2xuqKVu/9be4OWu33duvpsBZHnRP+A9wH3gL/
+        h+xRlZ76unLgDQ0NDT8Eg4FFIW+/DvxX8IBE98qGbMmmbMtH5ZgKHA7bmh1E2dKkHAMm2yC+B9qzjztB
+        dkryPcwG1Slm5nzrW0SqDa4Aq4DfgH42qE6xtmCRk0dXgUk2EKA/8LNtjIm+8LDBxZQmeh3QI/hXXaE/
+        wGWzwCqlVjq9BOhjYi6Nsmr8dqVX4wuC757AhvBZjb3O6nHqvtLQiUyesraI/gy+BwAXnP5W2gH8ZMaR
+        mxOOg5g6Gx773sAlp79dbbUDyYP2XGs4pvQzmxh8b3L601IOItn2tGaZ8WTmqGM0pk4Fv2PaOERJsO1p
+        3QN6pa7NxJA2gihbi4PvzU6fVYJtt9ICngt97GSNxdbQ4FunRrbPKsG2Wx1IXZuJnY6xmEpegQ90+jwl
+        2HarO6lrM3HNMRZTd4PfX50+LXbtYhduvVzJhV5J20Bi6lbwO8HpyzIBU8y9ub8t0I02kJhS/S8GOX2e
+        Emy7lXaCXOjRscZiSzuPUNC2zyrBtlsdSV2biZuOsdiaH3wri7N9Vgm23Uofbedim2Mstk4G32PDmyLb
+        n1aCbU9LX64ppc6FVuMYX35+S6oCxwX/rZKhaUG2PS3lMoVQVWWNxlZSDOmwo0gxpDymMMqjzznGY+v3
+        4F87wkWnv5X2lFkOaxK2d/jnIF/Jgqjf8MY2j9m1lS408ZfGeGALcKNDh6KahDXmSGx9yFDTk6Ht+nz4
+        x6u+JuauRZOimkFqaGhoyMxXD7Ceta6dAZIAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="dsGimnasio1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>139, 17</value>
+    <value>210, 19</value>
   </metadata>
 </root>

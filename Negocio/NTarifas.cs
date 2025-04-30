@@ -31,43 +31,40 @@ namespace Negocio
         // Ingresos mensuales en base a las tarifas
         public static double calcularIngresosMensuales(DSGimnasio ds)
         {
-
             double ingresosTotales = 0;
 
             foreach (DSGimnasio.VClientesRow cliente in ds.VClientes)
             {
-                // Activo o de baja
-                if(cliente.Estado == "Activo")
+                // Asegura que "Activo" es detectado aunque venga mal escrito
+                if (cliente.Estado.Trim().ToLower() == "activo")
                 {
-
-                    // Comprobar tarifa
-
-                    switch (cliente.TipoTarifa)
+                    switch (cliente.TipoTarifa.Trim().ToLower())
                     {
-
-                        case "Mensual":
+                        case "mensual":
                             ingresosTotales += 35;
                             break;
-                        case "Trimestral":
-                            ingresosTotales += 75 / 3; 
+                        case "trimestral":
+                            ingresosTotales += 75 / 3;
                             break;
-                        case "Mensual + Spining":
+                        case "mensual + spining":
                             ingresosTotales += 40;
                             break;
-                        case "Anual":
+                        case "anual":
                             ingresosTotales += 400 / 12;
                             break;
-
                     }
                 }
-
-
             }
 
             return ingresosTotales;
-
-
         }
+
+        public static int contarClientesActivos(DSGimnasio ds)
+        {
+            return ds.VClientes.Count(c => c.Estado.Trim().ToLower() == "activo");
+        }
+
+
 
 
     }

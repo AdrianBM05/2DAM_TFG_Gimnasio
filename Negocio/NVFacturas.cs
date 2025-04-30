@@ -24,11 +24,14 @@ namespace Negocio
             }
         }
 
-        public static void obtenerFacturasById(DSGimnasio ds, int id)
+        public static void obtenerFacturasByBusqueda(DSGimnasio ds, int id)
         {
             try
             {
-                
+                // Obtener la vista de una factura por el id
+                VFacturasTableAdapter ta = new VFacturasTableAdapter();
+                ta.FillById(ds.VFacturas, id);
+
             }
             catch (Exception e)
             {
@@ -36,9 +39,19 @@ namespace Negocio
             }
         }
 
-        
-
-        
+        public static void obtenerFacturasByBusqueda(DSGimnasio ds, string busqueda)
+        {
+            try
+            {
+                // Obtener la vista de una factura por el id
+                VFacturasTableAdapter ta = new VFacturasTableAdapter();
+                ta.FillByBusqueda(ds.VFacturas, busqueda);
+            }
+            catch (Exception e)
+            {
+                throw new ArgumentException(e.Message);
+            }
+        }
 
 
     }

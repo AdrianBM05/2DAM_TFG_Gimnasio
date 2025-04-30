@@ -135,6 +135,9 @@
   <metadata name="Fecha_Caducidad_Tarifa.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="clientesMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>254, 22</value>
+  </metadata>
   <metadata name="bsVClientes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>139, 17</value>
   </metadata>
@@ -142,19 +145,6 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnFacturaNueva.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAF1SURBVFhH7VUx
-        TgMxEBxBSQE9H4AeKqDhD/AV/pPwAqDhATyBhgYJkRYkhIREk2giGw2btXN7ziVNRppkZWXWc97xBdgC
-        OAdwsyFe0MAXgOmG+EMDLD4cd0OTe3Lv+cerncsawD1dA6eO21WRvTOKBp6dWa2KL7JP0cCZOGZISPsk
-        XWn1J7JP0YDiM7Evavp/Bkq3gO69Bl5OdL4Z1JZO8O8WLHsPeAa8nOh8M6i1v1Nyb1w67padgOYkU+eb
-        UTsBkn2qqM2wC1r1Cw282VtqFqw+DNvAm72lZsHqw7ANvNlbahasPozWBq36hQaaAZ31AYDrxH1Zt/ow
-        bAPNQJ71MYCJrLM+KujDsA00A3nWD2njEYBxqu8L+jC6NHgD8AtgB8BuqrlGdNFXYRt4GcgncJs46Al4
-        GeC8NQPv684AweTzBlwNfQuiaNXPxd8A7gA8AjgM1tQ2G9D3PP9aIzXZZIBPwiZPiX1q9uiNvRQsfrfU
-        WxQxA/j/SywIMWRPAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="btnEstado.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAT

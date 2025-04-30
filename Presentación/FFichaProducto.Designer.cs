@@ -411,13 +411,14 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // FProductoFicha
+            // FFichaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 519);
             this.Controls.Add(this.panel1);
-            this.Name = "FProductoFicha";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "FFichaProducto";
             this.Text = "FProductoFicha";
             this.Load += new System.EventHandler(this.FProductoFicha_Load);
             this.Leave += new System.EventHandler(this.FProductoFicha_Leave);
