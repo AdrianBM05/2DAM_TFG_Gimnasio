@@ -1,13 +1,7 @@
 ﻿using CAD.DSGimnasioTableAdapters;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentación
@@ -16,7 +10,8 @@ namespace Presentación
     {
         private int id;
         private DateTime fechaInicio;
-        public FFichaCliente(int _id, int tipo, DateTime _fechaInicio) 
+
+        public FFichaCliente(int _id, int tipo, DateTime _fechaInicio)
         {
             InitializeComponent();
             this.CenterToScreen();
@@ -24,10 +19,8 @@ namespace Presentación
             NEstados.obtenerEstados(dsGimnasio1);
             fechaInicio = _fechaInicio;
 
-            // 0 = NUEVO // 1 = MODIFICAR
             if (tipo == 0)
             {
-                //txtFechaInicio.Text = fechaInicio.ToString();
                 bsClientes.AddNew();
                 ((DataRowView)bsClientes.Current).Row["Fecha_Inicio_Tarifa"] = fechaInicio;
                 ((DataRowView)bsClientes.Current).Row["IdTipo_Cuenta"] = 1;
@@ -41,19 +34,16 @@ namespace Presentación
         }
 
         private void FClienteFicha2_Load(object sender, EventArgs e) { }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e) { }
-
-        private void nameTextBox_TextChanged(object sender, EventArgs e) { }
         private void FClienteFicha2_Load_1(object sender, EventArgs e) { }
+        private void nameTextBox_TextChanged(object sender, EventArgs e) { }
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e) { }
+        private void bsClientes_CurrentChanged(object sender, EventArgs e) { }
+        private void btnFactura_Click(object sender, EventArgs e) { }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
             try
             {
-
-                // Cuando el cliente es nuevo, hay que guardar el resto de campos necesarios
                 if (id == 0)
                 {
                     ((DataRowView)bsClientes.Current).Row["Nombre"] = txtNombre.Text;
@@ -65,29 +55,27 @@ namespace Presentación
                     ((DataRowView)bsClientes.Current).Row["Correo"] = txtCorreo.Text;
                 }
 
-                if (comboBoxTarifas.SelectedIndex == 0)
-                { 
-                    ((DataRowView)bsClientes.Current).Row["IdTarifa"] = 1;
-                    ((DataRowView)bsClientes.Current).Row["Fecha_Caducidad_Tarifa"] = fechaInicio.AddMonths(1);
+                int idTarifa = comboBoxTarifas.SelectedIndex + 1;
+                ((DataRowView)bsClientes.Current).Row["IdTarifa"] = idTarifa;
+
+                DateTime fechaCaducidad = fechaInicio;
+                switch (idTarifa)
+                {
+                    case 1:
+                        fechaCaducidad = fechaInicio.AddMonths(1);
+                        break;
+                    case 2:
+                        fechaCaducidad = fechaInicio.AddMonths(3);
+                        break;
+                    case 3:
+                        fechaCaducidad = fechaInicio.AddMonths(1);
+                        break;
+                    case 4:
+                        fechaCaducidad = fechaInicio.AddYears(1);
+                        break;
                 }
 
-                if (comboBoxTarifas.SelectedIndex == 1)
-                {
-                    ((DataRowView)bsClientes.Current).Row["IdTarifa"] = 2;
-                    ((DataRowView)bsClientes.Current).Row["Fecha_Caducidad_Tarifa"] = fechaInicio.AddMonths(3);
-                }
-
-                if (comboBoxTarifas.SelectedIndex == 2) // Mensual + Servicio.
-                {
-                    ((DataRowView)bsClientes.Current).Row["IdTarifa"] = 3;
-                    ((DataRowView)bsClientes.Current).Row["Fecha_Caducidad_Tarifa"] = fechaInicio.AddMonths(1);
-                }
-
-                if (comboBoxTarifas.SelectedIndex == 3)
-                {
-                    ((DataRowView)bsClientes.Current).Row["IdTarifa"] = 4;
-                    ((DataRowView)bsClientes.Current).Row["Fecha_Caducidad_Tarifa"] = fechaInicio.AddYears(1);
-                }
+                ((DataRowView)bsClientes.Current).Row["Fecha_Caducidad_Tarifa"] = fechaCaducidad;
 
                 bsClientes.EndEdit();
                 NVClientes.actualizarClientes(dsGimnasio1);
@@ -95,10 +83,8 @@ namespace Presentación
             }
             catch (Exception ex)
             {
-                throw new ArgumentException(ex.Message);
+                MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void bsClientes_CurrentChanged(object sender, EventArgs e) { }
-        private void btnFactura_Click(object sender, EventArgs e) { }
     }
 }

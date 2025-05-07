@@ -97,13 +97,36 @@ namespace Presentación
             }
         }
 
-        private void btnActualizar_Click(object sender, EventArgs e) =>
-            NFactura.actualizarFacturas(dsGimnasio1);
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                new VFacturasTableAdapter().Fill(dsGimnasio1.VFacturas);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar facturas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void btnCambiarEstado_Click(object sender, EventArgs e)
         {
             
         }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string columna = dataGridView1.Columns[e.ColumnIndex].DataPropertyName;
+
+            if (!string.IsNullOrEmpty(columna))
+            {
+                string currentSort = bsVFacturas.Sort;
+                string direction = (currentSort != null && currentSort.StartsWith(columna) && currentSort.EndsWith("ASC")) ? "DESC" : "ASC";
+                bsVFacturas.Sort = $"{columna} {direction}";
+            }
+        }
+
 
         private void generarPDFToolStripMenuItem_Click(object sender, EventArgs e)
         {

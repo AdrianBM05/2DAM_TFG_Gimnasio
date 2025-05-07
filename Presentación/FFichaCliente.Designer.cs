@@ -83,7 +83,7 @@
             // 
             this.headerLabel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.headerLabel.ForeColor = System.Drawing.Color.White;
-            this.headerLabel.Location = new System.Drawing.Point(80, 20);
+            this.headerLabel.Location = new System.Drawing.Point(92, 20);
             this.headerLabel.Name = "headerLabel";
             this.headerLabel.Size = new System.Drawing.Size(100, 50);
             this.headerLabel.TabIndex = 1;
