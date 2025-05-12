@@ -260,6 +260,7 @@ namespace Presentación
             NFactura.actualizarDesgloses(dsGimnasio1);
 
             cargarDesgloses();
+            cargarTotalFactura();
         }
 
 
