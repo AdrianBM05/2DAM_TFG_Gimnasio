@@ -22,7 +22,7 @@ namespace Presentación
             // Obtener todas las facturas al cargar
             NVFacturas.obtenerFacturas(dsGimnasio1);
         }
-
+         
         public void FGestionFacturas_Load(object sender, EventArgs e) { }
 
         public void btnCrearFactura_Click(object sender, EventArgs e)
