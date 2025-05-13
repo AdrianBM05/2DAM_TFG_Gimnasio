@@ -35,6 +35,7 @@ namespace Presentación
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.groupBoxResumen = new System.Windows.Forms.GroupBox();
             this.tlpVentana = new System.Windows.Forms.TableLayoutPanel();
             this.gbCabecera = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -132,6 +133,14 @@ namespace Presentación
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsDesglose)).BeginInit();
             this.SuspendLayout();
+            // 
+            // groupBoxResumen
+            // 
+            this.groupBoxResumen.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxResumen.Name = "groupBoxResumen";
+            this.groupBoxResumen.Size = new System.Drawing.Size(200, 100);
+            this.groupBoxResumen.TabIndex = 0;
+            this.groupBoxResumen.TabStop = false;
             // 
             // tlpVentana
             // 
@@ -581,7 +590,7 @@ namespace Presentación
             this.tlpDesgloses.ColumnCount = 3;
             this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.28391F));
             this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.71609F));
-            this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tlpDesgloses.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tlpDesgloses.Controls.Add(this.tlpDatosDesglose, 0, 0);
             this.tlpDesgloses.Controls.Add(this.tlpVistaDesglose, 1, 0);
             this.tlpDesgloses.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -641,7 +650,7 @@ namespace Presentación
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpDatosDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tlpDatosDesglose.Size = new System.Drawing.Size(284, 312);
+            this.tlpDatosDesglose.Size = new System.Drawing.Size(283, 312);
             this.tlpDatosDesglose.TabIndex = 1;
             // 
             // lblProducto
@@ -810,12 +819,12 @@ namespace Presentación
             this.tlpVistaDesglose.Controls.Add(this.dgvDesglose, 0, 0);
             this.tlpVistaDesglose.Controls.Add(this.tableLayoutPanel3, 0, 1);
             this.tlpVistaDesglose.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlpVistaDesglose.Location = new System.Drawing.Point(293, 3);
+            this.tlpVistaDesglose.Location = new System.Drawing.Point(292, 3);
             this.tlpVistaDesglose.Name = "tlpVistaDesglose";
             this.tlpVistaDesglose.RowCount = 2;
             this.tlpVistaDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tlpVistaDesglose.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
-            this.tlpVistaDesglose.Size = new System.Drawing.Size(663, 312);
+            this.tlpVistaDesglose.Size = new System.Drawing.Size(661, 312);
             this.tlpVistaDesglose.TabIndex = 3;
             // 
             // dgvDesglose
@@ -870,7 +879,7 @@ namespace Presentación
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDesglose.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDesglose.Size = new System.Drawing.Size(657, 196);
+            this.dgvDesglose.Size = new System.Drawing.Size(655, 196);
             this.dgvDesglose.TabIndex = 2;
             this.dgvDesglose.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDesglose_CellClick_1);
             // 
@@ -980,7 +989,7 @@ namespace Presentación
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(657, 104);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(655, 104);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // btnGenerar
@@ -1204,7 +1213,9 @@ namespace Presentación
         }
 
 
-        #endregion
+        private System.Windows.Forms.GroupBox groupBoxResumen;
+
+#endregion
 
         private System.Windows.Forms.TableLayoutPanel tlpVentana;
         private System.Windows.Forms.GroupBox gbCabecera;
