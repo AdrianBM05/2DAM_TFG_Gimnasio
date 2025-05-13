@@ -19,6 +19,8 @@ namespace Presentación
             InitializeComponent();
             empleado = _empleado;
             this.Load += FPanelControl_Load;
+            this.CargarGraficoGastosMensuales();
+            this.CargarGraficoAsistenciaSemanal();
         }
 
         private void FPanelControl_Load(object sender, EventArgs e)
@@ -134,5 +136,92 @@ namespace Presentación
             chartIngresos.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
             chartIngresos.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
         }
+    
+
+        private void CargarGraficoGastosMensuales()
+        {
+            chartGastos.Series.Clear();
+            chartGastos.Titles.Clear();
+            chartGastos.ChartAreas.Clear();
+
+            var area = new ChartArea("AreaGastos")
+            {
+                AxisX = {
+                    Title = "Mes",
+                    Interval = 1,
+                    LabelStyle = { Format = "MMM" }
+                },
+                AxisY = {
+                    Title = "Gastos (€)",
+                    Minimum = 0,
+                    LabelStyle = { Format = "C" }
+                }
+            };
+
+            chartGastos.ChartAreas.Add(area);
+            chartGastos.Titles.Add("Gastos Mensuales");
+
+            var serie = new Series("Gastos")
+            {
+                ChartType = SeriesChartType.Line,
+                BorderWidth = 2,
+                MarkerStyle = MarkerStyle.Circle,
+                MarkerSize = 8,
+                IsValueShownAsLabel = true,
+                Color = Color.IndianRed
+            };
+
+            var meses = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedMonthNames.Take(12).ToArray();
+            DateTime hoy = DateTime.Today;
+
+            for (int mes = 1; mes <= hoy.Month; mes++)
+            {
+                // Simulación de gastos, reemplaza por una función real si tienes acceso
+                int cantidad = new Random().Next(1000, 3000);
+                serie.Points.AddXY(meses[mes - 1], cantidad);
+            }
+
+            chartGastos.Series.Add(serie);
+        }
+
+        private void CargarGraficoAsistenciaSemanal()
+        {
+            chartAsistencia.Series.Clear();
+            chartAsistencia.Titles.Clear();
+            chartAsistencia.ChartAreas.Clear();
+
+            var area = new ChartArea("AreaAsistencia")
+            {
+                AxisX = {
+                    Title = "Día",
+                    Interval = 1
+                },
+                AxisY = {
+                    Title = "Asistencias",
+                    Minimum = 0,
+                    LabelStyle = { Format = "N0" }
+                }
+            };
+
+            chartAsistencia.ChartAreas.Add(area);
+            chartAsistencia.Titles.Add("Asistencia Semanal");
+
+            var dias = new[] { "L", "M", "X", "J", "V", "S", "D" };
+            var serie = new Series("Asistencia")
+            {
+                ChartType = SeriesChartType.Bar,
+                IsValueShownAsLabel = true,
+                Color = Color.MediumSeaGreen
+            };
+
+            for (int i = 0; i < 7; i++)
+            {
+                // Simulación, sustituir por datos reales
+                serie.Points.AddXY(dias[i], new Random().Next(20, 80));
+            }
+
+            chartAsistencia.Series.Add(serie);
+        }
+
     }
 }
