@@ -70,7 +70,7 @@ namespace Presentación
         }
 
         // Botón bueno
-        private void button1_Click_2(object sender, EventArgs e)
+        private void btnIniciar_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty((txtUsuario.Text).ToLower()) && !String.IsNullOrEmpty((txtContraseña.Text).ToLower()))
             {
@@ -158,5 +158,7 @@ namespace Presentación
         {
 
         }
+
+        
     }
 }

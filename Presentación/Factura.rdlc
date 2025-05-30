@@ -1400,7 +1400,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.89958cm</Height>
+      <Height>1.03187cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -1467,7 +1467,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="dsDesglose">
       <Query>
         <DataSourceName>DSGimnasio</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -1504,7 +1504,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSGimnasio</rd:DataSetName>
-        <rd:SchemaPath>E:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
         <rd:TableName>FacturaDesglose</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

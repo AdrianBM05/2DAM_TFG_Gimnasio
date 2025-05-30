@@ -38,17 +38,43 @@ namespace Negocio
             }
         }
 
-        public static DataTable obtenerIngresosSemanales(DSGimnasio ds, DateTime fechaInicio, DateTime fechaFin)
+        public static DataTable obtenerIngresosMensualesUltimoAno(DSGimnasio ds)
+        {
+            var adapter = new CalcularIngresosMensualesUltimoAnoTableAdapter();
+            var tabla = new DSGimnasio.CalcularIngresosMensualesUltimoAnoDataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
+        public static DataTable obtenerResumenClientesActivos(DSGimnasio ds)
+        {
+            var adapter = new ResumenClientesActivosTableAdapter();
+            var tabla = new DSGimnasio.ResumenClientesActivosDataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
+        public static DataTable obtenerResumenSemanalClientesIngresos(DSGimnasio ds)
+        {
+            var adapter = new ResumenSemanalClientesIngresosTableAdapter();
+            var tabla = new DSGimnasio.ResumenSemanalClientesIngresosDataTable();
+            adapter.Fill(tabla);
+            return tabla;
+        }
+
+
+        public static void compararClientesActivo()
         {
             try
             {
-                CalcularIngresosSemanalesTableAdapter ta = new CalcularIngresosSemanalesTableAdapter();
-                return ta.GetData(fechaInicio, fechaFin);
+                QueriesTableAdapter ta = new QueriesTableAdapter();
+                ta.ResumenClientesActivos();
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw new Exception("Error al obtener los ingresos semanales: " + ex.Message);
+                throw new Exception(e.Message);
             }
         }
+
     }
 }

@@ -95,6 +95,7 @@ namespace Presentación
                     MessageBox.Show("Error al eliminar factura: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            refrescarFacturas();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
@@ -102,6 +103,7 @@ namespace Presentación
             try
             {
                 new VFacturasTableAdapter().Fill(dsGimnasio1.VFacturas);
+                refrescarFacturas();
             }
             catch (Exception ex)
             {
@@ -125,6 +127,8 @@ namespace Presentación
                 string direction = (currentSort != null && currentSort.StartsWith(columna) && currentSort.EndsWith("ASC")) ? "DESC" : "ASC";
                 bsVFacturas.Sort = $"{columna} {direction}";
             }
+
+            refrescarFacturas();
         }
 
 
@@ -142,6 +146,8 @@ namespace Presentación
             {
                 MessageBox.Show("Error al generar PDF: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            refrescarFacturas();
         }
 
         private void dataGridView1_MouseClick(object sender, MouseEventArgs e) { } // sin uso actual
@@ -161,6 +167,20 @@ namespace Presentación
             }
         }
 
+        private void refrescarFacturas()
+        {
+            try
+            {
+                new VFacturasTableAdapter().Fill(dsGimnasio1.VFacturas);
+                dataGridView1.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al refrescar las facturas: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void pagarFacturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Modificar el estado de la factura a Pagada
@@ -178,6 +198,7 @@ namespace Presentación
                     MessageBox.Show("Error al pagar factura: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            refrescarFacturas();
         }
     }
 }

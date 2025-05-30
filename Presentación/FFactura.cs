@@ -370,9 +370,7 @@ namespace Presentación
         {
             // Abrir mostrar factura pasando el idFactura y el idCliente
             FMostrarFactura mostrarFactura = new FMostrarFactura(_id, (int)cmbClientes.SelectedValue);
-
             mostrarFactura.ShowDialog();
-
         }
 
         private void button1_Click(object sender, EventArgs e)

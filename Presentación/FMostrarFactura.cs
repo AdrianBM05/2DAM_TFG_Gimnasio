@@ -43,10 +43,8 @@ namespace Presentación
                 this.Close();
                 return;
             }
-
             reportViewer1.RefreshReport();
             reportViewer1.RenderingComplete += ReportViewer1_RenderingComplete;
-
         }
 
         private void CargarDatos()
@@ -77,21 +75,18 @@ namespace Presentación
                 nombre = clienteRow.Nombre?.Trim() ?? "Nombre";
                 apellidos = clienteRow.Apellidos?.Trim() ?? "Apellidos";
             }
-
             // Limpiar caracteres no válidos
             foreach (char c in Path.GetInvalidFileNameChars())
             {
                 nombre = nombre.Replace(c.ToString(), "");
                 apellidos = apellidos.Replace(c.ToString(), "");
             }
-
             // Crear carpeta "Facturas" en Escritorio si no existe
             string carpetaFacturas = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "Facturas");
             if (!Directory.Exists(carpetaFacturas))
             {
                 Directory.CreateDirectory(carpetaFacturas);
             }
-
             // Nombre del archivo: F_id_Apellidos_Nombre.pdf
             string nombreArchivo = $"Factura_{_id}_{apellidos}_{nombre}.pdf";
             string rutaCompleta = Path.Combine(carpetaFacturas, nombreArchivo);
@@ -110,17 +105,13 @@ namespace Presentación
                 {
                     MessageBox.Show("No se pudo enviar el correo porque no se encontró la dirección de correo electrónico del cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
                 MessageBox.Show($"Factura exportada correctamente a:\n{rutaCompleta}", "Exportación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error al exportar la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }
  

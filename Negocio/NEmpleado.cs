@@ -13,20 +13,15 @@ namespace Negocio
 
         public static void obtenerEmpleado(DSGimnasio ds, string nombre)
         {
-
             try
             {
-
                 EmpleadosTableAdapter ta = new EmpleadosTableAdapter();
                 ta.FillByUsuario(ds.Empleados, nombre);
-
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
-
-
         }
 
         // Todos los clientes

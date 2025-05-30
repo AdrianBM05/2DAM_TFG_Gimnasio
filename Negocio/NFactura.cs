@@ -210,10 +210,9 @@ namespace Negocio
                 {
                     mail.Attachments.Add(rutaPDF, Outlook.OlAttachmentType.olByValue, Type.Missing, Type.Missing);
                 }
-
                 // Enviar el correo
                 mail.Send();
-                // mail.Display();
+                // mail.Display(); // Mostrar el correo antes de enviar
             }
             catch (Exception ex)
             {

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition"
+        xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="DSGimnasio">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString />
+      </ConnectionProperties>
+      <rd:DataSourceID>abcd1234-abcd-1234-abcd-abcdefabcdef</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="dsVDesglose">
+      <Fields>
+        <Field Name="Nombre"><DataField>Nombre</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="Cantidad"><DataField>Cantidad</DataField><rd:TypeName>System.Int32</rd:TypeName></Field>
+        <Field Name="Base_Imponible"><DataField>Base_Imponible</DataField><rd:TypeName>System.Decimal</rd:TypeName></Field>
+        <Field Name="Tipo_IVA"><DataField>Tipo_IVA</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+        <Field Name="PVP"><DataField>PVP</DataField><rd:TypeName>System.Decimal</rd:TypeName></Field>
+        <Field Name="Concepto"><DataField>Concepto</DataField><rd:TypeName>System.String</rd:TypeName></Field>
+      </Fields>
+      <Query><DataSourceName>DSGimnasio</DataSourceName><CommandText /></Query>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+
+      <!-- CABECERA -->
+      <Textbox Name="TituloFactura">
+        <CanGrow>true</CanGrow>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>FacturaPro - Gimnasio Natura Sport</Value>
+                <Style>
+                  <FontSize>16pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.2in</Top>
+        <Left>0in</Left>
+        <Height>0.4in</Height>
+        <Width>7in</Width>
+        <Style><TextAlign>Center</TextAlign></Style>
+      </Textbox>
+
+      <!-- INFORMACIÓN CLIENTE -->
+      <Textbox Name="CabeceraDatos">
+        <CanGrow>true</CanGrow>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Nº Factura: __________&#xA;Fecha: ____________&#xA;Cliente: ________________</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>10pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>0.7in</Top>
+        <Left>0.2in</Left>
+        <Height>0.9in</Height>
+        <Width>3.5in</Width>
+        <Style>
+          <Border><Style>None</Style></Border>
+        </Style>
+      </Textbox>
+
+      <!-- TABLA -->
+      <Tablix Name="TablaDesglose">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn><Width>1.5in</Width></TablixColumn>
+            <TablixColumn><Width>0.8in</Width></TablixColumn>
+            <TablixColumn><Width>1in</Width></TablixColumn>
+            <TablixColumn><Width>0.8in</Width></TablixColumn>
+            <TablixColumn><Width>1in</Width></TablixColumn>
+            <TablixColumn><Width>1.5in</Width></TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell><CellContents><Textbox Name="HeaderProducto"><Paragraphs><Paragraph><TextRuns><TextRun><Value>Producto</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns></Paragraph></Paragraphs></Textbox></CellContents></TablixCell>
+                <TablixCell><CellContents><Textbox Name="HeaderCantidad"><Paragraphs><Paragraph><TextRuns><TextRun><Value>Cantidad</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns></Paragraph></Paragraphs></Textbox></CellContents></TablixCell>
+                <TablixCell><CellContents><Textbox Name="HeaderBase"><Paragraphs><Paragraph><TextRuns><TextRun><Value>Base Imponible</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns></Paragraph></Paragraphs></Textbox></CellContents></TablixCell>
+                <TablixCell><CellContents><Textbox Name="HeaderIVA"><Paragraphs><Paragraph><TextRuns><TextRun><Value>IVA</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns></Paragraph></Paragraphs></Textbox></CellContents></TablixCell>
+                <TablixCell><CellContents><Textbox Name="HeaderPVP"><Paragraphs><Paragraph><TextRuns><TextRun><Value>PVP</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns></Paragraph></Paragraphs></Textbox></CellContents></TablixCell>
+                <TablixCell><CellContents><Textbox Name="HeaderConcepto"><Paragraphs><Paragraph><TextRuns><TextRun><Value>Concepto</Value><Style><FontWeight>Bold</FontWeight></Style></TextRun></TextRuns></Paragraph></Paragraphs></Textbox></CellContents></TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember />
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>dsVDesglose</DataSetName>
+        <Top>1.8in</Top>
+        <Left>0in</Left>
+        <Height>0.3in</Height>
+        <Width>7.3in</Width>
+        <Style />
+      </Tablix>
+
+      <!-- TOTALES -->
+      <Textbox Name="TotalesPlaceholder">
+        <CanGrow>true</CanGrow>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Subtotal: ________&#xA;IVA: ________&#xA;TOTAL: ________</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                  <FontSize>10pt</FontSize>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>3in</Top>
+        <Left>5.2in</Left>
+        <Height>0.8in</Height>
+        <Width>2in</Width>
+        <Style><TextAlign>Right</TextAlign></Style>
+      </Textbox>
+
+      <!-- PIE -->
+      <Textbox Name="Pie">
+        <CanGrow>true</CanGrow>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Gracias por confiar en nosotros</Value>
+                <Style><FontStyle>Italic</FontStyle><FontSize>9pt</FontSize></Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <Top>4in</Top>
+        <Left>0in</Left>
+        <Height>0.3in</Height>
+        <Width>7.5in</Width>
+        <Style><TextAlign>Center</TextAlign></Style>
+      </Textbox>
+
+    </ReportItems>
+    <Height>4.5in</Height>
+  </Body>
+  <Width>7.5in</Width>
+  <Page>
+    <PageHeight>11in</PageHeight>
+    <PageWidth>8.5in</PageWidth>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
+  </Page>
+</Report>

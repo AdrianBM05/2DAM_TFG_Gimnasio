@@ -19,8 +19,7 @@ namespace Presentación
             InitializeComponent();
             empleado = _empleado;
             this.Load += FPanelControl_Load;
-            this.CargarGraficoGastosMensuales();
-            this.CargarGraficoAsistenciaSemanal();
+
         }
 
         private void FPanelControl_Load(object sender, EventArgs e)
@@ -28,7 +27,9 @@ namespace Presentación
             try
             {
                 CargarGraficoClientesActivos();
-                CargarGraficoIngresosSemanales();
+                cargarGraficoPorcentajeActivos();
+                CargarGraficoIngresosMensualesUltimoAno();
+                CargarGraficoResumenSemanal();
             }
             catch (Exception ex)
             {
@@ -95,9 +96,9 @@ namespace Presentación
         }
 
         /// <summary>
-        /// Muestra los ingresos semanales del mes actual en el gráfico derecho.
+        /// Muestra los ingresos mensuales del último año en el gráfico de la derecha.
         /// </summary>
-        private void CargarGraficoIngresosSemanales()
+        private void CargarGraficoIngresosMensualesUltimoAno()
         {
             chartIngresos.Series.Clear();
             chartIngresos.Titles.Clear();
@@ -105,12 +106,12 @@ namespace Presentación
 
             var area = new ChartArea("AreaIngresos")
             {
-                AxisX = { Title = "Semana" },
+                AxisX = { Title = "Mes", Interval = 1 },
                 AxisY = { Title = "Ingresos (€)" }
             };
 
             chartIngresos.ChartAreas.Add(area);
-            chartIngresos.Titles.Add("Ingresos semanales (Mes actual)");
+            chartIngresos.Titles.Add("Ingresos mensuales (Último año)");
 
             var serie = new Series("Ingresos")
             {
@@ -119,109 +120,161 @@ namespace Presentación
                 Color = Color.SteelBlue
             };
 
-            DateTime hoy = DateTime.Today;
-            DateTime inicioMes = new DateTime(hoy.Year, hoy.Month, 1);
-            DateTime finMes = inicioMes.AddMonths(1).AddDays(-1);
-
-            DataTable ingresos = NProcedimientos.obtenerIngresosSemanales(dsGimnasio1, inicioMes, finMes);
-
-            foreach (DataRow fila in ingresos.Rows)
+            try
             {
-                int semana = Convert.ToInt32(fila["Semana"]);
-                decimal total = Convert.ToDecimal(fila["IngresosSemanales"]);
-                serie.Points.AddXY($"Semana {semana}", total);
-            }
+                DataTable ingresos = NProcedimientos.obtenerIngresosMensualesUltimoAno(dsGimnasio1);
 
-            chartIngresos.Series.Add(serie);
-            chartIngresos.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            chartIngresos.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
-        }
-    
-
-        private void CargarGraficoGastosMensuales()
-        {
-            chartGastos.Series.Clear();
-            chartGastos.Titles.Clear();
-            chartGastos.ChartAreas.Clear();
-
-            var area = new ChartArea("AreaGastos")
-            {
-                AxisX = {
-                    Title = "Mes",
-                    Interval = 1,
-                    LabelStyle = { Format = "MMM" }
-                },
-                AxisY = {
-                    Title = "Gastos (€)",
-                    Minimum = 0,
-                    LabelStyle = { Format = "C" }
+                foreach (DataRow fila in ingresos.Rows)
+                {
+                    int anio = Convert.ToInt32(fila["Año"]);
+                    int mes = Convert.ToInt32(fila["Mes"]);
+                    decimal total = Convert.ToDecimal(fila["IngresosMensuales"]);
+                    string etiqueta = $"{new DateTime(anio, mes, 1):MMM yyyy}";
+                    serie.Points.AddXY(etiqueta, total);
                 }
+
+                chartIngresos.Series.Add(serie);
+                chartIngresos.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+                chartIngresos.ChartAreas[0].AxisY.MajorGrid.LineColor = Color.LightGray;
+                chartIngresos.ChartAreas[0].RecalculateAxesScale();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar gráfico de ingresos mensuales: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        /// <summary>
+        /// Carga un gráfico circular correcto en chartPorcentaje basado en el
+        /// número real de clientes activos e inactivos.
+        /// </summary>
+        private void cargarGraficoPorcentajeActivos()
+        {
+            chartPorcentaje.Series.Clear();
+            chartPorcentaje.Titles.Clear();
+            chartPorcentaje.ChartAreas.Clear();
+            chartPorcentaje.Legends.Clear(); // Añadir leyenda clara
+
+            var area = new ChartArea("AreaClientes");
+            chartPorcentaje.ChartAreas.Add(area);
+
+            var leyenda = new Legend("Leyenda")
+            {
+                Docking = Docking.Bottom,
+                Font = new Font("Segoe UI", 9)
+            };
+            chartPorcentaje.Legends.Add(leyenda);
+
+            var serie = new Series("Clientes")
+            {
+                ChartType = SeriesChartType.Pie,
+                IsValueShownAsLabel = true,
+                Label = "#VALX: #PERCENT{P1}", // Ej: Activos: 24.4%
+                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                LegendText = "#VALX"
             };
 
-            chartGastos.ChartAreas.Add(area);
-            chartGastos.Titles.Add("Gastos Mensuales");
+            try
+            {
+                DataTable resumen = NProcedimientos.obtenerResumenClientesActivos(dsGimnasio1);
 
-            var serie = new Series("Gastos")
+                if (resumen.Rows.Count > 0)
+                {
+                    var fila = resumen.Rows[0];
+                    int activos = Convert.ToInt32(fila["ClientesActivos"]);
+                    int total = Convert.ToInt32(fila["TotalClientes"]);
+                    int inactivos = total - activos;
+
+                    serie.Points.AddXY("Activos", activos);
+                    serie.Points.AddXY("Inactivos", inactivos);
+
+                    // Colores consistentes con otros gráficos
+                    serie.Points[0].Color = Color.Goldenrod; // Amarillo como el gráfico de arriba
+                    serie.Points[1].Color = Color.LightGray;
+                }
+
+                chartPorcentaje.Series.Add(serie);
+                chartPorcentaje.Titles.Add("Distribución de Clientes Activos");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar gráfico de clientes activos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        /// <summary>
+        /// Muestra clientes activos e ingresos semanales del mes actual en un único gráfico combinado.
+        /// </summary>
+        private void CargarGraficoResumenSemanal()
+        {
+            chartResumenSemanal.Series.Clear();
+            chartResumenSemanal.Titles.Clear();
+            chartResumenSemanal.ChartAreas.Clear();
+            chartResumenSemanal.Legends.Clear();
+
+            var area = new ChartArea("Resumen")
+            {
+                AxisX = { Title = "Semana", Interval = 1 },
+                AxisY = { Title = "Clientes activos" },
+                AxisY2 = { Title = "Ingresos (€)", Enabled = AxisEnabled.True }
+            };
+            chartResumenSemanal.ChartAreas.Add(area);
+
+            var leyenda = new Legend("Leyenda")
+            {
+                Docking = Docking.Top,
+                Font = new Font("Segoe UI", 9)
+            };
+            chartResumenSemanal.Legends.Add(leyenda);
+
+            var serieClientes = new Series("Clientes Activos")
+            {
+                ChartType = SeriesChartType.Column,
+                Color = Color.Goldenrod,
+                YAxisType = AxisType.Primary,
+                IsValueShownAsLabel = true
+            };
+
+            var serieIngresos = new Series("Ingresos")
             {
                 ChartType = SeriesChartType.Line,
-                BorderWidth = 2,
+                BorderWidth = 3,
+                Color = Color.SteelBlue,
+                YAxisType = AxisType.Secondary,
+                IsValueShownAsLabel = true,
+                LabelFormat = "N2",
                 MarkerStyle = MarkerStyle.Circle,
-                MarkerSize = 8,
-                IsValueShownAsLabel = true,
-                Color = Color.IndianRed
+                MarkerSize = 7
             };
 
-            var meses = CultureInfo.CurrentCulture.DateTimeFormat.AbbreviatedMonthNames.Take(12).ToArray();
-            DateTime hoy = DateTime.Today;
-
-            for (int mes = 1; mes <= hoy.Month; mes++)
+            try
             {
-                // Simulación de gastos, reemplaza por una función real si tienes acceso
-                int cantidad = new Random().Next(1000, 3000);
-                serie.Points.AddXY(meses[mes - 1], cantidad);
-            }
+                DataTable datos = NProcedimientos.obtenerResumenSemanalClientesIngresos(dsGimnasio1);
 
-            chartGastos.Series.Add(serie);
-        }
+                foreach (DataRow fila in datos.Rows)
+                {
+                    string semana = "Semana " + fila["Semana"].ToString();
+                    int clientes = Convert.ToInt32(fila["ClientesActivos"]);
+                    decimal ingresos = Convert.ToDecimal(fila["Ingresos"]);
 
-        private void CargarGraficoAsistenciaSemanal()
-        {
-            chartAsistencia.Series.Clear();
-            chartAsistencia.Titles.Clear();
-            chartAsistencia.ChartAreas.Clear();
-
-            var area = new ChartArea("AreaAsistencia")
-            {
-                AxisX = {
-                    Title = "Día",
-                    Interval = 1
-                },
-                AxisY = {
-                    Title = "Asistencias",
-                    Minimum = 0,
-                    LabelStyle = { Format = "N0" }
+                    serieClientes.Points.AddXY(semana, clientes);
+                    serieIngresos.Points.AddXY(semana, ingresos);
                 }
-            };
 
-            chartAsistencia.ChartAreas.Add(area);
-            chartAsistencia.Titles.Add("Asistencia Semanal");
-
-            var dias = new[] { "L", "M", "X", "J", "V", "S", "D" };
-            var serie = new Series("Asistencia")
-            {
-                ChartType = SeriesChartType.Bar,
-                IsValueShownAsLabel = true,
-                Color = Color.MediumSeaGreen
-            };
-
-            for (int i = 0; i < 7; i++)
-            {
-                // Simulación, sustituir por datos reales
-                serie.Points.AddXY(dias[i], new Random().Next(20, 80));
+                chartResumenSemanal.Series.Add(serieClientes);
+                chartResumenSemanal.Series.Add(serieIngresos);
+                chartResumenSemanal.Titles.Add("Clientes activos e ingresos semanales (Mes actual)");
             }
-
-            chartAsistencia.Series.Add(serie);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar gráfico resumen semanal: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
+
 
     }
 }

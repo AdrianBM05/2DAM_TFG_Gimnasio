@@ -6,8 +6,8 @@ namespace Presentación
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartClientes;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartIngresos;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartGastos;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartAsistencia;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartPorcentaje;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartResumenSemanal;
         private System.Windows.Forms.Label labelTitulo;
         private System.Windows.Forms.TableLayoutPanel mainLayout;
         private CAD.DSGimnasio dsGimnasio1;
@@ -27,20 +27,18 @@ namespace Presentación
         {
             this.chartClientes = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartIngresos = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartGastos = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartAsistencia = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartPorcentaje = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartResumenSemanal = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelTitulo = new System.Windows.Forms.Label();
             this.mainLayout = new System.Windows.Forms.TableLayoutPanel();
             this.dsGimnasio1 = new CAD.DSGimnasio();
-
             ((System.ComponentModel.ISupportInitialize)(this.chartClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartIngresos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartGastos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAsistencia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPorcentaje)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartResumenSemanal)).BeginInit();
             this.mainLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).BeginInit();
             this.SuspendLayout();
-
             // 
             // chartClientes
             // 
@@ -51,9 +49,8 @@ namespace Presentación
             this.chartClientes.Location = new System.Drawing.Point(2, 2);
             this.chartClientes.Margin = new System.Windows.Forms.Padding(2);
             this.chartClientes.Name = "chartClientes";
-            this.chartClientes.Size = new System.Drawing.Size(370, 160);
+            this.chartClientes.Size = new System.Drawing.Size(371, 173);
             this.chartClientes.TabIndex = 0;
-
             // 
             // chartIngresos
             // 
@@ -61,38 +58,35 @@ namespace Presentación
             this.chartIngresos.BorderlineColor = System.Drawing.Color.Silver;
             this.chartIngresos.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartIngresos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartIngresos.Location = new System.Drawing.Point(376, 2);
+            this.chartIngresos.Location = new System.Drawing.Point(377, 2);
             this.chartIngresos.Margin = new System.Windows.Forms.Padding(2);
             this.chartIngresos.Name = "chartIngresos";
-            this.chartIngresos.Size = new System.Drawing.Size(370, 160);
+            this.chartIngresos.Size = new System.Drawing.Size(371, 173);
             this.chartIngresos.TabIndex = 1;
-
             // 
-            // chartGastos
+            // chartPorcentaje
             // 
-            this.chartGastos.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chartGastos.BorderlineColor = System.Drawing.Color.Silver;
-            this.chartGastos.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            this.chartGastos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartGastos.Location = new System.Drawing.Point(2, 166);
-            this.chartGastos.Margin = new System.Windows.Forms.Padding(2);
-            this.chartGastos.Name = "chartGastos";
-            this.chartGastos.Size = new System.Drawing.Size(370, 160);
-            this.chartGastos.TabIndex = 2;
-
+            this.chartPorcentaje.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chartPorcentaje.BorderlineColor = System.Drawing.Color.Silver;
+            this.chartPorcentaje.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartPorcentaje.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartPorcentaje.Location = new System.Drawing.Point(2, 179);
+            this.chartPorcentaje.Margin = new System.Windows.Forms.Padding(2);
+            this.chartPorcentaje.Name = "chartPorcentaje";
+            this.chartPorcentaje.Size = new System.Drawing.Size(371, 174);
+            this.chartPorcentaje.TabIndex = 2;
             // 
-            // chartAsistencia
+            // chartResumenSemanal
             // 
-            this.chartAsistencia.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.chartAsistencia.BorderlineColor = System.Drawing.Color.Silver;
-            this.chartAsistencia.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            this.chartAsistencia.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartAsistencia.Location = new System.Drawing.Point(376, 166);
-            this.chartAsistencia.Margin = new System.Windows.Forms.Padding(2);
-            this.chartAsistencia.Name = "chartAsistencia";
-            this.chartAsistencia.Size = new System.Drawing.Size(370, 160);
-            this.chartAsistencia.TabIndex = 3;
-
+            this.chartResumenSemanal.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.chartResumenSemanal.BorderlineColor = System.Drawing.Color.Silver;
+            this.chartResumenSemanal.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartResumenSemanal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartResumenSemanal.Location = new System.Drawing.Point(377, 179);
+            this.chartResumenSemanal.Margin = new System.Windows.Forms.Padding(2);
+            this.chartResumenSemanal.Name = "chartResumenSemanal";
+            this.chartResumenSemanal.Size = new System.Drawing.Size(371, 174);
+            this.chartResumenSemanal.TabIndex = 3;
             // 
             // labelTitulo
             // 
@@ -106,33 +100,30 @@ namespace Presentación
             this.labelTitulo.TabIndex = 1;
             this.labelTitulo.Text = "Panel de Control - Estadísticas";
             this.labelTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
             // 
             // mainLayout
             // 
             this.mainLayout.ColumnCount = 2;
-            this.mainLayout.RowCount = 2;
             this.mainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainLayout.Controls.Add(this.chartClientes, 0, 0);
             this.mainLayout.Controls.Add(this.chartIngresos, 1, 0);
-            this.mainLayout.Controls.Add(this.chartGastos, 0, 1);
-            this.mainLayout.Controls.Add(this.chartAsistencia, 1, 1);
+            this.mainLayout.Controls.Add(this.chartPorcentaje, 0, 1);
+            this.mainLayout.Controls.Add(this.chartResumenSemanal, 1, 1);
             this.mainLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainLayout.Location = new System.Drawing.Point(0, 35);
             this.mainLayout.Margin = new System.Windows.Forms.Padding(2);
             this.mainLayout.Name = "mainLayout";
-            this.mainLayout.Size = new System.Drawing.Size(750, 325);
+            this.mainLayout.RowCount = 2;
+            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.mainLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.mainLayout.Size = new System.Drawing.Size(750, 355);
             this.mainLayout.TabIndex = 0;
-
             // 
             // dsGimnasio1
             // 
             this.dsGimnasio1.DataSetName = "DSGimnasio";
             this.dsGimnasio1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-
             // 
             // FPanelControl
             // 
@@ -144,14 +135,14 @@ namespace Presentación
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FPanelControl";
             this.Text = "Panel de Control";
-
             ((System.ComponentModel.ISupportInitialize)(this.chartClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartIngresos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartGastos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAsistencia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartPorcentaje)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartResumenSemanal)).EndInit();
             this.mainLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

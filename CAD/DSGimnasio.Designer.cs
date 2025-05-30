@@ -60,7 +60,11 @@ namespace CAD {
         
         private ObtenerClientesActivosDataTable tableObtenerClientesActivos;
         
-        private CalcularIngresosSemanalesDataTable tableCalcularIngresosSemanales;
+        private ResumenClientesActivosDataTable tableResumenClientesActivos;
+        
+        private CalcularIngresosMensualesUltimoAnoDataTable tableCalcularIngresosMensualesUltimoAno;
+        
+        private ResumenSemanalClientesIngresosDataTable tableResumenSemanalClientesIngresos;
         
         private global::System.Data.DataRelation relationFK_Tarifa_IdTarifa;
         
@@ -176,8 +180,14 @@ namespace CAD {
                 if ((ds.Tables["ObtenerClientesActivos"] != null)) {
                     base.Tables.Add(new ObtenerClientesActivosDataTable(ds.Tables["ObtenerClientesActivos"]));
                 }
-                if ((ds.Tables["CalcularIngresosSemanales"] != null)) {
-                    base.Tables.Add(new CalcularIngresosSemanalesDataTable(ds.Tables["CalcularIngresosSemanales"]));
+                if ((ds.Tables["ResumenClientesActivos"] != null)) {
+                    base.Tables.Add(new ResumenClientesActivosDataTable(ds.Tables["ResumenClientesActivos"]));
+                }
+                if ((ds.Tables["CalcularIngresosMensualesUltimoAno"] != null)) {
+                    base.Tables.Add(new CalcularIngresosMensualesUltimoAnoDataTable(ds.Tables["CalcularIngresosMensualesUltimoAno"]));
+                }
+                if ((ds.Tables["ResumenSemanalClientesIngresos"] != null)) {
+                    base.Tables.Add(new ResumenSemanalClientesIngresosDataTable(ds.Tables["ResumenSemanalClientesIngresos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -381,9 +391,29 @@ namespace CAD {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public CalcularIngresosSemanalesDataTable CalcularIngresosSemanales {
+        public ResumenClientesActivosDataTable ResumenClientesActivos {
             get {
-                return this.tableCalcularIngresosSemanales;
+                return this.tableResumenClientesActivos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CalcularIngresosMensualesUltimoAnoDataTable CalcularIngresosMensualesUltimoAno {
+            get {
+                return this.tableCalcularIngresosMensualesUltimoAno;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public ResumenSemanalClientesIngresosDataTable ResumenSemanalClientesIngresos {
+            get {
+                return this.tableResumenSemanalClientesIngresos;
             }
         }
         
@@ -508,8 +538,14 @@ namespace CAD {
                 if ((ds.Tables["ObtenerClientesActivos"] != null)) {
                     base.Tables.Add(new ObtenerClientesActivosDataTable(ds.Tables["ObtenerClientesActivos"]));
                 }
-                if ((ds.Tables["CalcularIngresosSemanales"] != null)) {
-                    base.Tables.Add(new CalcularIngresosSemanalesDataTable(ds.Tables["CalcularIngresosSemanales"]));
+                if ((ds.Tables["ResumenClientesActivos"] != null)) {
+                    base.Tables.Add(new ResumenClientesActivosDataTable(ds.Tables["ResumenClientesActivos"]));
+                }
+                if ((ds.Tables["CalcularIngresosMensualesUltimoAno"] != null)) {
+                    base.Tables.Add(new CalcularIngresosMensualesUltimoAnoDataTable(ds.Tables["CalcularIngresosMensualesUltimoAno"]));
+                }
+                if ((ds.Tables["ResumenSemanalClientesIngresos"] != null)) {
+                    base.Tables.Add(new ResumenSemanalClientesIngresosDataTable(ds.Tables["ResumenSemanalClientesIngresos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -652,10 +688,22 @@ namespace CAD {
                     this.tableObtenerClientesActivos.InitVars();
                 }
             }
-            this.tableCalcularIngresosSemanales = ((CalcularIngresosSemanalesDataTable)(base.Tables["CalcularIngresosSemanales"]));
+            this.tableResumenClientesActivos = ((ResumenClientesActivosDataTable)(base.Tables["ResumenClientesActivos"]));
             if ((initTable == true)) {
-                if ((this.tableCalcularIngresosSemanales != null)) {
-                    this.tableCalcularIngresosSemanales.InitVars();
+                if ((this.tableResumenClientesActivos != null)) {
+                    this.tableResumenClientesActivos.InitVars();
+                }
+            }
+            this.tableCalcularIngresosMensualesUltimoAno = ((CalcularIngresosMensualesUltimoAnoDataTable)(base.Tables["CalcularIngresosMensualesUltimoAno"]));
+            if ((initTable == true)) {
+                if ((this.tableCalcularIngresosMensualesUltimoAno != null)) {
+                    this.tableCalcularIngresosMensualesUltimoAno.InitVars();
+                }
+            }
+            this.tableResumenSemanalClientesIngresos = ((ResumenSemanalClientesIngresosDataTable)(base.Tables["ResumenSemanalClientesIngresos"]));
+            if ((initTable == true)) {
+                if ((this.tableResumenSemanalClientesIngresos != null)) {
+                    this.tableResumenSemanalClientesIngresos.InitVars();
                 }
             }
             this.relationFK_Tarifa_IdTarifa = this.Relations["FK_Tarifa_IdTarifa"];
@@ -720,8 +768,12 @@ namespace CAD {
             base.Tables.Add(this.tableVDesglose);
             this.tableObtenerClientesActivos = new ObtenerClientesActivosDataTable();
             base.Tables.Add(this.tableObtenerClientesActivos);
-            this.tableCalcularIngresosSemanales = new CalcularIngresosSemanalesDataTable();
-            base.Tables.Add(this.tableCalcularIngresosSemanales);
+            this.tableResumenClientesActivos = new ResumenClientesActivosDataTable();
+            base.Tables.Add(this.tableResumenClientesActivos);
+            this.tableCalcularIngresosMensualesUltimoAno = new CalcularIngresosMensualesUltimoAnoDataTable();
+            base.Tables.Add(this.tableCalcularIngresosMensualesUltimoAno);
+            this.tableResumenSemanalClientesIngresos = new ResumenSemanalClientesIngresosDataTable();
+            base.Tables.Add(this.tableResumenSemanalClientesIngresos);
             this.relationFK_Tarifa_IdTarifa = new global::System.Data.DataRelation("FK_Tarifa_IdTarifa", new global::System.Data.DataColumn[] {
                         this.tableTarifas.IdColumn}, new global::System.Data.DataColumn[] {
                         this.tableClientes.IdTarifaColumn}, false);
@@ -898,7 +950,19 @@ namespace CAD {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeCalcularIngresosSemanales() {
+        private bool ShouldSerializeResumenClientesActivos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeCalcularIngresosMensualesUltimoAno() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeResumenSemanalClientesIngresos() {
             return false;
         }
         
@@ -1012,7 +1076,13 @@ namespace CAD {
         public delegate void ObtenerClientesActivosRowChangeEventHandler(object sender, ObtenerClientesActivosRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void CalcularIngresosSemanalesRowChangeEventHandler(object sender, CalcularIngresosSemanalesRowChangeEvent e);
+        public delegate void ResumenClientesActivosRowChangeEventHandler(object sender, ResumenClientesActivosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void CalcularIngresosMensualesUltimoAnoRowChangeEventHandler(object sender, CalcularIngresosMensualesUltimoAnoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void ResumenSemanalClientesIngresosRowChangeEventHandler(object sender, ResumenSemanalClientesIngresosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -7199,18 +7269,18 @@ namespace CAD {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class CalcularIngresosSemanalesDataTable : global::System.Data.TypedTableBase<CalcularIngresosSemanalesRow> {
+        public partial class ResumenClientesActivosDataTable : global::System.Data.TypedTableBase<ResumenClientesActivosRow> {
             
-            private global::System.Data.DataColumn columnAño;
+            private global::System.Data.DataColumn columnTotalClientes;
             
-            private global::System.Data.DataColumn columnSemana;
+            private global::System.Data.DataColumn columnClientesActivos;
             
-            private global::System.Data.DataColumn columnIngresosSemanales;
+            private global::System.Data.DataColumn columnPorcentajeActivos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CalcularIngresosSemanalesDataTable() {
-                this.TableName = "CalcularIngresosSemanales";
+            public ResumenClientesActivosDataTable() {
+                this.TableName = "ResumenClientesActivos";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -7218,7 +7288,7 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal CalcularIngresosSemanalesDataTable(global::System.Data.DataTable table) {
+            internal ResumenClientesActivosDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -7235,32 +7305,32 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected CalcularIngresosSemanalesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ResumenClientesActivosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn AñoColumn {
+            public global::System.Data.DataColumn TotalClientesColumn {
                 get {
-                    return this.columnAño;
+                    return this.columnTotalClientes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn SemanaColumn {
+            public global::System.Data.DataColumn ClientesActivosColumn {
                 get {
-                    return this.columnSemana;
+                    return this.columnClientesActivos;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn IngresosSemanalesColumn {
+            public global::System.Data.DataColumn PorcentajeActivosColumn {
                 get {
-                    return this.columnIngresosSemanales;
+                    return this.columnPorcentajeActivos;
                 }
             }
             
@@ -7275,47 +7345,47 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CalcularIngresosSemanalesRow this[int index] {
+            public ResumenClientesActivosRow this[int index] {
                 get {
-                    return ((CalcularIngresosSemanalesRow)(this.Rows[index]));
+                    return ((ResumenClientesActivosRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CalcularIngresosSemanalesRowChangeEventHandler CalcularIngresosSemanalesRowChanging;
+            public event ResumenClientesActivosRowChangeEventHandler ResumenClientesActivosRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CalcularIngresosSemanalesRowChangeEventHandler CalcularIngresosSemanalesRowChanged;
+            public event ResumenClientesActivosRowChangeEventHandler ResumenClientesActivosRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CalcularIngresosSemanalesRowChangeEventHandler CalcularIngresosSemanalesRowDeleting;
+            public event ResumenClientesActivosRowChangeEventHandler ResumenClientesActivosRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event CalcularIngresosSemanalesRowChangeEventHandler CalcularIngresosSemanalesRowDeleted;
+            public event ResumenClientesActivosRowChangeEventHandler ResumenClientesActivosRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddCalcularIngresosSemanalesRow(CalcularIngresosSemanalesRow row) {
+            public void AddResumenClientesActivosRow(ResumenClientesActivosRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CalcularIngresosSemanalesRow AddCalcularIngresosSemanalesRow(int Año, int Semana, decimal IngresosSemanales) {
-                CalcularIngresosSemanalesRow rowCalcularIngresosSemanalesRow = ((CalcularIngresosSemanalesRow)(this.NewRow()));
+            public ResumenClientesActivosRow AddResumenClientesActivosRow(int TotalClientes, int ClientesActivos, decimal PorcentajeActivos) {
+                ResumenClientesActivosRow rowResumenClientesActivosRow = ((ResumenClientesActivosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Año,
-                        Semana,
-                        IngresosSemanales};
-                rowCalcularIngresosSemanalesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowCalcularIngresosSemanalesRow);
-                return rowCalcularIngresosSemanalesRow;
+                        TotalClientes,
+                        ClientesActivos,
+                        PorcentajeActivos};
+                rowResumenClientesActivosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowResumenClientesActivosRow);
+                return rowResumenClientesActivosRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                CalcularIngresosSemanalesDataTable cln = ((CalcularIngresosSemanalesDataTable)(base.Clone()));
+                ResumenClientesActivosDataTable cln = ((ResumenClientesActivosDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -7323,55 +7393,55 @@ namespace CAD {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new CalcularIngresosSemanalesDataTable();
+                return new ResumenClientesActivosDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
-                this.columnAño = base.Columns["Año"];
-                this.columnSemana = base.Columns["Semana"];
-                this.columnIngresosSemanales = base.Columns["IngresosSemanales"];
+                this.columnTotalClientes = base.Columns["TotalClientes"];
+                this.columnClientesActivos = base.Columns["ClientesActivos"];
+                this.columnPorcentajeActivos = base.Columns["PorcentajeActivos"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             private void InitClass() {
-                this.columnAño = new global::System.Data.DataColumn("Año", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAño);
-                this.columnSemana = new global::System.Data.DataColumn("Semana", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnSemana);
-                this.columnIngresosSemanales = new global::System.Data.DataColumn("IngresosSemanales", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIngresosSemanales);
-                this.columnAño.ReadOnly = true;
-                this.columnSemana.ReadOnly = true;
-                this.columnIngresosSemanales.ReadOnly = true;
+                this.columnTotalClientes = new global::System.Data.DataColumn("TotalClientes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalClientes);
+                this.columnClientesActivos = new global::System.Data.DataColumn("ClientesActivos", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClientesActivos);
+                this.columnPorcentajeActivos = new global::System.Data.DataColumn("PorcentajeActivos", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPorcentajeActivos);
+                this.columnTotalClientes.ReadOnly = true;
+                this.columnClientesActivos.ReadOnly = true;
+                this.columnPorcentajeActivos.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CalcularIngresosSemanalesRow NewCalcularIngresosSemanalesRow() {
-                return ((CalcularIngresosSemanalesRow)(this.NewRow()));
+            public ResumenClientesActivosRow NewResumenClientesActivosRow() {
+                return ((ResumenClientesActivosRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new CalcularIngresosSemanalesRow(builder);
+                return new ResumenClientesActivosRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(CalcularIngresosSemanalesRow);
+                return typeof(ResumenClientesActivosRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.CalcularIngresosSemanalesRowChanged != null)) {
-                    this.CalcularIngresosSemanalesRowChanged(this, new CalcularIngresosSemanalesRowChangeEvent(((CalcularIngresosSemanalesRow)(e.Row)), e.Action));
+                if ((this.ResumenClientesActivosRowChanged != null)) {
+                    this.ResumenClientesActivosRowChanged(this, new ResumenClientesActivosRowChangeEvent(((ResumenClientesActivosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -7379,8 +7449,8 @@ namespace CAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.CalcularIngresosSemanalesRowChanging != null)) {
-                    this.CalcularIngresosSemanalesRowChanging(this, new CalcularIngresosSemanalesRowChangeEvent(((CalcularIngresosSemanalesRow)(e.Row)), e.Action));
+                if ((this.ResumenClientesActivosRowChanging != null)) {
+                    this.ResumenClientesActivosRowChanging(this, new ResumenClientesActivosRowChangeEvent(((ResumenClientesActivosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -7388,8 +7458,8 @@ namespace CAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.CalcularIngresosSemanalesRowDeleted != null)) {
-                    this.CalcularIngresosSemanalesRowDeleted(this, new CalcularIngresosSemanalesRowChangeEvent(((CalcularIngresosSemanalesRow)(e.Row)), e.Action));
+                if ((this.ResumenClientesActivosRowDeleted != null)) {
+                    this.ResumenClientesActivosRowDeleted(this, new ResumenClientesActivosRowChangeEvent(((ResumenClientesActivosRow)(e.Row)), e.Action));
                 }
             }
             
@@ -7397,14 +7467,14 @@ namespace CAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.CalcularIngresosSemanalesRowDeleting != null)) {
-                    this.CalcularIngresosSemanalesRowDeleting(this, new CalcularIngresosSemanalesRowChangeEvent(((CalcularIngresosSemanalesRow)(e.Row)), e.Action));
+                if ((this.ResumenClientesActivosRowDeleting != null)) {
+                    this.ResumenClientesActivosRowDeleting(this, new ResumenClientesActivosRowChangeEvent(((ResumenClientesActivosRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveCalcularIngresosSemanalesRow(CalcularIngresosSemanalesRow row) {
+            public void RemoveResumenClientesActivosRow(ResumenClientesActivosRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -7431,7 +7501,563 @@ namespace CAD {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "CalcularIngresosSemanalesDataTable";
+                attribute2.FixedValue = "ResumenClientesActivosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CalcularIngresosMensualesUltimoAnoDataTable : global::System.Data.TypedTableBase<CalcularIngresosMensualesUltimoAnoRow> {
+            
+            private global::System.Data.DataColumn columnAño;
+            
+            private global::System.Data.DataColumn columnMes;
+            
+            private global::System.Data.DataColumn columnIngresosMensuales;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CalcularIngresosMensualesUltimoAnoDataTable() {
+                this.TableName = "CalcularIngresosMensualesUltimoAno";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal CalcularIngresosMensualesUltimoAnoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected CalcularIngresosMensualesUltimoAnoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AñoColumn {
+                get {
+                    return this.columnAño;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn MesColumn {
+                get {
+                    return this.columnMes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IngresosMensualesColumn {
+                get {
+                    return this.columnIngresosMensuales;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CalcularIngresosMensualesUltimoAnoRow this[int index] {
+                get {
+                    return ((CalcularIngresosMensualesUltimoAnoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CalcularIngresosMensualesUltimoAnoRowChangeEventHandler CalcularIngresosMensualesUltimoAnoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CalcularIngresosMensualesUltimoAnoRowChangeEventHandler CalcularIngresosMensualesUltimoAnoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CalcularIngresosMensualesUltimoAnoRowChangeEventHandler CalcularIngresosMensualesUltimoAnoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event CalcularIngresosMensualesUltimoAnoRowChangeEventHandler CalcularIngresosMensualesUltimoAnoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddCalcularIngresosMensualesUltimoAnoRow(CalcularIngresosMensualesUltimoAnoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CalcularIngresosMensualesUltimoAnoRow AddCalcularIngresosMensualesUltimoAnoRow(int Año, int Mes, decimal IngresosMensuales) {
+                CalcularIngresosMensualesUltimoAnoRow rowCalcularIngresosMensualesUltimoAnoRow = ((CalcularIngresosMensualesUltimoAnoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Año,
+                        Mes,
+                        IngresosMensuales};
+                rowCalcularIngresosMensualesUltimoAnoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCalcularIngresosMensualesUltimoAnoRow);
+                return rowCalcularIngresosMensualesUltimoAnoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CalcularIngresosMensualesUltimoAnoDataTable cln = ((CalcularIngresosMensualesUltimoAnoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CalcularIngresosMensualesUltimoAnoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnAño = base.Columns["Año"];
+                this.columnMes = base.Columns["Mes"];
+                this.columnIngresosMensuales = base.Columns["IngresosMensuales"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnAño = new global::System.Data.DataColumn("Año", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAño);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
+                this.columnIngresosMensuales = new global::System.Data.DataColumn("IngresosMensuales", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIngresosMensuales);
+                this.columnAño.ReadOnly = true;
+                this.columnMes.ReadOnly = true;
+                this.columnIngresosMensuales.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CalcularIngresosMensualesUltimoAnoRow NewCalcularIngresosMensualesUltimoAnoRow() {
+                return ((CalcularIngresosMensualesUltimoAnoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CalcularIngresosMensualesUltimoAnoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CalcularIngresosMensualesUltimoAnoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CalcularIngresosMensualesUltimoAnoRowChanged != null)) {
+                    this.CalcularIngresosMensualesUltimoAnoRowChanged(this, new CalcularIngresosMensualesUltimoAnoRowChangeEvent(((CalcularIngresosMensualesUltimoAnoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CalcularIngresosMensualesUltimoAnoRowChanging != null)) {
+                    this.CalcularIngresosMensualesUltimoAnoRowChanging(this, new CalcularIngresosMensualesUltimoAnoRowChangeEvent(((CalcularIngresosMensualesUltimoAnoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CalcularIngresosMensualesUltimoAnoRowDeleted != null)) {
+                    this.CalcularIngresosMensualesUltimoAnoRowDeleted(this, new CalcularIngresosMensualesUltimoAnoRowChangeEvent(((CalcularIngresosMensualesUltimoAnoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CalcularIngresosMensualesUltimoAnoRowDeleting != null)) {
+                    this.CalcularIngresosMensualesUltimoAnoRowDeleting(this, new CalcularIngresosMensualesUltimoAnoRowChangeEvent(((CalcularIngresosMensualesUltimoAnoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveCalcularIngresosMensualesUltimoAnoRow(CalcularIngresosMensualesUltimoAnoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DSGimnasio ds = new DSGimnasio();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CalcularIngresosMensualesUltimoAnoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ResumenSemanalClientesIngresosDataTable : global::System.Data.TypedTableBase<ResumenSemanalClientesIngresosRow> {
+            
+            private global::System.Data.DataColumn columnSemana;
+            
+            private global::System.Data.DataColumn columnIngresos;
+            
+            private global::System.Data.DataColumn columnClientesActivos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ResumenSemanalClientesIngresosDataTable() {
+                this.TableName = "ResumenSemanalClientesIngresos";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ResumenSemanalClientesIngresosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected ResumenSemanalClientesIngresosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SemanaColumn {
+                get {
+                    return this.columnSemana;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IngresosColumn {
+                get {
+                    return this.columnIngresos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ClientesActivosColumn {
+                get {
+                    return this.columnClientesActivos;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ResumenSemanalClientesIngresosRow this[int index] {
+                get {
+                    return ((ResumenSemanalClientesIngresosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ResumenSemanalClientesIngresosRowChangeEventHandler ResumenSemanalClientesIngresosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ResumenSemanalClientesIngresosRowChangeEventHandler ResumenSemanalClientesIngresosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ResumenSemanalClientesIngresosRowChangeEventHandler ResumenSemanalClientesIngresosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event ResumenSemanalClientesIngresosRowChangeEventHandler ResumenSemanalClientesIngresosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddResumenSemanalClientesIngresosRow(ResumenSemanalClientesIngresosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ResumenSemanalClientesIngresosRow AddResumenSemanalClientesIngresosRow(int Semana, decimal Ingresos, int ClientesActivos) {
+                ResumenSemanalClientesIngresosRow rowResumenSemanalClientesIngresosRow = ((ResumenSemanalClientesIngresosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Semana,
+                        Ingresos,
+                        ClientesActivos};
+                rowResumenSemanalClientesIngresosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowResumenSemanalClientesIngresosRow);
+                return rowResumenSemanalClientesIngresosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ResumenSemanalClientesIngresosDataTable cln = ((ResumenSemanalClientesIngresosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ResumenSemanalClientesIngresosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnSemana = base.Columns["Semana"];
+                this.columnIngresos = base.Columns["Ingresos"];
+                this.columnClientesActivos = base.Columns["ClientesActivos"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnSemana = new global::System.Data.DataColumn("Semana", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSemana);
+                this.columnIngresos = new global::System.Data.DataColumn("Ingresos", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIngresos);
+                this.columnClientesActivos = new global::System.Data.DataColumn("ClientesActivos", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClientesActivos);
+                this.columnSemana.ReadOnly = true;
+                this.columnIngresos.ReadOnly = true;
+                this.columnClientesActivos.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ResumenSemanalClientesIngresosRow NewResumenSemanalClientesIngresosRow() {
+                return ((ResumenSemanalClientesIngresosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ResumenSemanalClientesIngresosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ResumenSemanalClientesIngresosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ResumenSemanalClientesIngresosRowChanged != null)) {
+                    this.ResumenSemanalClientesIngresosRowChanged(this, new ResumenSemanalClientesIngresosRowChangeEvent(((ResumenSemanalClientesIngresosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ResumenSemanalClientesIngresosRowChanging != null)) {
+                    this.ResumenSemanalClientesIngresosRowChanging(this, new ResumenSemanalClientesIngresosRowChangeEvent(((ResumenSemanalClientesIngresosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ResumenSemanalClientesIngresosRowDeleted != null)) {
+                    this.ResumenSemanalClientesIngresosRowDeleted(this, new ResumenSemanalClientesIngresosRowChangeEvent(((ResumenSemanalClientesIngresosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ResumenSemanalClientesIngresosRowDeleting != null)) {
+                    this.ResumenSemanalClientesIngresosRowDeleting(this, new ResumenSemanalClientesIngresosRowChangeEvent(((ResumenSemanalClientesIngresosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveResumenSemanalClientesIngresosRow(ResumenSemanalClientesIngresosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DSGimnasio ds = new DSGimnasio();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ResumenSemanalClientesIngresosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -9699,15 +10325,117 @@ namespace CAD {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class CalcularIngresosSemanalesRow : global::System.Data.DataRow {
+        public partial class ResumenClientesActivosRow : global::System.Data.DataRow {
             
-            private CalcularIngresosSemanalesDataTable tableCalcularIngresosSemanales;
+            private ResumenClientesActivosDataTable tableResumenClientesActivos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal CalcularIngresosSemanalesRow(global::System.Data.DataRowBuilder rb) : 
+            internal ResumenClientesActivosRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableCalcularIngresosSemanales = ((CalcularIngresosSemanalesDataTable)(this.Table));
+                this.tableResumenClientesActivos = ((ResumenClientesActivosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int TotalClientes {
+                get {
+                    try {
+                        return ((int)(this[this.tableResumenClientesActivos.TotalClientesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'TotalClientes\' de la tabla \'ResumenClientesActivos\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableResumenClientesActivos.TotalClientesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ClientesActivos {
+                get {
+                    try {
+                        return ((int)(this[this.tableResumenClientesActivos.ClientesActivosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ClientesActivos\' de la tabla \'ResumenClientesActivos\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableResumenClientesActivos.ClientesActivosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal PorcentajeActivos {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableResumenClientesActivos.PorcentajeActivosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'PorcentajeActivos\' de la tabla \'ResumenClientesActivos\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableResumenClientesActivos.PorcentajeActivosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalClientesNull() {
+                return this.IsNull(this.tableResumenClientesActivos.TotalClientesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalClientesNull() {
+                this[this.tableResumenClientesActivos.TotalClientesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsClientesActivosNull() {
+                return this.IsNull(this.tableResumenClientesActivos.ClientesActivosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetClientesActivosNull() {
+                this[this.tableResumenClientesActivos.ClientesActivosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPorcentajeActivosNull() {
+                return this.IsNull(this.tableResumenClientesActivos.PorcentajeActivosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPorcentajeActivosNull() {
+                this[this.tableResumenClientesActivos.PorcentajeActivosColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CalcularIngresosMensualesUltimoAnoRow : global::System.Data.DataRow {
+            
+            private CalcularIngresosMensualesUltimoAnoDataTable tableCalcularIngresosMensualesUltimoAno;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal CalcularIngresosMensualesUltimoAnoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCalcularIngresosMensualesUltimoAno = ((CalcularIngresosMensualesUltimoAnoDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9715,15 +10443,101 @@ namespace CAD {
             public int Año {
                 get {
                     try {
-                        return ((int)(this[this.tableCalcularIngresosSemanales.AñoColumn]));
+                        return ((int)(this[this.tableCalcularIngresosMensualesUltimoAno.AñoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Año\' de la tabla \'CalcularIngresosSemanales\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Año\' de la tabla \'CalcularIngresosMensualesUltimoAno\' es " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCalcularIngresosSemanales.AñoColumn] = value;
+                    this[this.tableCalcularIngresosMensualesUltimoAno.AñoColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Mes {
+                get {
+                    try {
+                        return ((int)(this[this.tableCalcularIngresosMensualesUltimoAno.MesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'CalcularIngresosMensualesUltimoAno\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCalcularIngresosMensualesUltimoAno.MesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal IngresosMensuales {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCalcularIngresosMensualesUltimoAno.IngresosMensualesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IngresosMensuales\' de la tabla \'CalcularIngresosMensuales" +
+                                "UltimoAno\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCalcularIngresosMensualesUltimoAno.IngresosMensualesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAñoNull() {
+                return this.IsNull(this.tableCalcularIngresosMensualesUltimoAno.AñoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAñoNull() {
+                this[this.tableCalcularIngresosMensualesUltimoAno.AñoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsMesNull() {
+                return this.IsNull(this.tableCalcularIngresosMensualesUltimoAno.MesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetMesNull() {
+                this[this.tableCalcularIngresosMensualesUltimoAno.MesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIngresosMensualesNull() {
+                return this.IsNull(this.tableCalcularIngresosMensualesUltimoAno.IngresosMensualesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIngresosMensualesNull() {
+                this[this.tableCalcularIngresosMensualesUltimoAno.IngresosMensualesColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class ResumenSemanalClientesIngresosRow : global::System.Data.DataRow {
+            
+            private ResumenSemanalClientesIngresosDataTable tableResumenSemanalClientesIngresos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal ResumenSemanalClientesIngresosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableResumenSemanalClientesIngresos = ((ResumenSemanalClientesIngresosDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9731,69 +10545,86 @@ namespace CAD {
             public int Semana {
                 get {
                     try {
-                        return ((int)(this[this.tableCalcularIngresosSemanales.SemanaColumn]));
+                        return ((int)(this[this.tableResumenSemanalClientesIngresos.SemanaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Semana\' de la tabla \'CalcularIngresosSemanales\' es DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Semana\' de la tabla \'ResumenSemanalClientesIngresos\' es D" +
+                                "BNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCalcularIngresosSemanales.SemanaColumn] = value;
+                    this[this.tableResumenSemanalClientesIngresos.SemanaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public decimal IngresosSemanales {
+            public decimal Ingresos {
                 get {
                     try {
-                        return ((decimal)(this[this.tableCalcularIngresosSemanales.IngresosSemanalesColumn]));
+                        return ((decimal)(this[this.tableResumenSemanalClientesIngresos.IngresosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'IngresosSemanales\' de la tabla \'CalcularIngresosSemanales" +
-                                "\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Ingresos\' de la tabla \'ResumenSemanalClientesIngresos\' es" +
+                                " DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCalcularIngresosSemanales.IngresosSemanalesColumn] = value;
+                    this[this.tableResumenSemanalClientesIngresos.IngresosColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsAñoNull() {
-                return this.IsNull(this.tableCalcularIngresosSemanales.AñoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetAñoNull() {
-                this[this.tableCalcularIngresosSemanales.AñoColumn] = global::System.Convert.DBNull;
+            public int ClientesActivos {
+                get {
+                    try {
+                        return ((int)(this[this.tableResumenSemanalClientesIngresos.ClientesActivosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ClientesActivos\' de la tabla \'ResumenSemanalClientesIngre" +
+                                "sos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableResumenSemanalClientesIngresos.ClientesActivosColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsSemanaNull() {
-                return this.IsNull(this.tableCalcularIngresosSemanales.SemanaColumn);
+                return this.IsNull(this.tableResumenSemanalClientesIngresos.SemanaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetSemanaNull() {
-                this[this.tableCalcularIngresosSemanales.SemanaColumn] = global::System.Convert.DBNull;
+                this[this.tableResumenSemanalClientesIngresos.SemanaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsIngresosSemanalesNull() {
-                return this.IsNull(this.tableCalcularIngresosSemanales.IngresosSemanalesColumn);
+            public bool IsIngresosNull() {
+                return this.IsNull(this.tableResumenSemanalClientesIngresos.IngresosColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetIngresosSemanalesNull() {
-                this[this.tableCalcularIngresosSemanales.IngresosSemanalesColumn] = global::System.Convert.DBNull;
+            public void SetIngresosNull() {
+                this[this.tableResumenSemanalClientesIngresos.IngresosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsClientesActivosNull() {
+                return this.IsNull(this.tableResumenSemanalClientesIngresos.ClientesActivosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetClientesActivosNull() {
+                this[this.tableResumenSemanalClientesIngresos.ClientesActivosColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10413,22 +11244,90 @@ namespace CAD {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class CalcularIngresosSemanalesRowChangeEvent : global::System.EventArgs {
+        public class ResumenClientesActivosRowChangeEvent : global::System.EventArgs {
             
-            private CalcularIngresosSemanalesRow eventRow;
+            private ResumenClientesActivosRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CalcularIngresosSemanalesRowChangeEvent(CalcularIngresosSemanalesRow row, global::System.Data.DataRowAction action) {
+            public ResumenClientesActivosRowChangeEvent(ResumenClientesActivosRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public CalcularIngresosSemanalesRow Row {
+            public ResumenClientesActivosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class CalcularIngresosMensualesUltimoAnoRowChangeEvent : global::System.EventArgs {
+            
+            private CalcularIngresosMensualesUltimoAnoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CalcularIngresosMensualesUltimoAnoRowChangeEvent(CalcularIngresosMensualesUltimoAnoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public CalcularIngresosMensualesUltimoAnoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class ResumenSemanalClientesIngresosRowChangeEvent : global::System.EventArgs {
+            
+            private ResumenSemanalClientesIngresosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ResumenSemanalClientesIngresosRowChangeEvent(ResumenSemanalClientesIngresosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public ResumenSemanalClientesIngresosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -17186,7 +18085,7 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class CalcularIngresosSemanalesTableAdapter : global::System.ComponentModel.Component {
+    public partial class ResumenClientesActivosTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -17200,7 +18099,7 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public CalcularIngresosSemanalesTableAdapter() {
+        public ResumenClientesActivosTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -17297,10 +18196,10 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "CalcularIngresosSemanales";
-            tableMapping.ColumnMappings.Add("Año", "Año");
-            tableMapping.ColumnMappings.Add("Semana", "Semana");
-            tableMapping.ColumnMappings.Add("IngresosSemanales", "IngresosSemanales");
+            tableMapping.DataSetTable = "ResumenClientesActivos";
+            tableMapping.ColumnMappings.Add("TotalClientes", "TotalClientes");
+            tableMapping.ColumnMappings.Add("ClientesActivos", "ClientesActivos");
+            tableMapping.ColumnMappings.Add("PorcentajeActivos", "PorcentajeActivos");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -17317,31 +18216,17 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.CalcularIngresosSemanales";
+            this._commandCollection[0].CommandText = "dbo.ResumenClientesActivos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaInicio", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFin", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DSGimnasio.CalcularIngresosSemanalesDataTable dataTable, global::System.Nullable<global::System.DateTime> FechaInicio, global::System.Nullable<global::System.DateTime> FechaFin) {
+        public virtual int Fill(DSGimnasio.ResumenClientesActivosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((FechaInicio.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaInicio.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((FechaFin.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FechaFin.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -17353,21 +18238,349 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DSGimnasio.CalcularIngresosSemanalesDataTable GetData(global::System.Nullable<global::System.DateTime> FechaInicio, global::System.Nullable<global::System.DateTime> FechaFin) {
+        public virtual DSGimnasio.ResumenClientesActivosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((FechaInicio.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FechaInicio.Value));
+            DSGimnasio.ResumenClientesActivosDataTable dataTable = new DSGimnasio.ResumenClientesActivosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class CalcularIngresosMensualesUltimoAnoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public CalcularIngresosMensualesUltimoAnoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
             }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
             }
-            if ((FechaFin.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(FechaFin.Value));
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
             }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
             }
-            DSGimnasio.CalcularIngresosSemanalesDataTable dataTable = new DSGimnasio.CalcularIngresosSemanalesDataTable();
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "CalcularIngresosMensualesUltimoAno";
+            tableMapping.ColumnMappings.Add("Año", "Año");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
+            tableMapping.ColumnMappings.Add("IngresosMensuales", "IngresosMensuales");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CAD.Properties.Settings.Default.GimnasioConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.CalcularIngresosMensualesUltimoAno";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DSGimnasio.CalcularIngresosMensualesUltimoAnoDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DSGimnasio.CalcularIngresosMensualesUltimoAnoDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DSGimnasio.CalcularIngresosMensualesUltimoAnoDataTable dataTable = new DSGimnasio.CalcularIngresosMensualesUltimoAnoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class ResumenSemanalClientesIngresosTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public ResumenSemanalClientesIngresosTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "ResumenSemanalClientesIngresos";
+            tableMapping.ColumnMappings.Add("Semana", "Semana");
+            tableMapping.ColumnMappings.Add("Ingresos", "Ingresos");
+            tableMapping.ColumnMappings.Add("ClientesActivos", "ClientesActivos");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CAD.Properties.Settings.Default.GimnasioConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.ResumenSemanalClientesIngresos";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DSGimnasio.ResumenSemanalClientesIngresosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DSGimnasio.ResumenSemanalClientesIngresosDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            DSGimnasio.ResumenSemanalClientesIngresosDataTable dataTable = new DSGimnasio.ResumenSemanalClientesIngresosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -17400,7 +18613,7 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.IDbCommand[5];
+            this._commandCollection = new global::System.Data.IDbCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).Connection = new global::System.Data.SqlClient.SqlConnection(global::CAD.Properties.Settings.Default.GimnasioConnectionString);
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[0])).CommandText = "dbo.CalcularPrecioVenta";
@@ -17432,11 +18645,19 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[3])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Año", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Connection = new global::System.Data.SqlClient.SqlConnection(global::CAD.Properties.Settings.Default.GimnasioConnectionString);
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandText = "dbo.CalcularIngresosSemanales";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandText = "dbo.ResumenClientesActivos";
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).CommandType = global::System.Data.CommandType.StoredProcedure;
             ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaInicio", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[4])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FechaFin", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Connection = new global::System.Data.SqlClient.SqlConnection(global::CAD.Properties.Settings.Default.GimnasioConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandText = "dbo.CalcularIngresosMensualesUltimoAno";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[5])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Connection = new global::System.Data.SqlClient.SqlConnection(global::CAD.Properties.Settings.Default.GimnasioConnectionString);
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandText = "dbo.ResumenSemanalClientesIngresos";
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).CommandType = global::System.Data.CommandType.StoredProcedure;
+            ((global::System.Data.SqlClient.SqlCommand)(this._commandCollection[6])).Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17600,20 +18821,64 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object CalcularIngresosSemanales(global::System.Nullable<global::System.DateTime> FechaInicio, global::System.Nullable<global::System.DateTime> FechaFin) {
+        public virtual object ResumenClientesActivos() {
             global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[4]));
-            if ((FechaInicio.HasValue == true)) {
-                command.Parameters[1].Value = ((System.DateTime)(FechaInicio.Value));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
             }
             else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
+                return ((object)(returnValue));
             }
-            if ((FechaFin.HasValue == true)) {
-                command.Parameters[2].Value = ((System.DateTime)(FechaFin.Value));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object CalcularIngresosMensualesUltimoAno() {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[5]));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
             }
             else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
+                return ((object)(returnValue));
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object ResumenSemanalClientesIngresos() {
+            global::System.Data.SqlClient.SqlCommand command = ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[6]));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -18043,21 +19308,21 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tipoPagoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TipoPago.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tipoPagoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._envioTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Envio.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._envioTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tipoPagoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TipoPago.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tipoPagoTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18106,21 +19371,21 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._empleadosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._empleadosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._facturaDesgloseTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.FacturaDesglose.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._facturaDesgloseTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._empleadosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._empleadosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -18166,19 +19431,19 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tipoPagoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TipoPago.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tipoPagoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._envioTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Envio.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._envioTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tipoPagoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TipoPago.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tipoPagoTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18222,19 +19487,19 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._empleadosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._empleadosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._facturaDesgloseTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.FacturaDesglose.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._facturaDesgloseTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._empleadosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._empleadosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -18248,19 +19513,19 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(DSGimnasio dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._facturaDesgloseTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FacturaDesglose.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._facturaDesgloseTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._empleadosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Empleados.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._empleadosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._facturaDesgloseTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FacturaDesglose.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._facturaDesgloseTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -18304,19 +19569,19 @@ SELECT Id, MetodoEnvio, DetalleEnvio FROM Envio WHERE (Id = @Id)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._envioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Envio.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._envioTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tipoPagoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TipoPago.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tipoPagoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._envioTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Envio.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._envioTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
