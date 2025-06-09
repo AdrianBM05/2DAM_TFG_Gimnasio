@@ -272,9 +272,5 @@ namespace Presentación
                 MessageBox.Show("Error al cargar gráfico resumen semanal: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-
-
     }
 }

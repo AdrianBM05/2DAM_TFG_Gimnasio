@@ -58,7 +58,7 @@ namespace Presentación
         private void ConfigurarReportViewer()
         {
             reportViewer1.LocalReport.DataSources.Clear();
-            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("DataSet1", dsGimnasio1.Tables["FacturaDesglose"]));
+            reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("dsDesglose", dsGimnasio1.Tables["FacturaDesglose"]));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("dsFacturas", dsGimnasio1.Tables["Facturas"]));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("dsClientes", dsGimnasio1.Tables["Clientes"]));
             reportViewer1.LocalReport.DataSources.Add(new Microsoft.Reporting.WinForms.ReportDataSource("dsVDesglose", dsGimnasio1.Tables["VDesglose"]));

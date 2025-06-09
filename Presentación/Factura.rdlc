@@ -374,6 +374,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1572,7 +1573,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSGimnasio</rd:DataSetName>
-        <rd:SchemaPath>E:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
         <rd:TableName>Clientes</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1624,7 +1625,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSGimnasio</rd:DataSetName>
-        <rd:SchemaPath>E:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
         <rd:TableName>Facturas</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -1680,7 +1681,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSGimnasio</rd:DataSetName>
-        <rd:SchemaPath>E:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\2_D.A.M\_EMPRESAS\Gimansio\Presentación\DSGimnasio.xsd</rd:SchemaPath>
         <rd:TableName>VDesglose</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
