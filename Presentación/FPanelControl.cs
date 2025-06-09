@@ -19,6 +19,7 @@ namespace Presentación
             InitializeComponent();
             empleado = _empleado;
             this.Load += FPanelControl_Load;
+            this.WindowState = FormWindowState.Maximized;
 
         }
 
@@ -271,6 +272,11 @@ namespace Presentación
             {
                 MessageBox.Show("Error al cargar gráfico resumen semanal: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void FPanelControl_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

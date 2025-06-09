@@ -103,5 +103,16 @@ namespace Presentación
             NVProductos.actualizarProductos(dsGimnasio1);
             NVProductos.obtenerProductos(dsGimnasio1);
         }
+
+        private void labelBaseImponible_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FFichaProducto_Load(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

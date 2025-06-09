@@ -33,11 +33,12 @@ namespace Presentación
             this.WindowState = FormWindowState.Maximized;
             _empleado = _Empleado;
 
-            // Por defecto pag gestion de clientes
+            // Defecto : Panel de control
+            _panelControl = new FPanelControl(_empleado);
+            _panelControl.MdiParent = this;
+            _panelControl.Show();
 
-            _gestionClientes = new FGestionClientes(_empleado);
-            _gestionClientes.MdiParent = this;
-            _gestionClientes.Show();
+            
 
         }
 

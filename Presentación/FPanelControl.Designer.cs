@@ -135,6 +135,7 @@ namespace Presentación
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FPanelControl";
             this.Text = "Panel de Control";
+            this.Load += new System.EventHandler(this.FPanelControl_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.chartClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartIngresos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartPorcentaje)).EndInit();
