@@ -124,6 +124,7 @@ namespace Presentación
         {
             // Obtener los desgloses de una factura
             NVDesglose.obtenerDesglosesByIdFactura(dsGimnasio1, _id);
+            NVDesglose.actualizarDesglose(dsGimnasio1);
             cargarTotalFactura();
         }
 
@@ -154,14 +155,7 @@ namespace Presentación
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Explicación de código:
-            // ABRIR Factura = Factura YA creada que puede ser modificada todos los campos
-            // CREAR Factura = Factura nueva que se crea con los campos necesarios y se guarda en la base de datos
-
-            // El botón de guardar se comporta de dos maneras:
-            // 1. Crear una nueva factura
-            // 2. Guardar los cambios de una factura existente
-            // La condición facturaCreada se encarga de diferenciar entre ambas situaciones
+            
 
             if (facturaCreada)
             {
@@ -250,18 +244,21 @@ namespace Presentación
             desgloseTemp["BaseImponible"] = Convert.ToDecimal(txtBImponible.Text);
             desgloseTemp["IdTipoIVA"] = 1;
             desgloseTemp["Concepto"] = txtConcepto.Text;
-            bsDesglose.EndEdit();
+            
 
             // Mensaje de confirmación
             MessageBox.Show("Desglose añadido a la factura con id : " + idFactura, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            // Actualizar la factura y los desgloses
             NFactura.actualizarFacturas(dsGimnasio1);
             NFactura.actualizarDesgloses(dsGimnasio1);
+            cargarDesgloses(); // Recargar los desgloses para mostrar el nuevo desglose añadido
+            cargarTotalFactura(); // Actualizar el total de la factura
+            NVDesglose.actualizarDesglose(dsGimnasio1);
 
-            cargarDesgloses();
-            cargarTotalFactura();
-
-            
+            // Cantidad = ""
+            txtCantidad.Clear();
+            bsDesglose.EndEdit();
 
         }
 
