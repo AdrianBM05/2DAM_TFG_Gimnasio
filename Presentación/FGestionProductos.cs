@@ -90,7 +90,7 @@ namespace Presentación
             
             if(bsProductos.Count > 0)
             {
-                FFichaProducto ficha = new FFichaProducto((int)((DataRowView)bsProductos.Current).Row["Id"], 1);
+                FFichaProducto2 ficha = new FFichaProducto2((int)((DataRowView)bsProductos.Current).Row["Id"], 1);
                 ficha.ShowDialog();
             }
 

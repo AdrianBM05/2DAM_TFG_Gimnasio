@@ -71,7 +71,7 @@
             // 
             // gymLogo
             // 
-            this.gymLogo.Image = global::Presentación.Properties.Resources.natura_logo;
+            this.gymLogo.Image = global::Presentación.Properties.Resources.logo_musculoso_azul_naranja;
             this.gymLogo.Location = new System.Drawing.Point(10, 10);
             this.gymLogo.Name = "gymLogo";
             this.gymLogo.Size = new System.Drawing.Size(60, 60);
@@ -83,11 +83,12 @@
             // 
             this.headerLabel.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold);
             this.headerLabel.ForeColor = System.Drawing.Color.White;
-            this.headerLabel.Location = new System.Drawing.Point(92, 20);
+            this.headerLabel.Location = new System.Drawing.Point(76, 10);
             this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(100, 50);
+            this.headerLabel.Size = new System.Drawing.Size(255, 60);
             this.headerLabel.TabIndex = 1;
             this.headerLabel.Text = "Datos del Cliente";
+            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // clientInfoGroupBox
             // 

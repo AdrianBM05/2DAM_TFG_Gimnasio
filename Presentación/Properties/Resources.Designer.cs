@@ -73,9 +73,39 @@ namespace Presentación.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_9_jun_2025__12_11_48 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 9 jun 2025, 12_11_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_añadir_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-añadir-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_mi_gimnasio_wide {
+            get {
+                object obj = ResourceManager.GetObject("logo_mi_gimnasio_wide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_musculoso_azul_naranja {
+            get {
+                object obj = ResourceManager.GetObject("logo_musculoso_azul_naranja", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
