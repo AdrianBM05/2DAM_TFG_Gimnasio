@@ -125,7 +125,6 @@ namespace Presentación
             // Obtener los desgloses de una factura
             NVDesglose.obtenerDesglosesByIdFactura(dsGimnasio1, _id);
             cargarTotalFactura();
-
         }
 
         private void modificarDatosCliente()
@@ -261,6 +260,9 @@ namespace Presentación
 
             cargarDesgloses();
             cargarTotalFactura();
+
+            
+
         }
 
 
