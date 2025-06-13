@@ -322,6 +322,7 @@
             this.richTextBoxPVP.Size = new System.Drawing.Size(387, 79);
             this.richTextBoxPVP.TabIndex = 1;
             this.richTextBoxPVP.Text = "";
+            this.richTextBoxPVP.TextChanged += new System.EventHandler(this.richTextBoxPVP_TextChanged);
             this.richTextBoxPVP.Leave += new System.EventHandler(this.richTextBoxPVP_Leave);
             // 
             // tableLayoutPanel5

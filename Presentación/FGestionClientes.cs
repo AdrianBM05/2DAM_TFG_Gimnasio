@@ -368,5 +368,21 @@ namespace Presentación
         {
 
         }
+
+        private void btnBorrrar_Click(object sender, EventArgs e)
+        {
+            // MEnsaje de confirmación para eliminar al cliente
+            if (bsVClientes.Count > 0)
+            {
+                DialogResult rest = MessageBox.Show("¿Desea eliminar al cliente?", "Información", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (rest == DialogResult.Yes)
+                {
+                    // Cambiar estado del cliente
+                    NClientes.eliminarCliente((int)((DataRowView)bsVClientes.Current).Row["Id"]);
+                    // Refrescar datos
+                    NVClientes.obtenerClientes(dsGimnasio1);
+                }
+            }
+        }
     }
 }

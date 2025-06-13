@@ -55,6 +55,19 @@ namespace Presentación
 
         }
 
+        private void BloquearDatosFactura(bool bloquear)
+        {
+            cmbClientes.Enabled = !bloquear;
+            cbEstadoFactura.Enabled = !bloquear;
+            cmbTipoPago.Enabled = !bloquear;
+            cbEnvio.Enabled = !bloquear;
+            dtpEmision.Enabled = !bloquear;
+            dtpVencimiento.Enabled = !bloquear;
+            dtpFechaPago.Enabled = !bloquear;
+            dtpEnvio.Enabled = !bloquear;
+        }
+
+
         private void CargarDatosNuevaFactura()
         {
             bsFacturas.AddNew();
@@ -122,11 +135,11 @@ namespace Presentación
 
         private void cargarDesgloses()
         {
-            // Obtener los desgloses de una factura
             NVDesglose.obtenerDesglosesByIdFactura(dsGimnasio1, _id);
-            NVDesglose.actualizarDesglose(dsGimnasio1);
-            cargarTotalFactura();
+            bsDesglose.ResetBindings(false); // Refresca la vista del DGV
+            cargarTotalFactura(); // Calcula los totales
         }
+
 
         private void modificarDatosCliente()
         {
@@ -185,8 +198,8 @@ namespace Presentación
 
                 // Activamos el desglose para que se puedan añadir más productos
                 ToggleDesglose();
+                BloquearDatosFactura(true); // Bloquear campos de la factura
 
-                
             }
             else
             {
@@ -214,27 +227,38 @@ namespace Presentación
                 // Recargar los datos de la factura para obtener el Id actualizado
                 bsFacturas.ResetBindings(false);
                 facturaTemp = (DataRowView)bsFacturas.Current;
+                cargarDesgloses(); // Cargar los desgloses de la nueva factura
                 // Guardamos el id para los desgloses
-                int idFactura = (int)facturaTemp["Id"];
+                _id = (int)facturaTemp["Id"]; // Guardamos el ID en la variable de 
                 // Activamos desglose y desactivamos factura
                 ToggleDesglose();
+                BloquearDatosFactura(true); // Bloquear campos de la factura
                 facturaCreada = true;
                 // Mostrar id factura para probar
-                MessageBox.Show("Factura creada con id : " + idFactura, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-
+                MessageBox.Show("Factura creada con id : " + _id, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
         }
 
 
+        // Pseudocódigo detallado para solucionar el problema de que no se muestra el primer desglose añadido a una factura:
+        // 1. Revisar el método btnGuardarDesglose_Click para asegurar que el EndEdit() de bsDesglose se llama ANTES de actualizar el dataset y recargar los desgloses.
+        // 2. El orden correcto es: bsDesglose.EndEdit() -> NFactura.actualizarDesgloses(dsGimnasio1) -> cargarDesgloses().
+        // 3. Eliminar llamadas innecesarias a actualizarFacturas o actualizarDesglose si no son requeridas.
+        // 4. Asegurarse de que cargarDesgloses refresca correctamente el DataGridView.
+        // 5. Comprobar que el DataSource del DataGridView está correctamente enlazado a bsDesglose.
+        // 6. Opcional: Forzar un ResetBindings(true) tras añadir el desglose.
+
+        // Sustituir el método btnGuardarDesglose_Click por la versión corregida:
+
         private void btnGuardarDesglose_Click(object sender, EventArgs e)
         {
+            if (!facturaCreada || cmbProductos.SelectedIndex == -1 || string.IsNullOrEmpty(txtCantidad.Text))
+                return;
+
             DataRowView facturaTemp = (DataRowView)bsFacturas.Current;
             int idFactura = (int)facturaTemp["Id"];
-            // Comprobamos que los campos no estén vacíos
-            if (!facturaCreada || cmbProductos.SelectedIndex == -1 || string.IsNullOrEmpty(txtCantidad.Text)) return;
 
             bsDesglose.AddNew();
             DataRowView desgloseTemp = (DataRowView)bsDesglose.Current;
@@ -244,22 +268,23 @@ namespace Presentación
             desgloseTemp["BaseImponible"] = Convert.ToDecimal(txtBImponible.Text);
             desgloseTemp["IdTipoIVA"] = 1;
             desgloseTemp["Concepto"] = txtConcepto.Text;
-            
+
+            bsDesglose.EndEdit(); // IMPORTANTE: Guardar los cambios antes de actualizar el dataset
+
+            // Actualizar los desgloses en la base de datos
+            NFactura.actualizarDesgloses(dsGimnasio1);
+
+            // Recargar los desgloses para mostrar el nuevo añadido
+            cargarDesgloses();
 
             // Mensaje de confirmación
             MessageBox.Show("Desglose añadido a la factura con id : " + idFactura, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Actualizar la factura y los desgloses
-            NFactura.actualizarFacturas(dsGimnasio1);
-            NFactura.actualizarDesgloses(dsGimnasio1);
-            cargarDesgloses(); // Recargar los desgloses para mostrar el nuevo desglose añadido
-            cargarTotalFactura(); // Actualizar el total de la factura
-            NVDesglose.actualizarDesglose(dsGimnasio1);
-
-            // Cantidad = ""
+            // Limpiar campos
             txtCantidad.Clear();
-            bsDesglose.EndEdit();
-
+            txtBImponible.Clear();
+            txtConcepto.Clear();
+            cmbProductos.SelectedIndex = -1;
         }
 
 

@@ -590,6 +590,7 @@
             this.btnBorrrar.Size = new System.Drawing.Size(48, 46);
             this.btnBorrrar.TabIndex = 2;
             this.btnBorrrar.UseVisualStyleBackColor = true;
+            this.btnBorrrar.Click += new System.EventHandler(this.btnBorrrar_Click);
             // 
             // btnFicha
             // 

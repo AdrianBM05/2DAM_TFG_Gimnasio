@@ -114,5 +114,10 @@ namespace Presentación
             
 
         }
+
+        private void richTextBoxPVP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

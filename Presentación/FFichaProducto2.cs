@@ -102,7 +102,15 @@ namespace Presentación
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            // Cerrar la ventana y volver atrás
+            // Cerrar la ventana
+            try
+            {
+                Close();
+            }
+            catch (Exception ex)
+            {
+                throw new ArgumentException(ex.Message);
+            }
 
         }
     }

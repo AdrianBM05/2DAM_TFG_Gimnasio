@@ -39,12 +39,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.bsProductos = new System.Windows.Forms.BindingSource(this.components);
+            this.dsGimnasio1 = new CAD.DSGimnasio();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtPrecioCompra = new System.Windows.Forms.TextBox();
             this.txtBaseImponible = new System.Windows.Forms.TextBox();
             this.lblPVP = new System.Windows.Forms.Label();
             this.cbSeccion = new System.Windows.Forms.ComboBox();
+            this.bsSecciones = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxIVA = new System.Windows.Forms.ComboBox();
+            this.bsIVA = new System.Windows.Forms.BindingSource(this.components);
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblPrecioCompra = new System.Windows.Forms.Label();
@@ -55,18 +59,14 @@
             this.panelCabecera = new System.Windows.Forms.Panel();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.dsGimnasio1 = new CAD.DSGimnasio();
-            this.bsSecciones = new System.Windows.Forms.BindingSource(this.components);
-            this.bsProductos = new System.Windows.Forms.BindingSource(this.components);
-            this.bsIVA = new System.Windows.Forms.BindingSource(this.components);
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.panelCabecera.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsSecciones)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsIVA)).BeginInit();
+            this.panelCabecera.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNombre
@@ -78,6 +78,16 @@
             this.txtNombre.Size = new System.Drawing.Size(300, 22);
             this.txtNombre.TabIndex = 1;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            // 
+            // bsProductos
+            // 
+            this.bsProductos.DataMember = "Productos";
+            this.bsProductos.DataSource = this.dsGimnasio1;
+            // 
+            // dsGimnasio1
+            // 
+            this.dsGimnasio1.DataSetName = "DSGimnasio";
+            this.dsGimnasio1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txtDescripcion
             // 
@@ -110,6 +120,7 @@
             // lblPVP
             // 
             this.lblPVP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblPVP.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsProductos, "PVP", true));
             this.lblPVP.Font = new System.Drawing.Font("Cambria", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPVP.Location = new System.Drawing.Point(176, 332);
             this.lblPVP.Name = "lblPVP";
@@ -127,6 +138,11 @@
             this.cbSeccion.Size = new System.Drawing.Size(150, 22);
             this.cbSeccion.TabIndex = 6;
             // 
+            // bsSecciones
+            // 
+            this.bsSecciones.DataMember = "Secciones";
+            this.bsSecciones.DataSource = this.dsGimnasio1;
+            // 
             // comboBoxIVA
             // 
             this.comboBoxIVA.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bsIVA, "Tipo_IVA", true));
@@ -136,6 +152,11 @@
             this.comboBoxIVA.Name = "comboBoxIVA";
             this.comboBoxIVA.Size = new System.Drawing.Size(150, 22);
             this.comboBoxIVA.TabIndex = 5;
+            // 
+            // bsIVA
+            // 
+            this.bsIVA.DataMember = "Tipo_IVA";
+            this.bsIVA.DataSource = this.dsGimnasio1;
             // 
             // lblNombre
             // 
@@ -233,26 +254,6 @@
             this.lblTitulo.TabIndex = 1;
             this.lblTitulo.Text = "Ficha del producto";
             // 
-            // dsGimnasio1
-            // 
-            this.dsGimnasio1.DataSetName = "DSGimnasio";
-            this.dsGimnasio1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bsSecciones
-            // 
-            this.bsSecciones.DataMember = "Secciones";
-            this.bsSecciones.DataSource = this.dsGimnasio1;
-            // 
-            // bsProductos
-            // 
-            this.bsProductos.DataMember = "Productos";
-            this.bsProductos.DataSource = this.dsGimnasio1;
-            // 
-            // bsIVA
-            // 
-            this.bsIVA.DataMember = "Tipo_IVA";
-            this.bsIVA.DataSource = this.dsGimnasio1;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -300,13 +301,13 @@
             this.Name = "FFichaProducto2";
             this.Text = "Ficha de Producto";
             this.Load += new System.EventHandler(this.FFichaProducto2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bsProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsSecciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsIVA)).EndInit();
             this.panelCabecera.ResumeLayout(false);
             this.panelCabecera.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsGimnasio1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsSecciones)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsProductos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsIVA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
